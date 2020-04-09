@@ -1,0 +1,13 @@
+@import "./variables.scss";
+
+p {
+  line-height: 3rem;
+  letter-spacing: 0.1rem;
+}
+
+a {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+}

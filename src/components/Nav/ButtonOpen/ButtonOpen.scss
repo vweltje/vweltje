@@ -1,0 +1,122 @@
+@import "../../../scss/variables.scss";
+
+.ButtonOpen {
+  position: fixed;
+  border: none;
+  background: none;
+  display: block;
+  padding: 15px 25px;
+  height: 0;
+  width: 0;
+  top: 20px;
+  left: 50%;
+  transform: translateX(20px);
+  outline: none;
+  cursor: pointer;
+  margin-bottom: 20px;
+  z-index: 1;
+
+  .ButtonOpen--Line {
+    position: absolute;
+    height: 3px;
+    background-color: $colorBlack;
+    display: block;
+    transition: ease all 0.2s;
+
+    &.first,
+    &.third {
+      width: 15px;
+      transform: translateY(-50%);
+
+      &.left {
+        left: 10px;
+      }
+
+      &.right {
+        right: 10px;
+      }
+    }
+
+    &.first {
+      top: calc(50% - 8px);
+
+      &.left {
+        transform-origin: right bottom;
+      }
+
+      &.right {
+        transform-origin: left bottom;
+      }
+    }
+
+    &.second {
+      width: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+
+      &.left {
+        left: 10px;
+      }
+
+      &.right {
+        right: 10px;
+      }
+    }
+
+    &.third {
+      top: calc(50% + 8px);
+
+      &.left {
+        transform-origin: right top;
+      }
+
+      &.right {
+        transform-origin: left top;
+      }
+    }
+  }
+
+  &:hover {
+    .ButtonOpen--Line {
+      &.first {
+        top: calc(50% - 12px);
+
+        &.left {
+          transform: rotate(-45deg);
+          left: -4px;
+        }
+
+        &.right {
+          transform: rotate(45deg);
+          right: -4px;
+        }
+      }
+
+      &.second {
+        width: 20px;
+
+        &.left {
+          left: 0;
+        }
+
+        &.right {
+          right: 0;
+        }
+      }
+
+      &.third {
+        top: calc(50% + 8px);
+
+        &.left {
+          transform: rotate(45deg);
+          left: -4px;
+        }
+
+        &.right {
+          transform: rotate(-45deg);
+          right: -4px;
+        }
+      }
+    }
+  }
+}
