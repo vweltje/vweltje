@@ -3,6 +3,7 @@ import Helmet from "react-helmet";
 import { graphql } from "gatsby";
 import Layout from "../../layout";
 import SEO from "../../components/SEO/SEO";
+import Hero from "../../components/Hero/Hero";
 import config from "../../../data/SiteConfig";
 
 const Landing = () => {
@@ -10,6 +11,7 @@ const Landing = () => {
     <Layout>
       <Helmet title={config.siteTitle} />
       <SEO />
+      <Hero />
     </Layout>
   );
 };
