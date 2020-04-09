@@ -1,0 +1,28 @@
+/* autoprefixer grid: autoplace */
+
+@import url("https://fonts.googleapis.com/css?family=Libre+Caslon+Text:400,700|Nunito:400,700&display=swap");
+
+@import "../scss/typography";
+
+* {
+  box-sizing: border-box;
+  word-spacing: 0.2em;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+  font-size: 1.6rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Libre Caslon Text", serif;
+}
