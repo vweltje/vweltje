@@ -1,0 +1,9 @@
+@import "../../scss/variables.scss";
+
+.Container {
+  position: relative;
+  display: block;
+  width: 100%;
+  max-width: $containerWidth;
+  padding: 0 #{$spacing * 4};
+}
