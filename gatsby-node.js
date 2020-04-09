@@ -36,6 +36,17 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       }
     }
     createNodeField({ node, name: "slug", value: slug });
+    // Add contentType to node.fields
+    createNodeField({
+      node,
+      name: "contentType",
+      value: parsedFilePath.dir
+    });
+    createNodeField({
+      node,
+      name: "name",
+      value: parsedFilePath.name
+    });
   }
 };
 
@@ -55,12 +66,11 @@ exports.createPages = async ({ graphql, actions }) => {
           node {
             fields {
               slug
+              contentType
+              name
             }
             frontmatter {
-              title
-              tags
-              category
-              date
+              slug
             }
           }
         }
@@ -73,102 +83,20 @@ exports.createPages = async ({ graphql, actions }) => {
     throw markdownQueryResult.errors;
   }
 
-  const tagSet = new Set();
-  const categorySet = new Set();
+  const pagesSet = new Set();
 
-  const postsEdges = markdownQueryResult.data.allMarkdownRemark.edges;
-
-  // Sort posts
-  postsEdges.sort((postA, postB) => {
-    const dateA = moment(
-      postA.node.frontmatter.date,
-      siteConfig.dateFromFormat
-    );
-
-    const dateB = moment(
-      postB.node.frontmatter.date,
-      siteConfig.dateFromFormat
-    );
-
-    if (dateA.isBefore(dateB)) return 1;
-    if (dateB.isBefore(dateA)) return -1;
-
-    return 0;
-  });
-
-  // Paging
-  const { postsPerPage } = siteConfig;
-  if (postsPerPage) {
-    const pageCount = Math.ceil(postsEdges.length / postsPerPage);
-
-    [...Array(pageCount)].forEach((_val, pageNum) => {
-      createPage({
-        path: pageNum === 0 ? `/` : `/${pageNum + 1}/`,
-        component: listingPage,
-        context: {
-          limit: postsPerPage,
-          skip: pageNum * postsPerPage,
-          pageCount,
-          currentPageNum: pageNum + 1
-        }
-      });
-    });
-  } else {
-    // Load the landing page instead
-    createPage({
-      path: `/`,
-      component: landingPage
-    });
-  }
+  const { edges } = markdownQueryResult.data.allMarkdownRemark;
+  console.log(JSON.stringify(edges));
 
   // Post page creating
-  postsEdges.forEach((edge, index) => {
-    // Generate a list of tags
-    if (edge.node.frontmatter.tags) {
-      edge.node.frontmatter.tags.forEach(tag => {
-        tagSet.add(tag);
+  edges.forEach((edge) => {
+    // Generate a list of pages
+    if (edge.node.fields.contentType === "pages") {
+      const pageName = _.capitalize(String(edge.node.fields.name));
+      createPage({
+        path: edge.node.frontmatter.slug,
+        component: path.resolve(`src/pages/${pageName}/${pageName}.jsx`)
       });
     }
-
-    // Generate a list of categories
-    if (edge.node.frontmatter.category) {
-      categorySet.add(edge.node.frontmatter.category);
-    }
-
-    // Create post pages
-    const nextID = index + 1 < postsEdges.length ? index + 1 : 0;
-    const prevID = index - 1 >= 0 ? index - 1 : postsEdges.length - 1;
-    const nextEdge = postsEdges[nextID];
-    const prevEdge = postsEdges[prevID];
-
-    createPage({
-      path: edge.node.fields.slug,
-      component: postPage,
-      context: {
-        slug: edge.node.fields.slug,
-        nexttitle: nextEdge.node.frontmatter.title,
-        nextslug: nextEdge.node.fields.slug,
-        prevtitle: prevEdge.node.frontmatter.title,
-        prevslug: prevEdge.node.fields.slug
-      }
-    });
-  });
-
-  //  Create tag pages
-  tagSet.forEach(tag => {
-    createPage({
-      path: `/tags/${_.kebabCase(tag)}/`,
-      component: tagPage,
-      context: { tag }
-    });
-  });
-
-  // Create category pages
-  categorySet.forEach(category => {
-    createPage({
-      path: `/categories/${_.kebabCase(category)}/`,
-      component: categoryPage,
-      context: { category }
-    });
   });
 };

@@ -22,6 +22,7 @@ collections: # A list of collections the CMS should be able to edit
             name: 'hero'
             widget: 'object'
             fields:
+              - { label: Slug, name: slug, widget: hidden, default: "/" }
               - { label: Text, name: text, widget: markdown }
 
           - label: 'Meta'

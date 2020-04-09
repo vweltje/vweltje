@@ -1,4 +1,5 @@
 ---
+slug: /
 hero:
   text: >-
     Hi, I'm Vincent Weltje. A full stack web developer coding lightning fast web
