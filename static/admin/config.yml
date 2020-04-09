@@ -1,22 +1,50 @@
 backend:
   name: github # Refer to https://www.netlifycms.org/docs/authentication-backends/ for auth backend list and instructions
   branch: master # Branch to update
-  repo: vagr9k/gatsby-advanced-starter # Repo for pushing new commits. Make sure to replace with your repo!
+  repo: vweltje/vweltje # Repo for pushing new commits. Make sure to replace with your repo!
 
 media_folder: static/assets
 public_folder: assets
 
-collections:
-  - name: blog
-    label: "Post"
-    folder: "content"
-    create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}.md"
-    fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Cover Image", name: "cover", widget: "image" }
-      - { label: "Slug", name: "slug", widget: "string" }
-      - { label: "Category", name: "category", widget: "string" }
-      - { label: "Tags", name: "tags", widget: "list" }
-      - { label: "Body", name: "body", widget: "markdown" }
+collections: # A list of collections the CMS should be able to edit
+  - name: 'pages'
+    label: "Pages"
+    delete: false # Prevent users from deleting documents in this collection
+    editor:
+      preview: true
+    files:
+      - file: 'content/pages/landing.md'
+        label: 'Landingpage'
+        name: 'landing-page'
+        fields:
+          - label: 'Hero'
+            required: true
+            name: 'hero'
+            widget: 'object'
+            fields:
+              - { label: Text, name: text, widget: markdown }
+
+          - label: 'Meta'
+            required: false
+            name: 'meta'
+            widget: 'object'
+            fields:
+              - { label: Title, name: title, widget: string, required: false }
+              - {
+                  label: Description,
+                  name: description,
+                  widget: text,
+                  required: false,
+                }
+              - {
+                  label: Canonical Link,
+                  name: canonicalLink,
+                  widget: string,
+                  required: false,
+                }
+              - {
+                  label: Noindex,
+                  name: noindex,
+                  widget: boolean,
+                  required: false,
+                }
