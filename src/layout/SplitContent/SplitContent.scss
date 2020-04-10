@@ -1,0 +1,28 @@
+.SplitContent {
+  position: relative;
+  width: 100vw;
+  display: block;
+}
+
+.SplitContent--Main,
+.SplitContent--Clone {
+  transition: ease transform 0.2s;
+}
+
+.SplitContent--Clone {
+  position: absolute;
+  left: 0;
+  top: 0;
+  clip-path: polygon(50% 0%, 100% 0%, 100% 100%, 50% 100%);
+  width: 100%;
+  z-index: 1;
+}
+
+.SplitContent--Main.moved {
+  clip-path: polygon(50% 0%, 0% 0%, 0% 100%, 50% 100%);
+  transform: translateX(-325px);
+}
+
+.SplitContent--Clone.moved {
+  transform: translateX(325px);
+}
