@@ -14,4 +14,7 @@ hero:
     Interested in working together?\
 
     Let's have a talk.
+workHeading:
+  left: Selected
+  right: cases
 ---
