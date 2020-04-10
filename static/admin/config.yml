@@ -29,8 +29,8 @@ collections: # A list of collections the CMS should be able to edit
             name: 'workHeading'
             widget: 'object'
             fields:
-              - { label: Left, name: left, widget: text }
-              - { label: Right, name: right, widget: text }
+              - { label: Left, name: left, widget: string }
+              - { label: Right, name: right, widget: string }
 
           - label: 'Meta'
             required: false
