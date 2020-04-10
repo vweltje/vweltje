@@ -15,6 +15,7 @@ $spacing: 10px;
 $containerWidth: 1600px;
 
 // transition
-$transition: ease all 0.2s;
+$transitionSpeed: 0.2s;
+$transition: ease all $transitionSpeed;
 
 // Breakpoints

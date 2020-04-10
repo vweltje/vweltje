@@ -6,7 +6,20 @@
 
 .SplitContent--Main,
 .SplitContent--Clone {
-  transition: ease transform 0.2s;
+  transition: ease transform $transitionSpeed;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: block;
+    background: $colorBlack;
+    opacity: 0;
+    transition: ease opacity $transitionSpeed;
+  }
 }
 
 .SplitContent--Clone {
@@ -16,6 +29,11 @@
   clip-path: polygon(50% 0%, 100% 0%, 100% 100%, 50% 100%);
   width: 100%;
   z-index: 1;
+}
+
+.SplitContent--Main.moved::after,
+.SplitContent--Clone.moved::after {
+  opacity: 0.25;
 }
 
 .SplitContent--Main.moved {
