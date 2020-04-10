@@ -22,6 +22,7 @@ module.exports = {
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-lodash",
     "gatsby-optional-chaining",
+    "gatsby-plugin-eslint",
     {
       resolve: "gatsby-plugin-sass",
       options: {
