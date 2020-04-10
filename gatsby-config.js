@@ -24,7 +24,10 @@ module.exports = {
     {
       resolve: "gatsby-plugin-sass",
       options: {
-        data: `@import "${__dirname}/scss/variables";`
+        data: `@import "_variables.scss";`,
+        includePaths: [`${__dirname}/src/scss/`],
+        sourceMap: true,
+        outputStyle: "compressed"
       }
     },
     {
