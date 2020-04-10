@@ -4,6 +4,7 @@ import { graphql } from "gatsby";
 import Layout from "../../layout";
 import SEO from "../../components/SEO/SEO";
 import Hero from "../../components/Hero/Hero";
+import VerticalHeading from "../../components/VerticalHeading/VerticalHeading";
 import config from "../../../data/SiteConfig";
 
 const Landing = () => {
@@ -12,6 +13,7 @@ const Landing = () => {
       <Helmet title={config.siteTitle} />
       <SEO />
       <Hero />
+      <VerticalHeading />
     </Layout>
   );
 };
