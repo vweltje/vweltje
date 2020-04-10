@@ -20,7 +20,7 @@ const SplitContent = ({ split, children }) => {
     }, 200);
   }
   return (
-    <div className="SplitContent">
+    <>
       <main className={`SplitContent--Main ${moved ? "moved" : ""}`}>
         {children}
       </main>
@@ -29,7 +29,7 @@ const SplitContent = ({ split, children }) => {
           {children}
         </div>
       )}
-    </div>
+    </>
   );
 };
 
