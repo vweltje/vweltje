@@ -21,6 +21,7 @@ module.exports = {
   plugins: [
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-lodash",
+    "gatsby-optional-chaining",
     {
       resolve: "gatsby-plugin-sass",
       options: {
