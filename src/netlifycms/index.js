@@ -1,4 +1,4 @@
-import CMS from "netlify-cms-app";
+import CMS from "netlify-cms-app"
 
 CMS.init({
   config: {
@@ -6,4 +6,4 @@ CMS.init({
       name: "git-gateway"
     }
   }
-});
+})

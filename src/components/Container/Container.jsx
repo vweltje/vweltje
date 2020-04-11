@@ -1,11 +1,7 @@
-import React, { Component } from "react";
+import React from "react"
 
-import "./Container.scss";
+import "./Container.scss"
 
-class Container extends Component {
-  render() {
-    return <div className="Container">{this.props.children}</div>;
-  }
-}
+const Container = ({ children }) => <div className="Container">{children}</div>
 
-export default Container;
+export default Container

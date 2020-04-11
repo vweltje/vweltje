@@ -1,6 +1,6 @@
-import React from "react";
+import React from "react"
 
-import "./VerticalHeading.scss";
+import "./VerticalHeading.scss"
 
 const VerticalHeading = ({ textLeft, textRight }) => (
   <h2 className="VerticalHeading">
@@ -19,6 +19,6 @@ const VerticalHeading = ({ textLeft, textRight }) => (
       ))}
     </div>
   </h2>
-);
+)
 
-export default VerticalHeading;
+export default VerticalHeading

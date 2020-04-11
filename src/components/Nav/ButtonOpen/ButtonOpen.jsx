@@ -1,6 +1,6 @@
-import React from "react";
+import React from "react"
 
-import "./ButtonOpen.scss";
+import "./ButtonOpen.scss"
 
 const ButtonOpen = ({ onButtonClick }) => (
   <button className="ButtonOpen" type="button" onClick={onButtonClick}>
@@ -11,6 +11,6 @@ const ButtonOpen = ({ onButtonClick }) => (
     <span className="ButtonOpen--Line third left" />
     <span className="ButtonOpen--Line third right" />
   </button>
-);
+)
 
-export default ButtonOpen;
+export default ButtonOpen

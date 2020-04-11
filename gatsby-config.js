@@ -1,6 +1,6 @@
-const urljoin = require("url-join");
-const path = require("path");
-const config = require("./data/SiteConfig");
+const urljoin = require("url-join")
+const path = require("path")
+const config = require("./data/SiteConfig")
 
 module.exports = {
   pathPrefix: config.pathPrefix === "" ? "/" : config.pathPrefix,
@@ -56,15 +56,16 @@ module.exports = {
           {
             resolve: "gatsby-remark-images",
             options: {
-              maxWidth: 690
+              maxWidth: 800,
+              linkImagesToOriginal: false
             }
           },
           {
             resolve: "gatsby-remark-responsive-iframe"
-          },
-          "gatsby-remark-copy-linked-files",
-          "gatsby-remark-autolink-headers",
-          "gatsby-remark-prismjs"
+          }
+          // "gatsby-remark-copy-linked-files",
+          // "gatsby-remark-autolink-headers",
+          // "gatsby-remark-prismjs"
         ]
       }
     },
@@ -124,10 +125,10 @@ module.exports = {
       resolve: "gatsby-plugin-feed",
       options: {
         setup(ref) {
-          const ret = ref.query.site.siteMetadata.rssMetadata;
-          ret.allMarkdownRemark = ref.query.allMarkdownRemark;
-          ret.generator = "GatsbyJS Advanced Starter";
-          return ret;
+          const ret = ref.query.site.siteMetadata.rssMetadata
+          ret.allMarkdownRemark = ref.query.allMarkdownRemark
+          ret.generator = "GatsbyJS Advanced Starter"
+          return ret
         },
         query: `
         {
@@ -148,7 +149,7 @@ module.exports = {
         feeds: [
           {
             serialize(ctx) {
-              const { rssMetadata } = ctx.query.site.siteMetadata;
+              const { rssMetadata } = ctx.query.site.siteMetadata
               return ctx.query.allMarkdownRemark.edges.map((edge) => ({
                 categories: edge.node.frontmatter.tags,
                 date: edge.node.fields.date,
@@ -160,7 +161,7 @@ module.exports = {
                   { "content:encoded": edge.node.html },
                   { author: config.userEmail }
                 ]
-              }));
+              }))
             },
             query: `
             {
@@ -204,4 +205,4 @@ module.exports = {
       }
     }
   ]
-};
+}

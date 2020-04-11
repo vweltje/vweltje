@@ -13,6 +13,7 @@
     background: $colorBlack;
     opacity: 0;
     transition: ease opacity $transitionSpeed;
+    z-index: -1;
   }
 }
 
@@ -27,6 +28,7 @@
 
 .SplitContent--Main.moved::after,
 .SplitContent--Clone.moved::after {
+  z-index: 1;
   opacity: 0.25;
 }
 

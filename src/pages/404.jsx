@@ -1,9 +1,9 @@
-import React from "react";
-import Helmet from "react-helmet";
-import { Link } from "gatsby";
-import Layout from "../layout";
+import React from "react"
+import Helmet from "react-helmet"
+import { Link } from "gatsby"
+import Layout from "../layout"
 
-import config from "../../data/SiteConfig";
+import config from "../../data/SiteConfig"
 
 export default () => (
   <Layout>
@@ -16,11 +16,9 @@ export default () => (
         <p>
           We can't find the page you are looking for!
           <br />
-          Head back to 
-          {' '}
-          <Link to="/">{config.siteTitle}</Link>
+          Head back to <Link to="/">{config.siteTitle}</Link>
         </p>
       </div>
     </section>
   </Layout>
-);
+)

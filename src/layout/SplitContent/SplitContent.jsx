@@ -1,23 +1,23 @@
-import React, { useState } from "react";
+import React, { useState } from "react"
 
-import "./SplitContent.scss";
+import "./SplitContent.scss"
 
 const SplitContent = ({ split, children }) => {
-  const [moved, setMoved] = useState(false);
-  const [moveDefault, setDefault] = useState(true);
+  const [moved, setMoved] = useState(false)
+  const [moveDefault, setDefault] = useState(true)
   if (split) {
     setTimeout(() => {
-      setMoved(true);
-      setDefault(false);
-    }, 10);
+      setMoved(true)
+      setDefault(false)
+    }, 10)
   }
   if (!split && moved) {
     setTimeout(() => {
-      setMoved(false);
-    }, 10);
+      setMoved(false)
+    }, 10)
     setTimeout(() => {
-      setDefault(true);
-    }, 200);
+      setDefault(true)
+    }, 200)
   }
   return (
     <>
@@ -30,7 +30,7 @@ const SplitContent = ({ split, children }) => {
         </div>
       )}
     </>
-  );
-};
+  )
+}
 
-export default SplitContent;
+export default SplitContent

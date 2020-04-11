@@ -1,6 +1,6 @@
-import React from "react";
+import React from "react"
 
-import "./ButtonClose.scss";
+import "./ButtonClose.scss"
 
 const ButtonClose = ({ onButtonClick }) => (
   <button className="ButtonClose" type="button" onClick={onButtonClick}>
@@ -11,6 +11,6 @@ const ButtonClose = ({ onButtonClick }) => (
     <span className="ButtonClose--Line third left" />
     <span className="ButtonClose--Line third right" />
   </button>
-);
+)
 
-export default ButtonClose;
+export default ButtonClose

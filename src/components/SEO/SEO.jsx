@@ -1,69 +1,69 @@
-import React, { Component } from "react";
-import Helmet from "react-helmet";
-import urljoin from "url-join";
-import moment from "moment";
-import config from "../../../data/SiteConfig";
+import React, { Component } from "react"
+import Helmet from "react-helmet"
+import urljoin from "url-join"
+import moment from "moment"
+import config from "../../../data/SiteConfig"
 
 class SEO extends Component {
   render() {
-    const { postNode, postPath, postSEO } = this.props;
-    let title;
-    let description;
-    let image;
-    let postURL;
+    const { postNode, postPath, postSEO } = this.props
+    let title
+    let description
+    let image
+    let postURL
 
     if (postSEO) {
-      const postMeta = postNode.frontmatter;
-      ({ title } = postMeta);
+      const postMeta = postNode.frontmatter
+      ;({ title } = postMeta)
       description = postMeta.description
         ? postMeta.description
-        : postNode.excerpt;
-      image = postMeta.cover;
-      postURL = urljoin(config.siteUrl, config.pathPrefix, postPath);
+        : postNode.excerpt
+      image = postMeta.cover
+      postURL = urljoin(config.siteUrl, config.pathPrefix, postPath)
     } else {
-      title = config.siteTitle;
-      description = config.siteDescription;
-      image = config.siteLogo;
+      title = config.siteTitle
+      description = config.siteDescription
+      image = config.siteLogo
     }
 
-    const getImagePath = imageURI => {
+    const getImagePath = (imageURI) => {
       if (
         !imageURI.match(
           `(https?|ftp|file)://[-A-Za-z0-9+&@#/%?=~_|!:,.;]+[-A-Za-z0-9+&@#/%=~_|]`
         )
       )
-        return urljoin(config.siteUrl, config.pathPrefix, imageURI);
+        return urljoin(config.siteUrl, config.pathPrefix, imageURI)
 
-      return imageURI;
-    };
+      return imageURI
+    }
 
     const getPublicationDate = () => {
-      if (!postNode) return null;
+      if (!postNode) return null
 
-      if (!postNode.frontmatter) return null;
+      if (!postNode.frontmatter) return null
 
-      if (!postNode.frontmatter.date) return null;
+      if (!postNode.frontmatter.date) return null
 
-      return moment(postNode.frontmatter.date, config.dateFromFormat).toDate();
-    };
+      return moment(postNode.frontmatter.date, config.dateFromFormat).toDate()
+    }
 
-    image = getImagePath(image);
+    image = getImagePath(image)
 
-    const datePublished = getPublicationDate();
+    const datePublished = getPublicationDate()
 
     const authorJSONLD = {
       "@type": "Person",
       name: config.userName,
       email: config.userEmail,
       address: config.userLocation
-    };
+    }
 
     const logoJSONLD = {
       "@type": "ImageObject",
       url: getImagePath(config.siteLogo)
-    };
+    }
 
-    const blogURL = urljoin(config.siteUrl, config.pathPrefix);
+    const blogURL = urljoin(config.siteUrl, config.pathPrefix)
     const schemaOrgJSONLD = [
       {
         "@context": "http://schema.org",
@@ -72,7 +72,7 @@ class SEO extends Component {
         name: title,
         alternateName: config.siteTitleAlt ? config.siteTitleAlt : ""
       }
-    ];
+    ]
     if (postSEO) {
       schemaOrgJSONLD.push(
         {
@@ -107,7 +107,7 @@ class SEO extends Component {
           datePublished,
           description
         }
-      );
+      )
     }
     return (
       <Helmet>
@@ -141,8 +141,8 @@ class SEO extends Component {
         <meta name="twitter:description" content={description} />
         <meta name="twitter:image" content={image} />
       </Helmet>
-    );
+    )
   }
 }
 
-export default SEO;
+export default SEO

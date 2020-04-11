@@ -1,14 +1,14 @@
-import React from "react";
-import { Link } from "gatsby";
+import React from "react"
+import { Link } from "gatsby"
 
-import ButtonOpen from "./ButtonOpen/ButtonOpen";
-import ButtonClose from "./ButtonClose/ButtonClose";
+import ButtonOpen from "./ButtonOpen/ButtonOpen"
+import ButtonClose from "./ButtonClose/ButtonClose"
 
-import Logo from "../../svg/icon-1.svg";
-import LinkedinIcon from "../../svg/linkedin.svg";
-import InstagramIcon from "../../svg/instagram.svg";
+import Logo from "../../svg/icon-1.svg"
+import LinkedinIcon from "../../svg/linkedin.svg"
+import InstagramIcon from "../../svg/instagram.svg"
 
-import "./Nav.scss";
+import "./Nav.scss"
 
 const Nav = ({ navActive, setNavActive }) => (
   <>
@@ -59,6 +59,6 @@ const Nav = ({ navActive, setNavActive }) => (
       </div>
     </nav>
   </>
-);
+)
 
-export default Nav;
+export default Nav
