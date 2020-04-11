@@ -3,7 +3,7 @@ slug: /
 hero:
   text: >-
     # Hi, I'm Vincent Weltje. A full stack web developer coding lightning fast
-    web apps
+    web apps.
 
 
     I enjoy turning complex problems into beautiful, fast and easy to use
