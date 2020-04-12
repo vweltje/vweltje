@@ -5,15 +5,21 @@ import "./VerticalHeading.scss"
 const VerticalHeading = ({ textLeft, textRight }) => (
   <h2 className="VerticalHeading">
     <div className="VerticalHeading--Left">
-      {[...textLeft].map((character) => (
-        <span className="VerticalHeading--Character" key={character}>
+      {[...textLeft].map((character, index) => (
+        <span
+          className="VerticalHeading--Character"
+          key={`${character}-${index}`}
+        >
           {character}
         </span>
       ))}
     </div>
     <div className="VerticalHeading--Right">
-      {[...textRight].map((character) => (
-        <span className="VerticalHeading--Character" key={character}>
+      {[...textRight].map((character, index) => (
+        <span
+          className="VerticalHeading--Character"
+          key={`${character}-${index}`}
+        >
           {character}
         </span>
       ))}

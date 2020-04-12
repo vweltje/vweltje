@@ -4,6 +4,7 @@ import { graphql } from "gatsby"
 import Layout from "../../layout"
 import SEO from "../../components/SEO/SEO"
 import Hero from "../../components/Hero/Hero"
+import VerticalHeading from "../../components/VerticalHeading/VerticalHeading"
 import config from "../../../data/SiteConfig"
 
 const Landing = ({ data }) => {
@@ -14,6 +15,10 @@ const Landing = ({ data }) => {
       <Helmet title={config.siteTitle} />
       <SEO />
       <Hero>{frontmatter?.hero?.text}</Hero>
+      <VerticalHeading
+        textLeft={frontmatter?.workHeading?.left}
+        textRight={frontmatter?.workHeading?.right}
+      />
     </Layout>
   )
 }
