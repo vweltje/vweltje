@@ -1,0 +1,33 @@
+.Footer {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.Footer--Logo {
+  width: 100%;
+  max-width: 175px;
+}
+
+.Footer--Columns {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+.Footer--Column {
+  width: calc(100% / 3);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.Footer--Column h5 {
+  font-family: $fontPrimary;
+  margin-top: 0;
+}
+
+.Footer .SocialIcons {
+  margin-left: -20px;
+}

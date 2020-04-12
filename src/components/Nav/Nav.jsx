@@ -3,10 +3,9 @@ import { Link } from "gatsby"
 
 import ButtonOpen from "./ButtonOpen/ButtonOpen"
 import ButtonClose from "./ButtonClose/ButtonClose"
+import SocialIcons from "../SocialIcons/SocialIcons"
 
 import Logo from "../../svg/icon-1.svg"
-import LinkedinIcon from "../../svg/linkedin.svg"
-import InstagramIcon from "../../svg/instagram.svg"
 
 import "./Nav.scss"
 
@@ -36,26 +35,7 @@ const Nav = ({ navActive, setNavActive }) => (
             <Link to="/contact">Contact</Link>
           </li>
         </ul>
-        <ul className="Navigation--SocialIcons">
-          <li>
-            <a
-              href="https://www.linkedin.com/in/vweltje/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <LinkedinIcon />
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.instagram.com/vweltje/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <InstagramIcon />
-            </a>
-          </li>
-        </ul>
+        <SocialIcons />
       </div>
     </nav>
   </>
