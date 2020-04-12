@@ -86,7 +86,7 @@ collections: # A list of collections the CMS should be able to edit
         required: true,
       }
       - { label: Excerpt, name: excerpt, widget: text }
-      - { label: Device preview, name devicePreview, widget: image }
+      - { label: Device preview, name: devicePreview, widget: image }
 
       - label: 'Meta'
         required: false
