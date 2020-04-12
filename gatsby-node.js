@@ -83,12 +83,21 @@ exports.createPages = async ({ graphql, actions }) => {
   // Post page creating
   edges.forEach((edge) => {
     // Generate a list of pages
-    if (edge.node.fields.contentType === "pages") {
-      const pageName = _.capitalize(String(edge.node.fields.name))
-      createPage({
-        path: edge.node.frontmatter.slug,
-        component: path.resolve(`src/pages/${pageName}/${pageName}.jsx`)
-      })
+    const name = _.capitalize(String(edge.node.fields.name))
+    switch (edge.node.fields.contentType) {
+      case "cases":
+        createPage({
+          path: `/cases${edge.node.fields.slug}`,
+          component: path.resolve(`src/pages/SingleCase/SingleCase.jsx`)
+        })
+        break
+      default:
+        // Page
+        createPage({
+          path: edge.node.frontmatter.slug,
+          component: path.resolve(`src/pages/${name}/${name}.jsx`)
+        })
+        break
     }
   })
 }
