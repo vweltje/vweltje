@@ -6,6 +6,18 @@ backend:
 media_folder: static/assets
 public_folder: assets
 
+# display_url: https://gatsbro.netlify.com # This url will display in the top-right of the CMS
+media_library:
+  name: uploadcare
+  config:
+    publicKey: 23c5658658ffad7df124
+    multiple: false
+    tabs: 'file camera url facebook gdrive'
+    effects: 'crop,rotate,enhance,grayscale'
+    imageShrink: '2000x2000'
+    previewStep: true
+    clearable: true
+
 collections: # A list of collections the CMS should be able to edit
   - name: 'pages'
     label: "Pages"
