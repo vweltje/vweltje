@@ -1,14 +1,14 @@
 import React from "react"
 
-import SelectedWorkItemText from "./SelectedWorkItemText/SelectedWorkItemText"
-import SelectedWorkItemImage from "./SelectedWorkItemImage/SelectedWorkItemImage"
+import SelectedCaseText from "./SelectedCaseText/SelectedCaseText"
+import SelectedCaseImage from "./SelectedCaseImage/SelectedCaseImage"
 
-const SelectedWorkItem = ({ item, textFirst = false }) => {
+const SelectedCase = ({ item, textFirst = false }) => {
   return (
     <div className="SelectedWork--Item">
       {textFirst ? (
         <>
-          <SelectedWorkItemText
+          <SelectedCaseText
             title={item?.title}
             text={item?.excerpt}
             link={{
@@ -16,12 +16,12 @@ const SelectedWorkItem = ({ item, textFirst = false }) => {
               slug: item?.slug
             }}
           />
-          <SelectedWorkItemImage image={item?.devicePreview} />
+          <SelectedCaseImage image={item?.devicePreview} />
         </>
       ) : (
         <>
-          <SelectedWorkItemImage image={item?.devicePreview} />
-          <SelectedWorkItemText
+          <SelectedCaseImage image={item?.devicePreview} />
+          <SelectedCaseText
             title={item?.title}
             text={item?.excerpt}
             link={{
@@ -35,4 +35,4 @@ const SelectedWorkItem = ({ item, textFirst = false }) => {
   )
 }
 
-export default SelectedWorkItem
+export default SelectedCase

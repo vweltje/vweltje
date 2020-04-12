@@ -1,12 +1,12 @@
 import React from "react"
 import Image from "../../../Image/Image"
 
-const SelectedWorkItemImage = ({ image }) => {
+const SelectedCaseImage = ({ image }) => {
   return (
-    <div className="SelectedWorkItemImage">
+    <div className="SelectedCaseImage">
       <Image resolutions="small" lazy={false} src={image} alt={image} />
     </div>
   )
 }
 
-export default SelectedWorkItemImage
+export default SelectedCaseImage

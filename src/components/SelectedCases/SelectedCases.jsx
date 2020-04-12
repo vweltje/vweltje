@@ -1,14 +1,14 @@
 import React from "react"
 import { StaticQuery, graphql } from "gatsby"
+import SelectedCase from "./SelectedCase/SelectedCase"
+import "./SelectedCases.scss"
 
-import SelectedWorkItem from "./SelectedWorkItem/SelectedWorkItem"
-
-const SelectedWorkItems = ({ items }) => {
+const SelectedCases = ({ items }) => {
   return (
-    <div className="SelectedWork">
+    <div className="SelectedCases">
       {!!items.length &&
         items.map((item, index) => (
-          <SelectedWorkItem
+          <SelectedCase
             item={item}
             textFirst={index % 2 !== 0}
             key={item.slug}
@@ -21,7 +21,7 @@ const SelectedWorkItems = ({ items }) => {
 export default () => (
   <StaticQuery
     query={graphql`
-      query SelectedWorkItemsQuery {
+      query SelectedCasesQuery {
         allMarkdownRemark(
           filter: { fields: { contentType: { eq: "cases" } } }
           limit: 3
@@ -46,7 +46,7 @@ export default () => (
       }
     `}
     render={(data) => (
-      <SelectedWorkItems
+      <SelectedCases
         items={
           data?.allMarkdownRemark?.edges?.map((edge) => ({
             ...edge?.node?.frontmatter,

@@ -5,7 +5,7 @@ import Layout from "../../layout"
 import SEO from "../../components/SEO/SEO"
 import Hero from "../../components/Hero/Hero"
 import VerticalHeading from "../../components/VerticalHeading/VerticalHeading"
-import SelectedWorkItems from "../../components/SelectedWorkItems/SelectedWorkItems"
+import SelectedCases from "../../components/SelectedCases/SelectedCases"
 import config from "../../../data/SiteConfig"
 
 const Landing = ({ data }) => {
@@ -20,7 +20,7 @@ const Landing = ({ data }) => {
         textLeft={frontmatter?.workHeading?.left}
         textRight={frontmatter?.workHeading?.right}
       />
-      <SelectedWorkItems />
+      <SelectedCases />
     </Layout>
   )
 }
