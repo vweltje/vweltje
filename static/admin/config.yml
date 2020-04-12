@@ -68,3 +68,47 @@ collections: # A list of collections the CMS should be able to edit
                   widget: boolean,
                   required: false,
                 }
+
+  - name: 'cases'
+    label: "Cases"
+    editor:
+      preview: true
+    folder: content/werk
+    slug: '{{slug}}'
+    create: true # Allow users to create new documents in this collection
+    fields:
+      - { label: Titel, name: title, widget: string, required: true }
+      - {
+        label: Datum,
+        name: date,
+        widget: date,
+        format: 'MM/DD/YYYY',
+        required: true,
+      }
+      - { label: Excerpt, name: excerpt, widget: text }
+      - { label: Device preview, name devicePreview, widget: image }
+
+      - label: 'Meta'
+        required: false
+        name: 'meta'
+        widget: 'object'
+        fields:
+          - { label: Title, name: title, widget: string, required: false }
+          - {
+              label: Description,
+              name: description,
+              widget: text,
+              required: false,
+            }
+          - {
+              label: Canonical Link,
+              name: canonicalLink,
+              widget: string,
+              required: false,
+            }
+          - {
+              label: Noindex,
+              name: noindex,
+              widget: boolean,
+              required: false,
+            }
