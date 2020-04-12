@@ -73,7 +73,7 @@ collections: # A list of collections the CMS should be able to edit
     label: "Cases"
     editor:
       preview: true
-    folder: content/werk
+    folder: content/cases
     slug: '{{slug}}'
     create: true # Allow users to create new documents in this collection
     fields:
