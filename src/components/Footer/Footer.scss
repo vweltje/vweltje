@@ -25,9 +25,23 @@
 
 .Footer--Column h5 {
   font-family: $fontPrimary;
-  margin-top: 0;
+  font-size: 1.4rem;
+  line-height: 2.1rem;
+  margin: 0;
+}
+
+.Footer--Column p {
+  margin: 0;
+  font-size: 1.4rem;
+  line-height: 2.1rem;
+  font-weight: 300;
 }
 
 .Footer .SocialIcons {
   margin-left: -20px;
+}
+
+.Footer .SocialIcons a {
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
