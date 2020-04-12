@@ -11,7 +11,8 @@
   flex-direction: column;
   align-items: center;
   transition: ease all 0.2s;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
 
   .Navigation--Container {
     display: flex;
