@@ -13,20 +13,26 @@ const Footer = () => {
       <Container>
         <div className="Footer--Columns">
           <div className="Footer--Column">
-            <Link to="/" className="Footer--LogoLink">
-              <Logo className="Footer--Logo" />
-            </Link>
+            <div>
+              <Link to="/" className="Footer--LogoLink">
+                <Logo className="Footer--Logo" />
+              </Link>
+            </div>
           </div>
           <div className="Footer--Column">
-            <h5>Location</h5>
-            <p>
-              Eindhoven, <br />
-              The Netherlands
-            </p>
+            <div>
+              <h5>Location</h5>
+              <p>
+                Eindhoven, <br />
+                The Netherlands
+              </p>
+            </div>
           </div>
           <div className="Footer--Column">
-            <h5>Socials</h5>
-            <SocialIcons />
+            <div>
+              <h5>Socials</h5>
+              <SocialIcons />
+            </div>
           </div>
         </div>
       </Container>
