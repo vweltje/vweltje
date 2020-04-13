@@ -5,7 +5,7 @@
   align-items: center;
   width: calc(50% + #{$spacing * 8});
   z-index: 0;
-  padding: #{$spacing * 8} 0;
+  padding: #{$spacing * 6} 0;
 }
 
 .SelectedCaseImage--Background {
@@ -18,7 +18,7 @@
   height: 100%;
   z-index: -1;
 
-  .Left {
+  .Left .parallax-inner {
     width: 50%;
     height: 100%;
     position: absolute;
@@ -30,7 +30,7 @@
     transform: translateY(20px);
   }
 
-  .Right {
+  .Right .parallax-inner {
     position: absolute;
     width: 80%;
     right: 0;
@@ -40,9 +40,18 @@
     z-index: -2;
     transform: translateY(-20px);
   }
+
+  &.Reversed {
+    .Left .parallax-inner {
+      background-color: $colorLightGreen;
+    }
+    .Right .parallax-inner {
+      background-color: $colorGreen;
+    }
+  }
 }
 
 .SelectedCaseImage img {
-  width: 75%;
+  width: 65%;
   z-index: 1;
 }

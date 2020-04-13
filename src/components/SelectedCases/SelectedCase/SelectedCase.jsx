@@ -8,7 +8,7 @@ import "./SelectedCase.scss"
 
 const SelectedCase = ({ item, textFirst = false }) => {
   return (
-    <div className="SelectedCase">
+    <div className={`SelectedCase${textFirst ? " textFirst" : ""}`}>
       <Container>
         {textFirst ? (
           <>
@@ -20,7 +20,10 @@ const SelectedCase = ({ item, textFirst = false }) => {
                 slug: item?.slug
               }}
             />
-            <SelectedCaseImage image={item?.devicePreview} />
+            <SelectedCaseImage
+              image={item?.devicePreview}
+              backgroundAnimationAxis="xy"
+            />
           </>
         ) : (
           <>
