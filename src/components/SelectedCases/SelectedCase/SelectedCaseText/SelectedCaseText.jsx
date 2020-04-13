@@ -13,7 +13,7 @@ const SelectedCaseText = ({
 }) => {
   return (
     <div className="SelectedCaseText">
-      <div className="SelectedCaseText--inner">
+      <div className="SelectedCaseText--Inner">
         <h2>{title}</h2>
         <p>{text}</p>
         <Link to={`${link.slug}`}>{link.text}</Link>
