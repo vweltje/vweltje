@@ -3,14 +3,14 @@
   top: 0;
   width: 0;
   height: 100%;
-  z-index: 1;
+  z-index: 10;
   left: 50%;
   transform: translateX(-50%);
   background: $colorWhite;
   display: flex;
   flex-direction: column;
   align-items: center;
-  transition: ease all 0.2s;
+  transition: ease all $transitionSpeed;
   overflow-x: hidden;
   overflow-y: auto;
 
@@ -20,7 +20,7 @@
     align-items: center;
     padding: 50px 0;
     width: 650px;
-    transition: ease all 0.2s;
+    transition: ease all $transitionSpeed;
     transform: scale(0.8);
   }
 
@@ -106,7 +106,7 @@
       right: 0;
       background-color: rgba($colorGreen, 0.3);
       opacity: 0;
-      transition: ease all 0.2s;
+      transition: ease all $transitionSpeed;
       z-index: -1;
     }
 

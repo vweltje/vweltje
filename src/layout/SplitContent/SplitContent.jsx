@@ -24,11 +24,14 @@ const SplitContent = ({ split, children }) => {
       <main className={`SplitContent--Main ${moved ? "moved" : ""}`}>
         {children}
       </main>
-      {(split || !moveDefault) && (
-        <div className={`SplitContent--Clone ${moved ? "moved" : ""}`}>
-          {children}
-        </div>
-      )}
+      <div
+        className={`SplitContent--Clone ${moved ? "moved" : ""}`}
+        style={{
+          "z-index": split || !moveDefault ? "1" : "-1"
+        }}
+      >
+        {children}
+      </div>
     </>
   )
 }

@@ -1,5 +1,6 @@
 .SplitContent--Main,
 .SplitContent--Clone {
+  background-color: $colorWhite;
   transition: ease transform $transitionSpeed;
 
   &::after {
@@ -24,6 +25,7 @@
   clip-path: polygon(50% 0%, 100% 0%, 100% 100%, 50% 100%);
   width: 100%;
   z-index: 1;
+  transition: ease transform $transitionSpeed;
 }
 
 .SplitContent--Main.moved::after,

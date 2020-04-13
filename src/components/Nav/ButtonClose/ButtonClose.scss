@@ -15,7 +15,7 @@
     height: 3px;
     background-color: $colorBlack;
     display: block;
-    transition: ease all 0.2s;
+    transition: ease all $transitionSpeed;
 
     &.first,
     &.third {
