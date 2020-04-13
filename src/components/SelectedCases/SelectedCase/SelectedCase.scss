@@ -1,0 +1,9 @@
+.SelectedCase {
+  padding-bottom: #{$spacing * 14};
+}
+
+.SelectedCase .Container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}

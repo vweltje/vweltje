@@ -1,0 +1,6 @@
+.SelectedCaseText {
+  width: calc(50% - #{$spacing * 8});
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

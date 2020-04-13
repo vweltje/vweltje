@@ -1,0 +1,48 @@
+.SelectedCaseImage {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: calc(50% + #{$spacing * 8});
+  z-index: 0;
+  padding: #{$spacing * 8} 0;
+}
+
+.SelectedCaseImage--Background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+
+  .Left {
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background-color: $colorGreen;
+    z-index: -1;
+    transform: translateY(20px);
+  }
+
+  .Right {
+    position: absolute;
+    width: 80%;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: $colorLightGreen;
+    z-index: -2;
+    transform: translateY(-20px);
+  }
+}
+
+.SelectedCaseImage img {
+  width: 75%;
+  z-index: 1;
+}

@@ -16,11 +16,13 @@ const Landing = ({ data }) => {
       <Helmet title={config.siteTitle} />
       <SEO />
       <Hero>{frontmatter?.hero?.text}</Hero>
-      <VerticalHeading
-        textLeft={frontmatter?.workHeading?.left}
-        textRight={frontmatter?.workHeading?.right}
-      />
-      <SelectedCases />
+      <section>
+        <VerticalHeading
+          textLeft={frontmatter?.workHeading?.left}
+          textRight={frontmatter?.workHeading?.right}
+        />
+        <SelectedCases />
+      </section>
     </Layout>
   )
 }
