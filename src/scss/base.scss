@@ -15,3 +15,38 @@ body {
   margin: 0;
   font-weight: 300;
 }
+
+.Link {
+  position: relative;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 1.4rem;
+  letter-spacing: 0.1rem;
+  padding-right: 30px;
+  transition: ease padding-right $transitionSpeed;
+
+  &::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 7px;
+    width: 20px;
+    display: block;
+    background-color: $colorBlack;
+    clip-path: polygon(
+      0 3px,
+      15px 3px,
+      15px 0,
+      20px 50%,
+      15px 7px,
+      15px 4px,
+      0 4px
+    );
+  }
+
+  &:hover {
+    padding-right: 40px;
+  }
+}
