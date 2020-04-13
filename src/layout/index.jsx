@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import Helmet from "react-helmet"
+import { ParallaxProvider } from "react-scroll-parallax"
 import Nav from "../components/Nav/Nav"
 import SplitContent from "./SplitContent/SplitContent"
 import Footer from "../components/Footer/Footer"
@@ -15,13 +16,15 @@ const MainLayout = ({ children }) => {
         <meta name="description" content={config.siteDescription} />
         <html lang="en" />
       </Helmet>
-      <Nav navActive={navActive} setNavActive={setNavActive} />
-      <SplitContent split={navActive}>
-        <>
-          {children}
-          <Footer />
-        </>
-      </SplitContent>
+      <ParallaxProvider>
+        <Nav navActive={navActive} setNavActive={setNavActive} />
+        <SplitContent split={navActive}>
+          <>
+            {children}
+            <Footer />
+          </>
+        </SplitContent>
+      </ParallaxProvider>
     </>
   )
 }
