@@ -19,3 +19,18 @@ $transitionSpeed: 0.2s;
 $transition: ease all $transitionSpeed;
 
 // Breakpoints
+$bpTablet: 992px;
+$bpMobile: 550px;
+
+@mixin Container {
+  position: relative;
+  display: block;
+  width: 100%;
+  max-width: $containerWidth;
+  padding: 0 #{$spacing * 4};
+  margin: 0 auto;
+
+  @media screen and (max-width: $bpMobile) {
+    padding: 0 #{$spacing * 2};
+  }
+}

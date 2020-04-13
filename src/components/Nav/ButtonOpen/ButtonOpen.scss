@@ -6,13 +6,23 @@
   padding: 15px 25px;
   height: 0;
   width: 0;
-  top: 20px;
+  top: #{$spacing * 2};
   left: 50%;
-  transform: translateX(20px);
+  transform: translateX(#{$spacing * 2});
   outline: none;
   cursor: pointer;
-  margin-bottom: 20px;
   z-index: 1;
+
+  @media screen and (max-width: $bpTablet) {
+    z-index: 2;
+    left: unset;
+    right: calc(#{$spacing * 4} - 10px);
+    transform: translateX(0);
+  }
+
+  @media screen and (max-width: $bpMobile) {
+    right: calc(#{$spacing * 2} - 10px);
+  }
 
   .ButtonOpen--Line {
     position: absolute;

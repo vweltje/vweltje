@@ -1,5 +1,5 @@
 import React from "react"
-import Splitview, { SplitviewContainer } from "../Splitview/Splitview"
+import Splitview, { SplitviewContainer } from "./Splitview/Splitview"
 import Logo from "../../svg/logo-2.svg"
 import Content from "../Content/Content"
 import "./Hero.scss"

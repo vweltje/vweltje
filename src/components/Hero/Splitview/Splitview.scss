@@ -3,6 +3,10 @@
   flex-direction: row;
   position: relative;
 
+  @media screen and (max-width: $bpTablet) {
+    flex-direction: column-reverse;
+  }
+
   .Splitview--Left,
   .Splitview--Right {
     width: 50%;
@@ -11,27 +15,38 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    @media screen and (max-width: $bpTablet) {
+      width: 100%;
+    }
   }
 
   .Splitview--Left {
     background-color: $colorGreen;
 
-    p,
-    h1 {
-      color: $colorLightGreen;
-      font-size: 2rem;
-      letter-spacing: 0.1rem;
-    }
-
-    h1 {
-      font-family: $fontPrimary;
-      font-weight: 300;
-      line-height: 3rem;
+    @media screen and (max-width: $bpTablet) {
+      margin-top: 70px;
+      height: auto;
     }
   }
 
   .Splitview--Right {
     background-color: $colorLightGreen;
+
+    @media screen and (max-width: $bpTablet) {
+      position: fixed;
+      top: 0;
+      align-items: flex-start;
+      height: 70px;
+      z-index: 1;
+
+      .Splitview--Content {
+        padding: 0;
+        justify-content: flex-start;
+        position: relative;
+        @include Container;
+      }
+    }
   }
 
   .Splitview--Content {
@@ -42,10 +57,5 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-
-    .Logo {
-      max-width: 400px;
-      align-self: center;
-    }
   }
 }
