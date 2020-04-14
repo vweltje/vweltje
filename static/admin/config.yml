@@ -79,7 +79,7 @@ collections: # A list of collections the CMS should be able to edit
     fields:
       - { label: Titel, name: title, widget: string, required: true }
       - {
-        label: Datum,
+        label: Date,
         name: date,
         widget: date,
         format: 'MM/DD/YYYY',
@@ -88,7 +88,7 @@ collections: # A list of collections the CMS should be able to edit
       - { label: Featured image, name: featuredImage, widget: image }
       - label: 'List'
         required: true
-        name: 'List'
+        name: 'list'
         widget: 'object'
         fields:
           - { label: Url, name: url, widget: string }
