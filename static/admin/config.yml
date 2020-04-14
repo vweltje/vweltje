@@ -25,6 +25,9 @@ collections: # A list of collections the CMS should be able to edit
     editor:
       preview: true
     files:
+      #
+      # Landingpage
+      #
       - file: 'content/pages/landing.md'
         label: 'Landingpage'
         name: 'landing-page'
@@ -43,6 +46,40 @@ collections: # A list of collections the CMS should be able to edit
             fields:
               - { label: Left, name: left, widget: string }
               - { label: Right, name: right, widget: string }
+
+          - label: 'Meta'
+            required: false
+            name: 'meta'
+            widget: 'object'
+            fields:
+              - { label: Title, name: title, widget: string, required: false }
+              - {
+                  label: Description,
+                  name: description,
+                  widget: text,
+                  required: false,
+                }
+              - {
+                  label: Canonical Link,
+                  name: canonicalLink,
+                  widget: string,
+                  required: false,
+                }
+              - {
+                  label: Noindex,
+                  name: noindex,
+                  widget: boolean,
+                  required: false,
+                }
+      #
+      # Cases
+      #
+      - file: 'content/pages/cases.md'
+        label: 'Cases'
+        name: 'cases'
+        fields:
+          - { label: Titel, name: title, widget: string, required: true }
+          - { label: Excerpt, name: excerpt, widget: text }
 
           - label: 'Meta'
             required: false
