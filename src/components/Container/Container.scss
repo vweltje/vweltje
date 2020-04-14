@@ -1,3 +1,7 @@
 .Container {
   @include Container;
+
+  &.noPadding {
+    padding: 0;
+  }
 }
