@@ -7,6 +7,10 @@ import SelectedCaseImage from "./SelectedCaseImage/SelectedCaseImage"
 import "./SelectedCase.scss"
 
 const SelectedCase = ({ item, textFirst = false }) => {
+  const link = {
+    text: "View case study",
+    slug: `/cases/${item?.slug}` ?? ""
+  }
   return (
     <div className={`SelectedCase${textFirst ? " textFirst" : ""}`}>
       <Container>
@@ -15,10 +19,7 @@ const SelectedCase = ({ item, textFirst = false }) => {
             <SelectedCaseText
               title={item?.title}
               text={item?.excerpt}
-              link={{
-                text: "View case study",
-                slug: item?.slug
-              }}
+              link={link}
             />
             <SelectedCaseImage
               image={item?.devicePreview}
@@ -31,10 +32,7 @@ const SelectedCase = ({ item, textFirst = false }) => {
             <SelectedCaseText
               title={item?.title}
               text={item?.excerpt}
-              link={{
-                text: "View case study",
-                slug: item?.slug
-              }}
+              link={link}
             />
           </>
         )}
