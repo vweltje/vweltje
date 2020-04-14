@@ -27,7 +27,7 @@ const SplitContent = ({ split, children }) => {
       <div
         className={`SplitContent--Clone ${moved ? "moved" : ""}`}
         style={{
-          "z-index": split || !moveDefault ? "1" : "-1"
+          zIndex: split || !moveDefault ? "1" : "-1"
         }}
       >
         {children}
