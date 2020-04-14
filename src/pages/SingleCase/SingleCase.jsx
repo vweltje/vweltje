@@ -2,6 +2,7 @@ import React from "react"
 import Helmet from "react-helmet"
 // import { graphql } from "gatsby"
 import Layout from "../../layout"
+import SimpleHeader from "../../components/SimpleHeader/SimpleHeader"
 import SEO from "../../components/SEO/SEO"
 import config from "../../../data/SiteConfig"
 
@@ -13,6 +14,7 @@ const SingleCase = () => {
     <Layout>
       <Helmet title={config.siteTitle} />
       <SEO />
+      <SimpleHeader />
       SingleCase
     </Layout>
   )
