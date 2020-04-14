@@ -27,7 +27,6 @@ const projectTypes = {
 }
 
 const ProjectType = ({ type }) => {
-  console.log(type)
   return (
     <>
       {projectTypes[type].icon}
