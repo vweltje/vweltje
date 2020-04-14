@@ -83,7 +83,6 @@ const Image = ({
   }
   const onImageInterseting = () => {
     setIsIntersecting(true)
-    console.log("ja")
   }
 
   return (
