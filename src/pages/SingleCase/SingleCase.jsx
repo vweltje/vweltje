@@ -20,7 +20,7 @@ const SingleCase = ({ data }) => {
       <article className="SingleCase">
         <CaseIntroSection
           title={caseData?.title}
-          list={caseData?.List}
+          list={caseData?.list}
           excerpt={caseData?.excerpt}
         />
         <CaseDevicePreview image={caseData?.devicePreview} />
@@ -45,7 +45,7 @@ export const pageQuery = graphql`
         title
         date
         featuredImage
-        List {
+        list {
           url
           employer
           projectType
