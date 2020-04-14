@@ -30,7 +30,7 @@ const Nav = ({ navActive, setNavActive }) => {
               <Link to="/">Home</Link>
             </li>
             <li className="Navigation--Link">
-              <Link to="/work">Work</Link>
+              <Link to="/cases">Cases</Link>
             </li>
             <li className="Navigation--Link">
               <Link to="/photography">Photography</Link>
