@@ -85,8 +85,33 @@ collections: # A list of collections the CMS should be able to edit
         format: 'MM/DD/YYYY',
         required: true,
       }
+      - { label: Featured image, name: featuredImage, widget: image }
+      - label: 'List'
+        required: true
+        name: 'List'
+        widget: 'object'
+        fields:
+          - { label: Url, name: url, widget: string }
+          - label: "Employer"
+            name: "employer"
+            widget: "select"
+            options:
+              - { label: "Personal project", value: "personalProject" }
+              - { label: "Oddessey Solutions", value: "oddesseySolutions" }
+              - { label: "Thrive Web", value: "thriveWeb" }
+            default: ["Personal project"]
+          - label: "Project type"
+            name: "projectType"
+            widget: "select"
+            options:
+              - { label: "WordPress", value: "wordpress" }
+              - { label: "React", value: "react" }
+              - { label: "Thrive Web", value: "thrive-web" }
+            default: ["Personal project"]
       - { label: Excerpt, name: excerpt, widget: text }
       - { label: Device preview, name: devicePreview, widget: image }
+      - { label: Content, name: content, widget: markdown }
+
 
       - label: 'Meta'
         required: false
