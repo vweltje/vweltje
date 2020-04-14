@@ -3,19 +3,24 @@ import Helmet from "react-helmet"
 // import { graphql } from "gatsby"
 import Layout from "../../layout"
 import SimpleHeader from "../../components/SimpleHeader/SimpleHeader"
+import CaseIntroSection from "../../components/CaseIntroSection/CaseIntroSection"
 import SEO from "../../components/SEO/SEO"
 import config from "../../../data/SiteConfig"
 
-// const SingleCase = ({ data }) => {
-const SingleCase = () => {
-  // const frontmatter = data?.allMarkdownRemark?.edges?.[0]?.node?.frontmatter
-
+const SingleCase = ({ data }) => {
+  const caseData = { ...data?.case?.frontmatter, ...data?.case?.fields }
   return (
     <Layout>
       <Helmet title={config.siteTitle} />
       <SEO />
       <SimpleHeader />
-      SingleCase
+      <article>
+        <CaseIntroSection
+          title={caseData?.title}
+          list={caseData?.list}
+          excerpt={caseData?.excerpt}
+        />
+      </article>
     </Layout>
   )
 }
@@ -23,26 +28,25 @@ const SingleCase = () => {
 export default SingleCase
 
 /* eslint no-undef: "off" */
-// export const pageQuery = graphql`
-//   query SingleCaseQuery {
-//     allMarkdownRemark(
-//       filter: {
-//         fields: { contentType: { eq: "pages" }, name: { eq: "landing" } }
-//       }
-//     ) {
-//       edges {
-//         node {
-//           frontmatter {
-//             hero {
-//               text
-//             }
-//             workHeading {
-//               left
-//               right
-//             }
-//           }
-//         }
-//       }
-//     }
-//   }
-// `
+export const pageQuery = graphql`
+  query SingleCaseQuery($id: String!) {
+    case: markdownRemark(id: { eq: $id }) {
+      fields {
+        slug
+      }
+      frontmatter {
+        title
+        date
+        featuredImage
+        list {
+          url
+          employer
+          projectType
+        }
+        excerpt
+        devicePreview
+        content
+      }
+    }
+  }
+`

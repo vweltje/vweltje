@@ -1,0 +1,29 @@
+.CaseIntroList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  li,
+  li a {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  li {
+    padding: $spacing 0;
+  }
+
+  svg {
+    height: 20px;
+    padding-right: $spacing;
+    max-width: 30px;
+  }
+}
