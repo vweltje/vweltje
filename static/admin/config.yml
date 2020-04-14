@@ -106,8 +106,7 @@ collections: # A list of collections the CMS should be able to edit
             options:
               - { label: "WordPress", value: "wordpress" }
               - { label: "React", value: "react" }
-              - { label: "Thrive Web", value: "thrive-web" }
-            default: ["Personal project"]
+            default: ["WordPress"]
       - { label: Excerpt, name: excerpt, widget: text }
       - { label: Device preview, name: devicePreview, widget: image }
       - { label: Content, name: content, widget: markdown }
