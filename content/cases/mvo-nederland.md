@@ -1,9 +1,13 @@
 ---
 title: MVO Nederland
 date: 04/12/2020
-featuredImage: https://ucarecdn.com/efddad8d-b5ff-4528-97a0-4957d9c8331b/
+featuredImage: https://ucarecdn.com/446132f6-059f-4ebf-890d-62bab734b337/
 List:
   url: https://mvonederland.nl/
+  employer: oddesseySolutions
+  projectType: wordpress
+list:
+  url: https://mvonederland.nl
   employer: oddesseySolutions
   projectType: wordpress
 excerpt: Crafted a custom theme for a WordPress powered website
