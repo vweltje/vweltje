@@ -4,6 +4,9 @@ import Helmet from "react-helmet"
 import Layout from "../../layout"
 import SimpleHeader from "../../components/SimpleHeader/SimpleHeader"
 import CaseIntroSection from "../../components/CaseIntroSection/CaseIntroSection"
+import CaseDevicePreview from "../../components/CaseDevicePreview/CaseDevicePreview"
+import Container from "../../components/Container/Container"
+import Content from "../../components/Content/Content"
 import SEO from "../../components/SEO/SEO"
 import config from "../../../data/SiteConfig"
 
@@ -14,12 +17,16 @@ const SingleCase = ({ data }) => {
       <Helmet title={config.siteTitle} />
       <SEO />
       <SimpleHeader />
-      <article>
+      <article className="SingleCase">
         <CaseIntroSection
           title={caseData?.title}
-          list={caseData?.list}
+          list={caseData?.List}
           excerpt={caseData?.excerpt}
         />
+        <CaseDevicePreview image={caseData?.devicePreview} />
+        <Container size="small">
+          <Content>{caseData.content}</Content>
+        </Container>
       </article>
     </Layout>
   )
@@ -38,7 +45,7 @@ export const pageQuery = graphql`
         title
         date
         featuredImage
-        list {
+        List {
           url
           employer
           projectType

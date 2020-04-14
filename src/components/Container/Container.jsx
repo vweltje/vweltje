@@ -2,8 +2,10 @@ import React from "react"
 
 import "./Container.scss"
 
-const Container = ({ children, noPadding }) => (
-  <div className={`Container${noPadding ? " noPadding" : ""}`}>{children}</div>
+const Container = ({ children, noPadding, size }) => (
+  <div className={`Container${noPadding ? " noPadding" : ""} ${size}`}>
+    {children}
+  </div>
 )
 
 export default Container

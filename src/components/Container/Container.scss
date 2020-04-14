@@ -4,4 +4,8 @@
   &.noPadding {
     padding: 0;
   }
+
+  &.small {
+    max-width: $containerWidthSmall;
+  }
 }

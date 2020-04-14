@@ -1,0 +1,14 @@
+.CaseDevicePreview--Figure {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: #{$spacing * 8};
+  background: linear-gradient(90deg, $colorGreen 50%, $colorLightGreen 50%);
+}
+
+.CaseDevicePreview--Image {
+  width: 100%;
+  max-width: $containerWidthSmall;
+}
