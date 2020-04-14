@@ -29,8 +29,7 @@ const Image = ({
     "1000",
     "1200",
     "1500",
-    "1600",
-    "2000"
+    "1600"
   ] // image sizes used for image source sets
 
   const checkIsUploadcare = (ulloadcareSrc) => {
@@ -48,7 +47,7 @@ const Image = ({
     } else if (res === "medium") {
       mutatedRes = "1000x"
     } else if (res === "large") {
-      mutatedRes = "2000x"
+      mutatedRes = "1600x"
     }
     return mutatedRes
   }
