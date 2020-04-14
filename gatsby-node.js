@@ -59,6 +59,7 @@ exports.createPages = async ({ graphql, actions }) => {
       allMarkdownRemark {
         edges {
           node {
+            id
             fields {
               slug
               contentType
@@ -83,19 +84,26 @@ exports.createPages = async ({ graphql, actions }) => {
   // Post page creating
   edges.forEach((edge) => {
     // Generate a list of pages
+    const { id } = edge.node
     const name = _.capitalize(String(edge.node.fields.name))
     switch (edge.node.fields.contentType) {
       case "cases":
         createPage({
           path: `/cases${edge.node.fields.slug}`,
-          component: path.resolve(`src/pages/SingleCase/SingleCase.jsx`)
+          component: path.resolve(`src/pages/SingleCase/SingleCase.jsx`),
+          context: {
+            id
+          }
         })
         break
       default:
         // Page
         createPage({
           path: edge.node.frontmatter.slug,
-          component: path.resolve(`src/pages/${name}/${name}.jsx`)
+          component: path.resolve(`src/pages/${name}/${name}.jsx`),
+          context: {
+            id
+          }
         })
         break
     }
