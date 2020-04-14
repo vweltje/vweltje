@@ -6,9 +6,9 @@
   padding: 15px 25px;
   height: 0;
   width: 0;
-  top: #{$spacing * 2};
+  top: #{$spacing * 4};
   left: 50%;
-  transform: translateX(#{$spacing * 2});
+  transform: translateX(#{$spacing * 4});
   outline: none;
   cursor: pointer;
   z-index: 1;
