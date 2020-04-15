@@ -6,10 +6,11 @@ import SEO from "../../components/SEO/SEO"
 import Hero from "../../components/Hero/Hero"
 import VerticalHeading from "../../components/VerticalHeading/VerticalHeading"
 import SelectedCases from "../../components/SelectedCases/SelectedCases"
+import { getPageData } from "../../helpers/graphqlHelper"
 import config from "../../../data/SiteConfig"
 
 const Landing = ({ data }) => {
-  const frontmatter = data?.allMarkdownRemark?.edges?.[0]?.node?.frontmatter
+  const frontmatter = getPageData(data)
 
   return (
     <Layout>
@@ -31,23 +32,15 @@ export default Landing
 
 /* eslint no-undef: "off" */
 export const pageQuery = graphql`
-  query LandingQuery {
-    allMarkdownRemark(
-      filter: {
-        fields: { contentType: { eq: "pages" }, name: { eq: "landing" } }
-      }
-    ) {
-      edges {
-        node {
-          frontmatter {
-            hero {
-              text
-            }
-            workHeading {
-              left
-              right
-            }
-          }
+  query LandingQuery($id: String!) {
+    markdownRemark(id: { eq: $id }) {
+      frontmatter {
+        hero {
+          text
+        }
+        workHeading {
+          left
+          right
         }
       }
     }

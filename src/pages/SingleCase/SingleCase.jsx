@@ -9,10 +9,11 @@ import CaseDevicePreview from "../../components/CaseDevicePreview/CaseDevicePrev
 import Container from "../../components/Container/Container"
 import Content from "../../components/Content/Content"
 import SEO from "../../components/SEO/SEO"
+import { getPageData } from "../../helpers/graphqlHelper"
 import config from "../../../data/SiteConfig"
 
 const SingleCase = ({ data }) => {
-  const caseData = { ...data?.case?.frontmatter, ...data?.case?.fields }
+  const pageData = getPageData(data)
   return (
     <Layout>
       <Helmet title={config.siteTitle} />
@@ -20,13 +21,13 @@ const SingleCase = ({ data }) => {
       <SimpleHeader />
       <article className="SingleCase">
         <PageIntro
-          title={caseData?.title}
-          excerpt={caseData?.excerpt}
-          aditionalStartContent={<CaseIntroList list={caseData?.list} />}
+          title={pageData?.title}
+          excerpt={pageData?.excerpt}
+          aditionalStartContent={<CaseIntroList list={pageData?.list} />}
         />
-        <CaseDevicePreview image={caseData?.devicePreview} />
+        <CaseDevicePreview image={pageData?.devicePreview} />
         <Container size="small">
-          <Content>{caseData.content}</Content>
+          <Content>{pageData.content}</Content>
         </Container>
       </article>
     </Layout>
@@ -38,7 +39,7 @@ export default SingleCase
 /* eslint no-undef: "off" */
 export const pageQuery = graphql`
   query SingleCaseQuery($id: String!) {
-    case: markdownRemark(id: { eq: $id }) {
+    markdownRemark(id: { eq: $id }) {
       fields {
         slug
       }

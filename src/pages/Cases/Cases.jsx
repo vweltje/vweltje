@@ -4,10 +4,13 @@ import Layout from "../../layout"
 import SEO from "../../components/SEO/SEO"
 import SimpleHeader from "../../components/SimpleHeader/SimpleHeader"
 import PageIntro from "../../components/PageIntro/PageIntro"
+import { getPageData, getEdges } from "../../helpers/graphqlHelper"
 import config from "../../../data/SiteConfig"
 
 const Cases = ({ data }) => {
-  const pageData = { ...data?.case?.frontmatter, ...data?.case?.fields }
+  const pageData = getPageData(data, "casesPage")
+  const cases = getEdges(data)
+  console.log(cases)
   return (
     <Layout>
       <Helmet title={config.siteTitle} />
@@ -23,10 +26,31 @@ export default Cases
 /* eslint no-undef: "off" */
 export const pageQuery = graphql`
   query CasesQuery($id: String!) {
-    case: markdownRemark(id: { eq: $id }) {
+    casesPage: markdownRemark(id: { eq: $id }) {
       frontmatter {
         title
         excerpt
+      }
+    }
+
+    cases: allMarkdownRemark(
+      filter: { fields: { contentType: { eq: "cases" } } }
+      sort: { fields: frontmatter___date, order: DESC }
+    ) {
+      edges {
+        node {
+          frontmatter {
+            excerpt
+            title
+            featuredImage
+            date
+          }
+          fields {
+            slug
+            name
+            contentType
+          }
+        }
       }
     }
   }

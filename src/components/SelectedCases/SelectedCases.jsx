@@ -1,6 +1,7 @@
 import React from "react"
 import { StaticQuery, graphql } from "gatsby"
 import SelectedCase from "./SelectedCase/SelectedCase"
+import { getEdges } from "../../helpers/graphqlHelper"
 import "./SelectedCases.scss"
 
 const SelectedCases = ({ items }) => {
@@ -45,15 +46,6 @@ export default () => (
         }
       }
     `}
-    render={(data) => (
-      <SelectedCases
-        items={
-          data?.allMarkdownRemark?.edges?.map((edge) => ({
-            ...edge?.node?.frontmatter,
-            ...edge?.node?.fields
-          })) ?? []
-        }
-      />
-    )}
+    render={(data) => <SelectedCases items={getEdges(data)} />}
   />
 )
