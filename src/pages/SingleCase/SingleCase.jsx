@@ -3,7 +3,8 @@ import Helmet from "react-helmet"
 // import { graphql } from "gatsby"
 import Layout from "../../layout"
 import SimpleHeader from "../../components/SimpleHeader/SimpleHeader"
-import CaseIntroSection from "../../components/CaseIntroSection/CaseIntroSection"
+import PageIntro from "../../components/PageIntro/PageIntro"
+import CaseIntroList from "../../components/CaseIntroList/CaseIntroList"
 import CaseDevicePreview from "../../components/CaseDevicePreview/CaseDevicePreview"
 import Container from "../../components/Container/Container"
 import Content from "../../components/Content/Content"
@@ -18,10 +19,10 @@ const SingleCase = ({ data }) => {
       <SEO />
       <SimpleHeader />
       <article className="SingleCase">
-        <CaseIntroSection
+        <PageIntro
           title={caseData?.title}
-          list={caseData?.list}
           excerpt={caseData?.excerpt}
+          aditionalStartContent={<CaseIntroList list={caseData?.list} />}
         />
         <CaseDevicePreview image={caseData?.devicePreview} />
         <Container size="small">

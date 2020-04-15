@@ -18,26 +18,14 @@ const Cases = ({ data }) => {
 
 export default Cases
 
-// /* eslint no-undef: "off" */
-// export const pageQuery = graphql`
-//   query SingleCaseQuery($id: String!) {
-//     case: markdownRemark(id: { eq: $id }) {
-//       fields {
-//         slug
-//       }
-//       frontmatter {
-//         title
-//         date
-//         featuredImage
-//         list {
-//           url
-//           employer
-//           projectType
-//         }
-//         excerpt
-//         devicePreview
-//         content
-//       }
-//     }
-//   }
-// `
+/* eslint no-undef: "off" */
+export const pageQuery = graphql`
+  query CasesQuery($id: String!) {
+    case: markdownRemark(id: { eq: $id }) {
+      frontmatter {
+        title
+        excerpt
+      }
+    }
+  }
+`

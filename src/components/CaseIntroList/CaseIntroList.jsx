@@ -1,10 +1,10 @@
 import React from "react"
 
-import OddesseySolutionsIcon from "../../../svg/oddessey-solutions-icon.svg"
-import ThriveWebIcon from "../../../svg/thrive-web-icon.svg"
-import SitePreviewIcon from "../../../svg/visit-site-icon.svg"
-import WordPressIcon from "../../../svg/wordpress-icon.svg"
-import ReactIcon from "../../../svg/react-icon.svg"
+import OddesseySolutionsIcon from "../../svg/oddessey-solutions-icon.svg"
+import ThriveWebIcon from "../../svg/thrive-web-icon.svg"
+import SitePreviewIcon from "../../svg/visit-site-icon.svg"
+import WordPressIcon from "../../svg/wordpress-icon.svg"
+import ReactIcon from "../../svg/react-icon.svg"
 
 import "./CaseIntroList.scss"
 

@@ -1,4 +1,4 @@
-.CaseIntroSection {
+.PageIntro {
   padding-top: #{$spacing * 4};
   padding-bottom: #{$spacing * 8};
 
@@ -6,13 +6,15 @@
     display: flex;
     flex-direction: row;
   }
-  .CaseIntroSection--Start,
-  .CaseIntroSection--End {
+
+  .PageIntro--Start,
+  .PageIntro--End {
     width: 50%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
   }
+
   h1 {
     font-size: 2.6rem;
   }
