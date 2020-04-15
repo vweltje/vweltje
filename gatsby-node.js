@@ -99,7 +99,7 @@ exports.createPages = async ({ graphql, actions }) => {
       default:
         // Page
         createPage({
-          path: edge.node.frontmatter.slug,
+          path: edge.node.frontmatter.slug || edge.node.fields.slug,
           component: path.resolve(`src/pages/${name}/${name}.jsx`),
           context: {
             id

@@ -19,6 +19,9 @@ media_library:
     clearable: true
 
 collections: # A list of collections the CMS should be able to edit
+  # ----------------------------------------------------------------------------
+  # Pages
+  # ----------------------------------------------------------------------------
   - name: 'pages'
     label: "Pages"
     delete: false # Prevent users from deleting documents in this collection
@@ -72,7 +75,7 @@ collections: # A list of collections the CMS should be able to edit
                   required: false,
                 }
       #
-      # Cases
+      # Cases page
       #
       - file: 'content/pages/cases.md'
         label: 'Cases'
@@ -106,6 +109,9 @@ collections: # A list of collections the CMS should be able to edit
                   required: false,
                 }
 
+  # ----------------------------------------------------------------------------
+  # Cases
+  # ----------------------------------------------------------------------------
   - name: 'cases'
     label: "Cases"
     editor:
