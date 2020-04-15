@@ -18,7 +18,7 @@ const Cases = ({ data }) => {
       <SEO />
       <SimpleHeader />
       <PageIntro title={pageData?.title} excerpt={pageData?.excerpt} />
-      <CasesGrid cases={[...cases, ...cases, ...cases, ...cases]} />
+      <CasesGrid cases={cases} />
     </Layout>
   )
 }
