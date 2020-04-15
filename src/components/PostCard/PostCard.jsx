@@ -6,11 +6,13 @@ import "./PostCard.scss"
 
 const PostCard = ({ image, title, excerpt, link }) => (
   <div className="PostCard">
-    <figure className="PostCard--Image">
-      <Image background src={image} lazy size="small" alt={image} />
-    </figure>
-    <h2 className="PostCard--title">{title}</h2>
-    <p>{excerpt}</p>
+    <Link className="PostCard--ContentLink" to={`${link.slug}`}>
+      <figure className="PostCard--Image">
+        <Image background src={image} lazy size="small" alt={image} />
+      </figure>
+      <h2 className="PostCard--title">{title}</h2>
+      <p>{excerpt}</p>
+    </Link>
     <div>
       <Link className="Link" to={`${link.slug}`}>
         {link.text}
