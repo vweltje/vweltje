@@ -6,8 +6,7 @@ import SimpleHeader from "../../components/SimpleHeader/SimpleHeader"
 import PageIntro from "../../components/PageIntro/PageIntro"
 import CaseIntroList from "../../components/CaseIntroList/CaseIntroList"
 import CaseDevicePreview from "../../components/CaseDevicePreview/CaseDevicePreview"
-import Container from "../../components/Container/Container"
-import Content from "../../components/Content/Content"
+import CaseContent from "../../components/CaseContent/CaseContent"
 import SEO from "../../components/SEO/SEO"
 import { getPageData } from "../../helpers/graphqlHelper"
 import config from "../../../data/SiteConfig"
@@ -26,9 +25,7 @@ const SingleCase = ({ data }) => {
           aditionalStartContent={<CaseIntroList list={pageData?.list} />}
         />
         <CaseDevicePreview image={pageData?.devicePreview} />
-        <Container size="tiny">
-          <Content>{pageData.content}</Content>
-        </Container>
+        <CaseContent content={pageData.content} />
       </article>
     </Layout>
   )

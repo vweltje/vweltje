@@ -7,7 +7,7 @@ import "./CaseDevicePreview.scss"
 
 const CaseDevicePreview = ({ image }) => (
   <section className="CaseDevicePreview">
-    <Container>
+    <Container size="small">
       <figure className="CaseDevicePreview--Figure">
         <Image
           className="CaseDevicePreview--Image"
