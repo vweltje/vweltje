@@ -26,7 +26,7 @@ const SingleCase = ({ data }) => {
           aditionalStartContent={<CaseIntroList list={pageData?.list} />}
         />
         <CaseDevicePreview image={pageData?.devicePreview} />
-        <Container size="small">
+        <Container size="tiny">
           <Content>{pageData.content}</Content>
         </Container>
       </article>

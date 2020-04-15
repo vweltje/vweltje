@@ -1,0 +1,28 @@
+.CasesGrid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.CasesGrid--Item {
+  width: 50%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  &:nth-child(odd) {
+    padding-right: #{$spacing * 4};
+  }
+
+  &:nth-child(even) {
+    padding-left: #{$spacing * 4};
+  }
+
+  &:nth-child(n + 3) {
+    padding-top: #{$spacing * 4};
+  }
+
+  &:nth-last-child(n + 3) {
+    padding-bottom: #{$spacing * 4};
+  }
+}

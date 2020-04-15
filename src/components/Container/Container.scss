@@ -8,4 +8,8 @@
   &.small {
     max-width: $containerWidthSmall;
   }
+
+  &.tiny {
+    max-width: $containerWidthTiny;
+  }
 }

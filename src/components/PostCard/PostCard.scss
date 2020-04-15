@@ -1,0 +1,19 @@
+.PostCard {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.PostCard--Image {
+  position: relative;
+  display: block;
+  margin: 0;
+  width: 100%;
+  height: 0;
+  padding-top: 66.7%;
+}
+
+.PostCard--title {
+  margin-top: 3rem;
+  margin-bottom: 0;
+}
