@@ -6,6 +6,10 @@
   width: calc(50% + #{$spacing * 8});
   z-index: 0;
   padding: #{$spacing * 6} 0;
+
+  @media screen and (max-width: $bpLarge) {
+    width: 100%;
+  }
 }
 
 .SelectedCaseImage--Background {

@@ -3,8 +3,26 @@
   display: flex;
   align-items: center;
   justify-content: center;
-}
 
-.SelectedCaseText--Inner {
-  max-width: 360px;
+  @media screen and (max-width: $bpLarge) {
+    width: 100%;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  &:first-child {
+    .SelectedCaseText--Inner {
+      padding-right: #{$spacing * 4};
+    }
+  }
+
+  &:last-child {
+    .SelectedCaseText--Inner {
+      padding-left: #{$spacing * 4};
+    }
+  }
+
+  .SelectedCaseText--Inner {
+    max-width: 360px;
+  }
 }
