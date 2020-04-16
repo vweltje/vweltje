@@ -5,7 +5,7 @@ import Layout from "../../layout"
 import SEO from "../../components/SEO/SEO"
 import SimpleHeader from "../../components/SimpleHeader/SimpleHeader"
 import PageIntro from "../../components/PageIntro/PageIntro"
-import AboutSection from "../../components/AboutSection/AboutSection"
+import DefaultSection from "../../components/DefaultSection/DefaultSection"
 import LargeImage from "../../components/LargeImage/LargeImage"
 import { getPageData } from "../../helpers/graphqlHelper"
 import config from "../../../data/SiteConfig"
@@ -19,8 +19,8 @@ const About = ({ data }) => {
       <SimpleHeader />
       <article>
         <PageIntro title={pageData.title} paddingBottom={false} />
-        <AboutSection data={pageData.firstSection} />
-        <AboutSection data={pageData.secondSection} imageFirst />
+        <DefaultSection data={pageData.firstSection} />
+        <DefaultSection data={pageData.secondSection} imageFirst />
         <LargeImage image={pageData.footerImage} />
       </article>
     </Layout>

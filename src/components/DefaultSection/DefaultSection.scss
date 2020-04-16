@@ -1,4 +1,4 @@
-.AboutSection {
+.DefaultSection {
   display: flex;
   padding-bottom: #{$spacing * 8};
 
@@ -12,28 +12,28 @@
   }
 }
 
-.AboutSection--Start,
-.AboutSection--End {
+.DefaultSection--Start,
+.DefaultSection--End {
   position: relative;
   width: 50%;
   display: flex;
   flex-direction: column;
 }
 
-.AboutSection--Start {
+.DefaultSection--Start {
   padding-right: #{$spacing * 4};
 }
 
-.AboutSection--End {
+.DefaultSection--End {
   padding-left: #{$spacing * 4};
 }
 
-.AboutSection--ImageWrapper {
+.DefaultSection--ImageWrapper {
   position: relative;
   width: 100%;
   height: 100%;
 }
 
-.AboutSection--Image {
+.DefaultSection--Image {
   width: 100%;
 }

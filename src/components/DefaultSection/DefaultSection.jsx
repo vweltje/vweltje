@@ -3,13 +3,13 @@ import Container from "../Container/Container"
 import Content from "../Content/Content"
 import Image from "../Image/Image"
 
-import "./AboutSection.scss"
+import "./DefaultSection.scss"
 
-const AboutSection = ({ data, imageFirst = false }) => {
+const DefaultSection = ({ data, imageFirst = false }) => {
   const image = (
-    <div className="AboutSection--ImageWrapper">
+    <div className="DefaultSection--ImageWrapper">
       <Image
-        className="AboutSection--Image"
+        className="DefaultSection--Image"
         src={data.image}
         lazy={false}
         backgroun={false}
@@ -19,15 +19,17 @@ const AboutSection = ({ data, imageFirst = false }) => {
   )
   const content = <Content>{data.content}</Content>
   return (
-    <section className="AboutSection">
+    <section className="DefaultSection">
       <Container>
-        <div className="AboutSection--Start">
+        <div className="DefaultSection--Start">
           {imageFirst ? image : content}
         </div>
-        <div className="AboutSection--End">{imageFirst ? content : image}</div>
+        <div className="DefaultSection--End">
+          {imageFirst ? content : image}
+        </div>
       </Container>
     </section>
   )
 }
 
-export default AboutSection
+export default DefaultSection
