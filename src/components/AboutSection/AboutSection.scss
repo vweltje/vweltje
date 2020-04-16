@@ -1,0 +1,39 @@
+.AboutSection {
+  display: flex;
+  padding-bottom: #{$spacing * 8};
+
+  .Container {
+    display: flex;
+    flex-direction: row;
+  }
+
+  p:first-of-type {
+    margin-top: 0;
+  }
+}
+
+.AboutSection--Start,
+.AboutSection--End {
+  position: relative;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.AboutSection--Start {
+  padding-right: #{$spacing * 4};
+}
+
+.AboutSection--End {
+  padding-left: #{$spacing * 4};
+}
+
+.AboutSection--ImageWrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.AboutSection--Image {
+  width: 100%;
+}

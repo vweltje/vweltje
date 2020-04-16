@@ -7,9 +7,10 @@ const PageIntro = ({
   title,
   excerpt,
   aditionalStartContent,
-  aditionalEndContent
+  aditionalEndContent,
+  paddingBottom = true
 }) => (
-  <section className="PageIntro">
+  <section className={`PageIntro ${paddingBottom ? "" : "resetBottomPadding"}`}>
     <Container>
       <div className="PageIntro--Start">
         <h1 className="PageIntro-heading">{title}</h1>

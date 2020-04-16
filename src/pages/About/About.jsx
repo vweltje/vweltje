@@ -15,9 +15,9 @@ const About = ({ data }) => {
     <Layout>
       <Helmet title={config.siteTitle} />
       <SEO />
-      <SimpleHeader />\
+      <SimpleHeader />
       <article>
-        <PageIntro title={pageData.title} />
+        <PageIntro title={pageData.title} paddingBottom={false} />
         <AboutSection data={pageData.firstSection} />
         <AboutSection data={pageData.secondSection} imageFirst />
       </article>
