@@ -32,9 +32,9 @@ secondSection:
     * Pretium vulputate sapien nec sagittis aliquam malesuada bibendum arcu. 
 
 
-    `- Vincent weltje`
-
-
     > Creativity and love for pushing pixels is key to build epic web experienced that blow people’s minds.
+
+
+    \- Vincent Weltje
 footerImage: https://ucarecdn.com/21d6f610-1984-4088-81f8-b705c69e6ab0/
 ---
