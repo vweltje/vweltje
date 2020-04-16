@@ -13,14 +13,14 @@
   cursor: pointer;
   z-index: 1;
 
-  @media screen and (max-width: $bpTablet) {
+  @media screen and (max-width: $bpLarge) {
     z-index: 2;
     left: unset;
     right: calc(#{$spacing * 4} - 10px);
     transform: translateX(0);
   }
 
-  @media screen and (max-width: $bpMobile) {
+  @media screen and (max-width: $bpMedium) {
     right: calc(#{$spacing * 2} - 10px);
   }
 

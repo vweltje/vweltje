@@ -22,8 +22,10 @@ $transitionSpeed: 0.2s;
 $transition: ease all $transitionSpeed;
 
 // Breakpoints
-$bpTablet: 992px;
-$bpMobile: 550px;
+$bpExtraLarge: 1200px;
+$bpLarge: 992px;
+$bpMedium: 768px;
+$bpSmall: 576px;
 
 @mixin Container {
   position: relative;
@@ -33,7 +35,7 @@ $bpMobile: 550px;
   padding: 0 #{$spacing * 4};
   margin: 0 auto;
 
-  @media screen and (max-width: $bpMobile) {
+  @media screen and (max-width: $bpMedium) {
     padding: 0 #{$spacing * 2};
   }
 }

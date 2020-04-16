@@ -3,7 +3,7 @@
   flex-direction: row;
   position: relative;
 
-  @media screen and (max-width: $bpTablet) {
+  @media screen and (max-width: $bpLarge) {
     flex-direction: column-reverse;
   }
 
@@ -16,7 +16,7 @@
     align-items: center;
     justify-content: center;
 
-    @media screen and (max-width: $bpTablet) {
+    @media screen and (max-width: $bpLarge) {
       width: 100%;
     }
   }
@@ -24,7 +24,7 @@
   .Splitview--Left {
     background-color: $colorGreen;
 
-    @media screen and (max-width: $bpTablet) {
+    @media screen and (max-width: $bpLarge) {
       margin-top: 70px;
       height: auto;
     }
@@ -33,7 +33,7 @@
   .Splitview--Right {
     background-color: $colorLightGreen;
 
-    @media screen and (max-width: $bpTablet) {
+    @media screen and (max-width: $bpLarge) {
       position: fixed;
       top: 0;
       align-items: flex-start;

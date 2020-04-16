@@ -17,7 +17,7 @@
     align-self: center;
     display: block;
 
-    @media screen and (max-width: $bpTablet) {
+    @media screen and (max-width: $bpLarge) {
       max-width: 200px;
       align-self: flex-start;
     }
