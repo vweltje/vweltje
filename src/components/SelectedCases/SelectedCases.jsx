@@ -2,6 +2,7 @@ import React from "react"
 import { StaticQuery, graphql } from "gatsby"
 import SelectedCase from "./SelectedCase/SelectedCase"
 import { getEdges } from "../../helpers/graphqlHelper"
+import { downBreakpoint } from "../../helpers/breakpointHelper"
 import "./SelectedCases.scss"
 
 const SelectedCases = ({ items }) => {
@@ -11,7 +12,7 @@ const SelectedCases = ({ items }) => {
         items.map((item, index) => (
           <SelectedCase
             item={item}
-            textFirst={index % 2 !== 0}
+            textFirst={!downBreakpoint("large") && index % 2 !== 0}
             key={item.slug}
           />
         ))}

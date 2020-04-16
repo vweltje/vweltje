@@ -1,5 +1,21 @@
 .SelectedCase {
-  padding-bottom: #{$spacing * 14};
+  padding: #{$spacing * 7} 0;
+
+  @media screen and (max-width: $bpLarge) {
+    padding-bottom: #{$spacing * 4};
+  }
+
+  &:first-child {
+    padding-top: 0;
+  }
+
+  &:last-child {
+    padding-bottom: #{$spacing * 14};
+
+    @media screen and (max-width: $bpLarge) {
+      padding-bottom: #{$spacing * 8};
+    }
+  }
 }
 
 .SelectedCase .Container {
