@@ -1,6 +1,6 @@
 .DefaultSection {
   display: flex;
-  padding-bottom: #{$spacing * 8};
+  padding: #{$spacing * 4} 0;
 
   .Container {
     display: flex;
