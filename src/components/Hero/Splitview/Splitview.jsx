@@ -1,10 +1,13 @@
 import React from "react"
 import { upperFirst } from "lodash"
+import Container from "../../Container/Container"
 import "./Splitview.scss"
 
 const SplitviewContainer = ({ position, children }) => (
   <div className={`Splitview--${upperFirst(position)}`}>
-    <div className="Splitview--Content">{children}</div>
+    <Container>
+      <div className="Splitview--Content">{children}</div>
+    </Container>
   </div>
 )
 
