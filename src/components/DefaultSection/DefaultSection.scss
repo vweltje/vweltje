@@ -3,6 +3,10 @@
 
   .Container {
     display: flex;
+
+    @media screen and (max-width: $bpExtraLarge) {
+      flex-direction: column;
+    }
   }
 
   p:first-of-type {
@@ -14,14 +18,26 @@
 .DefaultSection--End {
   position: relative;
   width: 50%;
+
+  @media screen and (max-width: $bpExtraLarge) {
+    width: 100%;
+  }
 }
 
 .DefaultSection--Start {
   padding-right: #{$spacing * 4};
+
+  @media screen and (max-width: $bpExtraLarge) {
+    padding-right: 0;
+  }
 }
 
 .DefaultSection--End {
   padding-left: #{$spacing * 4};
+
+  @media screen and (max-width: $bpExtraLarge) {
+    padding-left: 0;
+  }
 }
 
 .DefaultSection--ImageWrapper {
