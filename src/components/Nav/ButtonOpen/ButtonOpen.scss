@@ -17,6 +17,7 @@
     z-index: 2;
     left: unset;
     right: calc(#{$spacing * 4} - 10px);
+    top: #{$spacing * 2};
     transform: translateX(0);
   }
 
