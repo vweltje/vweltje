@@ -1,4 +1,5 @@
 import React from "react"
+import { graphql } from "gatsby"
 import Helmet from "react-helmet"
 import Layout from "../../layout"
 import SEO from "../../components/SEO/SEO"
@@ -27,7 +28,7 @@ export default Cases
 
 /* eslint no-undef: "off" */
 export const pageQuery = graphql`
-  query CasesQuery($id: String!) {
+  query CasesQuery($id: String) {
     casesPage: markdownRemark(id: { eq: $id }) {
       frontmatter {
         title

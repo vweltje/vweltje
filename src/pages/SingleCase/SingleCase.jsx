@@ -1,6 +1,6 @@
 import React from "react"
 import Helmet from "react-helmet"
-// import { graphql } from "gatsby"
+import { graphql } from "gatsby"
 import Layout from "../../layout"
 import SimpleHeader from "../../components/SimpleHeader/SimpleHeader"
 import PageIntro from "../../components/PageIntro/PageIntro"
@@ -35,7 +35,7 @@ export default SingleCase
 
 /* eslint no-undef: "off" */
 export const pageQuery = graphql`
-  query SingleCaseQuery($id: String!) {
+  query SingleCaseQuery($id: String) {
     markdownRemark(id: { eq: $id }) {
       fields {
         slug

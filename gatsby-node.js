@@ -82,30 +82,35 @@ exports.createPages = async ({ graphql, actions }) => {
   const { edges } = markdownQueryResult.data.allMarkdownRemark
 
   // Post page creating
-  edges.forEach((edge) => {
+  console.log("Created: ")
+  edges.forEach(({ node }) => {
     // Generate a list of pages
-    const { id } = edge.node
-    const name = _.capitalize(String(edge.node.fields.name))
-    switch (edge.node.fields.contentType) {
+    const { id } = node
+    const name = _.capitalize(String(node.fields.name))
+    switch (node.fields.contentType) {
       case "cases":
         createPage({
-          path: `/cases${edge.node.fields.slug}`,
+          path: `/cases${node.fields.slug}`,
           component: path.resolve(`src/pages/SingleCase/SingleCase.jsx`),
           context: {
             id
           }
         })
+        console.log(`/cases${node.fields.slug}`)
         break
       default:
         // Page
         createPage({
-          path: edge.node.frontmatter.slug || edge.node.fields.slug,
+          path: node.frontmatter.slug || node.fields.slug,
           component: path.resolve(`src/pages/${name}/${name}.jsx`),
           context: {
             id
           }
         })
+        console.log(node.frontmatter.slug || node.fields.slug)
         break
     }
   })
 }
+
+module.exports.resolvableExtensions = () => [".json"]

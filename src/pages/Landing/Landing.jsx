@@ -32,7 +32,7 @@ export default Landing
 
 /* eslint no-undef: "off" */
 export const pageQuery = graphql`
-  query LandingQuery($id: String!) {
+  query LandingQuery($id: String) {
     markdownRemark(id: { eq: $id }) {
       frontmatter {
         hero {
