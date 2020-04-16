@@ -4,17 +4,23 @@ import Helmet from "react-helmet"
 import Layout from "../../layout"
 import SEO from "../../components/SEO/SEO"
 import SimpleHeader from "../../components/SimpleHeader/SimpleHeader"
+import PageIntro from "../../components/PageIntro/PageIntro"
+import AboutSection from "../../components/AboutSection/AboutSection"
 import { getPageData } from "../../helpers/graphqlHelper"
 import config from "../../../data/SiteConfig"
 
 const About = ({ data }) => {
   const pageData = getPageData(data)
-  console.log(pageData)
   return (
     <Layout>
       <Helmet title={config.siteTitle} />
       <SEO />
-      <SimpleHeader />
+      <SimpleHeader />\
+      <article>
+        <PageIntro title={pageData.title} />
+        <AboutSection data={pageData.firstSection} />
+        <AboutSection data={pageData.secondSection} imageFirst />
+      </article>
     </Layout>
   )
 }

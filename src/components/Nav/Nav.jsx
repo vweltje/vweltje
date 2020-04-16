@@ -36,7 +36,7 @@ const Nav = ({ navActive, setNavActive }) => {
               <Link to="/photography">Photography</Link>
             </li>
             <li className="Navigation--Link">
-              <Link to="/about">About me</Link>
+              <Link to="/about-me">About me</Link>
             </li>
             <li className="Navigation--Link">
               <Link to="/contact">Contact</Link>
