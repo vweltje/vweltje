@@ -108,6 +108,54 @@ collections: # A list of collections the CMS should be able to edit
                   widget: boolean,
                   required: false,
                 }
+      #
+      # Cases page
+      #
+      - file: 'content/pages/about.md'
+        label: 'About'
+        name: 'about'
+        fields:
+          - { label: Titel, name: title, widget: string, required: true }
+          - label: 'First section'
+            required: true
+            name: 'firstSection'
+            widget: 'object'
+            fields:
+              - { label: Content, name: content, widget: markdown }
+              - { label: Image, name: image, widget: image }
+          - label: 'Second section'
+            required: true
+            name: 'secondSection'
+            widget: 'object'
+            fields:
+              - { label: Content, name: content, widget: markdown }
+              - { label: Image, name: image, widget: image }
+          - { label: Footer image, name: footerImage, widget: image }
+
+          - label: 'Meta'
+            required: false
+            name: 'meta'
+            widget: 'object'
+            fields:
+              - { label: Title, name: title, widget: string, required: false }
+              - {
+                  label: Description,
+                  name: description,
+                  widget: text,
+                  required: false,
+                }
+              - {
+                  label: Canonical Link,
+                  name: canonicalLink,
+                  widget: string,
+                  required: false,
+                }
+              - {
+                  label: Noindex,
+                  name: noindex,
+                  widget: boolean,
+                  required: false,
+                }
 
   # ----------------------------------------------------------------------------
   # Cases
