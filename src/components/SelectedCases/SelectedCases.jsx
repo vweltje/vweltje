@@ -3,7 +3,6 @@ import { StaticQuery, graphql } from "gatsby"
 import SelectedCase from "./SelectedCase/SelectedCase"
 import { getEdges } from "../../helpers/graphqlHelper"
 import { downBreakpoint } from "../../helpers/breakpointHelper"
-import "./SelectedCases.scss"
 
 const SelectedCases = ({ items }) => {
   return (

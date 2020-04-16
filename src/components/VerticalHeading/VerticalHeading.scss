@@ -9,19 +9,37 @@
   align-items: center;
   justify-content: center;
   font-size: 1.6rem;
-  margin: #{$spacing * 14} 0;
+  margin: 0;
+  padding: #{$spacing * 14} 0;
+
+  @media screen and (max-width: $bpLarge) {
+    padding: #{$spacing * 4} #{$spacing * 4} #{$spacing * 2};
+    justify-content: flex-start;
+  }
 
   .VerticalHeading--Left {
     margin-right: $spacing;
+
+    @media screen and (max-width: $bpLarge) {
+      margin-right: 1rem;
+    }
   }
 
   .VerticalHeading--Right {
     margin-left: $spacing;
+
+    @media screen and (max-width: $bpLarge) {
+      margin-left: 0;
+    }
   }
 
   .VerticalHeading--Character {
     display: block;
     padding: #{$spacing * 0.1} 0;
     line-height: 2.2rem;
+
+    @media screen and (max-width: $bpLarge) {
+      display: inline-block;
+    }
   }
 }
