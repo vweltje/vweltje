@@ -32,6 +32,9 @@ secondSection:
     * Pretium vulputate sapien nec sagittis aliquam malesuada bibendum arcu. 
 
 
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Penatibus et magnis dis parturient montes. 
+
+
     > Creativity and love for pushing pixels is key to build epic web experienced that blow people’s minds.
 
 
