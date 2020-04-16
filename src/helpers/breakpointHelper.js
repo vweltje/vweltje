@@ -24,11 +24,11 @@ const useBreakpoint = () => {
   )
 
   useEffect(() => {
-    const calculateInnerWidth = throttle(() => {
+    const calcualte = throttle(() => {
       setBreakpoint(getCurrentBreakpoint(window.innerWidth))
     }, 200)
-    window.addEventListener("resize", calculateInnerWidth)
-    return () => window.removeEventListener("resize", calculateInnerWidth)
+    window.addEventListener("resize", calcualte)
+    return () => window.removeEventListener("resize", calcualte)
   }, [])
 
   return breakpoint
@@ -40,11 +40,11 @@ const downBreakpoint = (breakpoint) => {
   )
 
   useEffect(() => {
-    const calculateInnerWidth = throttle(() => {
+    const calcualte = throttle(() => {
       setIsDown(isDownBreakpoint(breakpoint, window.innerWidth))
     }, 200)
-    window.addEventListener("resize", calculateInnerWidth)
-    return () => window.removeEventListener("resize", calculateInnerWidth)
+    window.addEventListener("resize", calcualte)
+    return () => window.removeEventListener("resize", calcualte)
   }, [])
 
   return isDown
