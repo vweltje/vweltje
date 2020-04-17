@@ -1,7 +1,9 @@
 import React from "react"
 
+import "./Required.scss"
+
 const Required = () => (
-  <div>
+  <div className="ContactForm--Required">
     <span>* Required field</span>
   </div>
 )
