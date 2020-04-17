@@ -1,0 +1,20 @@
+.ContactForm--Label {
+  position: relative;
+  flex-grow: 1;
+  font-size: 4rem;
+}
+
+.ContactForm--Input {
+  position: absolute;
+  left: 0;
+  top: 0;
+  border: none;
+  background-color: transparent;
+  font-size: 4rem;
+  font-family: $fontPrimary;
+  padding: 0;
+  outline: none;
+  transform: translateY(-50%);
+  top: 50%;
+  letter-spacing: 0.1rem;
+}

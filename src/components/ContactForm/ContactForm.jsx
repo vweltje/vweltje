@@ -1,5 +1,5 @@
 import React from "react"
-import Field from "./Field/Field"
+import Fieldset from "./Fieldset/Fieldset"
 import fields from "./constants"
 import "./ContactForm.scss"
 
@@ -13,7 +13,7 @@ const ContactForm = () => {
       data-netlify=""
     >
       {fields.map(({ name, label, type, required }, index) => (
-        <Field
+        <Fieldset
           name={name}
           label={label}
           type={type}

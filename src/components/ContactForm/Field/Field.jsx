@@ -1,26 +1,24 @@
 import React from "react"
-import Input from "../Input/Input"
-import NavigationButtons from "../NavigationButtons/NavigationButtons"
-import Required from "../Required/Required"
-import Progress from "../Progress/Progress"
 
-const Field = ({ name, label, type, required, index }) => (
-  <fieldset
-    className="ContactForm--Field"
-    style={{
-      zIndex: -Math.abs(index),
-      transform: `translateY(-${index * 10}px) scale(${1 - 0.01 * index * 2})`
-    }}
-  >
-    <div className="ContactForm--FieldTop">
-      <Input name={name} label={label} type={type} required={required} />
-      <NavigationButtons />
-    </div>
-    <div className="ContactForm--FieldBottom">
-      <Required />
-      <Progress />
-    </div>
-  </fieldset>
+const Field = ({ name, label, type, required }) => (
+  <label htmlFor={name} className="ContactForm--Field">
+    {label}
+    {type === "textarea" ? (
+      <textarea
+        className="ContactForm--Textarea"
+        id={name}
+        name={name}
+        required={required}
+      />
+    ) : (
+      <input
+        className="ContactForm--Input"
+        id={name}
+        name={name}
+        type={type}
+        required={required}
+      />
+    )}
+  </label>
 )
-
 export default Field
