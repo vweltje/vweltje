@@ -11,11 +11,19 @@
   .Splitview--Right {
     width: 50%;
     height: 900px;
-
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
+
+    .Container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      @media screen and (max-width: $bpLarge) {
+        align-items: flex-start;
+      }
+    }
 
     @media screen and (max-width: $bpLarge) {
       width: 100%;
@@ -42,10 +50,10 @@
       z-index: 1;
 
       .Splitview--Content {
-        padding: 0;
         justify-content: flex-start;
         position: relative;
         @include Container;
+        padding: 0;
       }
     }
   }
