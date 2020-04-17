@@ -1,5 +1,6 @@
-import React, { useState } from "react"
+import React, { useContext, useState } from "react"
 import { Link } from "gatsby"
+import { store } from "../../store"
 
 import ButtonOpen from "./ButtonOpen/ButtonOpen"
 import ButtonClose from "./ButtonClose/ButtonClose"
@@ -10,6 +11,17 @@ import Logo from "../../svg/icon-1.svg"
 import "./Nav.scss"
 
 const Nav = ({ navActive, setNavActive }) => {
+  const {
+    state: { navigationActive },
+    dispatch
+  } = useContext(store)
+
+  console.log(navigationActive)
+
+  setTimeout(() => {
+    dispatch("activateNavigation")
+  }, 2000)
+
   const [isActive, setIsActive] = useState(false)
   if (navActive !== isActive) {
     setTimeout(() => {
