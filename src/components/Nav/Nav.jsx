@@ -14,8 +14,16 @@ const Nav = () => {
   const {
     state: {
       nav: { active }
-    }
+    },
+    dispatch
   } = useContext(store)
+
+  const openContactOverlay = () => {
+    dispatch("nav--deactivate")
+    setTimeout(() => {
+      dispatch("contactOverlay--activate")
+    }, 200)
+  }
 
   return (
     <>
@@ -40,7 +48,9 @@ const Nav = () => {
               <Link to="/about-me">About me</Link>
             </li>
             <li className="Navigation--Link">
-              <Link to="/contact">Contact</Link>
+              <button type="button" onClick={openContactOverlay}>
+                Contact
+              </button>
             </li>
           </ul>
           <SocialIcons />

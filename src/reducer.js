@@ -1,12 +1,12 @@
 import { navReducer, navInitState } from "./components/Nav/navReducer"
 import {
-  contactFormReducer,
-  contactFormInitState
-} from "./components/ContactForm/contactFormReducer"
+  contactOverlayReducer,
+  contactOverlayInitState
+} from "./components/ContactOverlay/contactOverlayReducer"
 
 export const initState = {
   nav: navInitState,
-  contactForm: contactFormInitState
+  contactOverlay: contactOverlayInitState
 }
 
 export const reducer = (state, action) => {
@@ -16,6 +16,6 @@ export const reducer = (state, action) => {
   }
   return {
     nav: navReducer(state.nav, mutatedAction),
-    contactForm: contactFormReducer(state.contactForm, mutatedAction)
+    contactOverlay: contactOverlayReducer(state.contactOverlay, mutatedAction)
   }
 }
