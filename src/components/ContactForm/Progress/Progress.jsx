@@ -1,8 +1,10 @@
 import React from "react"
 
+import "./Progress.scss"
+
 const Progress = () => (
-  <div>
-    Step 01 <span>/ 04</span>
+  <div className="ContactForm--Progress">
+    Step 01 <span className="ContactForm--ProgressNext">/ 04</span>
   </div>
 )
 
