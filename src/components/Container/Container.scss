@@ -9,6 +9,10 @@
     max-width: $containerWidthSmall;
   }
 
+  &.smaller {
+    max-width: $containerWidthSmaller;
+  }
+
   &.tiny {
     max-width: $containerWidthTiny;
   }
