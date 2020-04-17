@@ -1,0 +1,26 @@
+.ContactForm--NavigationButtons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  font-family: $fontPrimary;
+  color: $colorLightGreen;
+}
+
+.ContactForm--NavigationButton {
+  border: none;
+  font-family: $fontPrimary;
+  font-size: 3rem;
+
+  background-color: transparent;
+  outline: none;
+  cursor: pointer;
+
+  &.Prev {
+    color: $colorLightGreen;
+  }
+
+  &.Next {
+    color: $colorGreen;
+  }
+}

@@ -4,6 +4,8 @@ import NavigationButtons from "../NavigationButtons/NavigationButtons"
 import Required from "../Required/Required"
 import Progress from "../Progress/Progress"
 
+import "./Fieldset.scss"
+
 const Fieldset = ({ name, label, type, required, index }) => (
   <fieldset
     className="ContactForm--Fieldset"

@@ -1,12 +1,14 @@
 import React from "react"
 
+import "./NavigationButtons.scss"
+
 const NavigationButtons = () => (
-  <div className="ContactForm--Buttons">
-    <button className="ContactForm--Button Prev" type="button">
+  <div className="ContactForm--NavigationButtons">
+    <button className="ContactForm--NavigationButton Prev" type="button">
       Prev
     </button>
     /
-    <button className="ContactForm--Button Next" type="button">
+    <button className="ContactForm--NavigationButton Next" type="button">
       Next
     </button>
   </div>

@@ -1,5 +1,7 @@
 import React from "react"
 
+import "./Field.scss"
+
 const Field = ({ name, label, type, required }) => (
   <label htmlFor={name} className="ContactForm--Field">
     {label}
