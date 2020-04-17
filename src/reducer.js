@@ -1,7 +1,12 @@
 import { navReducer, navInitState } from "./components/Nav/navReducer"
+import {
+  contactFormReducer,
+  contactFormInitState
+} from "./components/ContactForm/contactFormReducer"
 
 export const initState = {
-  ...navInitState
+  nav: navInitState,
+  contactForm: contactFormInitState
 }
 
 export const reducer = (state, action) => {
@@ -10,6 +15,7 @@ export const reducer = (state, action) => {
     value: action?.value ?? undefined
   }
   return {
-    ...navReducer(state, mutatedAction)
+    nav: navReducer(state.nav, mutatedAction),
+    contactForm: contactFormReducer(state.contactForm, mutatedAction)
   }
 }

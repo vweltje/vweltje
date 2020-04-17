@@ -4,10 +4,12 @@ import "./PageSplitter.scss"
 
 const PageSplitter = ({ children }) => {
   const {
-    state: { navigationActive }
+    state: {
+      nav: { active }
+    }
   } = useContext(store)
   const [splitted, setSplitted] = useState(true)
-  const splitContent = navigationActive
+  const splitContent = active
 
   useEffect(() => {
     if (splitContent) {

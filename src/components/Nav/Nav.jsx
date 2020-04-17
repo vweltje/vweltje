@@ -12,16 +12,17 @@ import "./Nav.scss"
 
 const Nav = () => {
   const {
-    state: { navigationActive },
-    dispatch
+    state: {
+      nav: { active }
+    }
   } = useContext(store)
 
   return (
     <>
-      <ButtonOpen onButtonClick={() => dispatch("activateNavigation")} />
-      <nav className={`Navigation ${navigationActive ? "active" : ""}`}>
+      <ButtonOpen />
+      <nav className={`Navigation ${active ? "active" : ""}`}>
         <div className="Navigation--Container">
-          <ButtonClose onButtonClick={() => dispatch("deactivateNavigation")} />
+          <ButtonClose />
           <Link to="/" className="Navigation--IconLink">
             <Logo className="Navigation--Icon" />
           </Link>
