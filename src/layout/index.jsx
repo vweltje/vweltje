@@ -1,16 +1,14 @@
-import React, { useState } from "react"
+import React from "react"
 import Helmet from "react-helmet"
 import { ParallaxProvider } from "react-scroll-parallax"
 import { StateProvider } from "../store"
-import Nav from "../components/Nav/Nav"
-import SplitContent from "./SplitContent/SplitContent"
-import Footer from "../components/Footer/Footer"
+import MainLayoutContent from "./MainLayoutContent/MainLayoutContent"
+
 import config from "../../data/SiteConfig"
 
 import "../scss/base.scss"
 
 const MainLayout = ({ children }) => {
-  const [navActive, setNavActive] = useState(false)
   return (
     <StateProvider>
       <Helmet>
@@ -18,13 +16,7 @@ const MainLayout = ({ children }) => {
         <html lang="en" />
       </Helmet>
       <ParallaxProvider>
-        <Nav navActive={navActive} setNavActive={setNavActive} />
-        <SplitContent split={navActive}>
-          <>
-            {children}
-            <Footer />
-          </>
-        </SplitContent>
+        <MainLayoutContent>{children}</MainLayoutContent>
       </ParallaxProvider>
     </StateProvider>
   )
