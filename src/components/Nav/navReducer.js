@@ -1,4 +1,8 @@
-export default (state, action) => {
+export const navInitState = {
+  navigationActive: false
+}
+
+export const navReducer = (state, action) => {
   switch (action.type) {
     case "activateNavigation":
       return {

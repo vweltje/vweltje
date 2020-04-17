@@ -1,11 +1,15 @@
-import navigationReducer from "./components/Nav/reducer"
+import { navReducer, navInitState } from "./components/Nav/navReducer"
 
-export default (state, action) => {
+export const initState = {
+  ...navInitState
+}
+
+export const reducer = (state, action) => {
   const mutatedAction = {
     type: action?.type ?? action,
     value: action?.value ?? undefined
   }
   return {
-    ...navigationReducer(state, mutatedAction)
+    ...navReducer(state, mutatedAction)
   }
 }

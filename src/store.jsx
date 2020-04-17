@@ -1,14 +1,11 @@
 import React, { createContext, useReducer } from "react"
-import reducer from "./reducer"
+import { reducer, initState } from "./reducer"
 
-const initialState = {
-  navigationActive: false
-}
-const store = createContext(initialState)
+const store = createContext(initState)
 const { Provider } = store
 
 const StateProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(reducer, initialState)
+  const [state, dispatch] = useReducer(reducer, initState)
 
   return <Provider value={{ state, dispatch }}>{children}</Provider>
 }
