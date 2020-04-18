@@ -5,22 +5,22 @@ export const contactOverlayInitState = {
 
 export const contactOverlayReducer = (state, action) => {
   switch (action.type) {
-    case "caseontactOverlay--Activate":
+    case "caseontactOverlay--activate":
       return {
         ...state,
         active: true
       }
-    case "ContactOverlay--Deactivate":
+    case "contactOverlay--deactivate":
       return {
         ...state,
         active: false
       }
-    case "ContactOverlay--NextField":
+    case "contactOverlay--nextField":
       return {
         ...state,
         activeField: state.activeField + 1
       }
-    case "ContactOverlay--PreviousField":
+    case "contactOverlay--previousField":
       return {
         ...state,
         activeField: state.activeField - 1

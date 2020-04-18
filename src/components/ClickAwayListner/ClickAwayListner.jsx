@@ -9,9 +9,7 @@ const useClickAwayListner = (ref, onClickAway, detectEvents) => {
     }
 
     document.addEventListener("mousedown", handleClickAway)
-    return () => {
-      document.removeEventListener("mousedown", handleClickAway)
-    }
+    return () => document.removeEventListener("mousedown", handleClickAway)
   }, [ref, detectEvents])
 }
 

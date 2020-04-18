@@ -19,10 +19,10 @@ const Navigation = () => {
   const openContactOverlay = () => {
     dispatch("navigation--deactivate")
     setTimeout(() => {
-      dispatch("ContactOverlay--Activate")
+      dispatch("contactOverlay--activate")
     }, 200)
   }
-
+  console.log("navigation", active)
   return (
     <>
       <ButtonOpen />

@@ -1,4 +1,4 @@
-import React, { useContext, memo } from "react"
+import React, { useContext } from "react"
 import ClickAwayListner from "../ClickAwayListner/ClickAwayListner"
 import Container from "../Container/Container"
 import ContactForm from "../ContactForm/ContactForm"
@@ -12,21 +12,23 @@ const ContactOverlay = () => {
     },
     dispatch
   } = useContext(store)
+
   console.log("contactOverlay", active)
+
   return (
-    <ClickAwayListner
-      onClickAway={() => dispatch("ContactOverlay--Deactivate")}
-      detectEvents={active}
-    >
-      <div className={`ContactOverlay${active ? " visible" : ""}`}>
-        <Container size="smaller">
-          <div className="ContactOverlay--Inner">
+    <div className={`ContactOverlay${active ? " visible" : ""}`}>
+      <Container size="smaller">
+        <div className="ContactOverlay--Inner">
+          <ClickAwayListner
+            detectEvents={active}
+            onClickAway={() => dispatch("contactOverlay--deactivate")}
+          >
             <ContactForm />
-          </div>
-        </Container>
-      </div>
-    </ClickAwayListner>
+          </ClickAwayListner>
+        </div>
+      </Container>
+    </div>
   )
 }
 
-export default memo(ContactOverlay)
+export default ContactOverlay
