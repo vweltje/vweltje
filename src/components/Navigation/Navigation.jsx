@@ -1,4 +1,4 @@
-import React, { useContext, memo } from "react"
+import React, { useContext } from "react"
 import { Link } from "gatsby"
 import ClickAwayListner from "../ClickAwayListner/ClickAwayListner"
 import ButtonOpen from "./ButtonOpen/ButtonOpen"
@@ -15,14 +15,13 @@ const Navigation = () => {
     },
     dispatch
   } = useContext(store)
-
   const openContactOverlay = () => {
     dispatch("navigation--deactivate")
     setTimeout(() => {
       dispatch("contactOverlay--activate")
     }, 200)
   }
-  console.log("navigation", active)
+
   return (
     <>
       <ButtonOpen />
@@ -63,4 +62,4 @@ const Navigation = () => {
   )
 }
 
-export default memo(Navigation)
+export default Navigation

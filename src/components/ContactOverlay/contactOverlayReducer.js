@@ -5,7 +5,7 @@ export const contactOverlayInitState = {
 
 export const contactOverlayReducer = (state, action) => {
   switch (action.type) {
-    case "caseontactOverlay--activate":
+    case "contactOverlay--activate":
       return {
         ...state,
         active: true

@@ -1,5 +1,5 @@
 export const navigationInitState = {
-  active: true
+  active: false
 }
 
 export const navigationReducer = (state, action) => {

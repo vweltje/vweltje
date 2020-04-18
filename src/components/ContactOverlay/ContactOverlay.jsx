@@ -1,4 +1,4 @@
-import React, { useContext } from "react"
+import React, { useContext, useState, useEffect } from "react"
 import ClickAwayListner from "../ClickAwayListner/ClickAwayListner"
 import Container from "../Container/Container"
 import ContactForm from "../ContactForm/ContactForm"
@@ -12,22 +12,32 @@ const ContactOverlay = () => {
     },
     dispatch
   } = useContext(store)
+  const [visible, setVisible] = useState(false)
+  const deactivate = () => {
+    setVisible(false)
+    setTimeout(() => {
+      dispatch("contactOverlay--deactivate")
+    }, 200)
+  }
 
-  console.log("contactOverlay", active)
+  useEffect(() => {
+    if (active) setVisible(true)
+  }, [active])
 
   return (
-    <div className={`ContactOverlay${active ? " visible" : ""}`}>
-      <Container size="smaller">
-        <div className="ContactOverlay--Inner">
-          <ClickAwayListner
-            detectEvents={active}
-            onClickAway={() => dispatch("contactOverlay--deactivate")}
-          >
-            <ContactForm />
-          </ClickAwayListner>
+    <>
+      {active && (
+        <div className={`ContactOverlay${visible ? " visible" : ""}`}>
+          <Container size="smaller">
+            <div className="ContactOverlay--Inner">
+              <ClickAwayListner detectEvents={active} onClickAway={deactivate}>
+                <ContactForm />
+              </ClickAwayListner>
+            </div>
+          </Container>
         </div>
-      </Container>
-    </div>
+      )}
+    </>
   )
 }
 
