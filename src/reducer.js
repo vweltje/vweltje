@@ -1,11 +1,14 @@
-import { navReducer, navInitState } from "./components/Nav/navReducer"
+import {
+  navigationReducer,
+  navigationInitState
+} from "./components/Navigation/navigationReducer"
 import {
   contactOverlayReducer,
   contactOverlayInitState
 } from "./components/ContactOverlay/contactOverlayReducer"
 
 export const initState = {
-  nav: navInitState,
+  navigation: navigationInitState,
   contactOverlay: contactOverlayInitState
 }
 
@@ -15,7 +18,7 @@ export const reducer = (state, action) => {
     value: action?.value ?? undefined
   }
   return {
-    nav: navReducer(state.nav, mutatedAction),
+    navigation: navigationReducer(state.navigation, mutatedAction),
     contactOverlay: contactOverlayReducer(state.contactOverlay, mutatedAction)
   }
 }

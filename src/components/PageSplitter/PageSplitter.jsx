@@ -5,7 +5,7 @@ import "./PageSplitter.scss"
 const PageSplitter = ({ children }) => {
   const {
     state: {
-      nav: { active }
+      navigation: { active }
     }
   } = useContext(store)
   const [splitted, setSplitted] = useState(true)

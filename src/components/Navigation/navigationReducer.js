@@ -1,15 +1,15 @@
-export const navInitState = {
+export const navigationInitState = {
   active: false
 }
 
-export const navReducer = (state, action) => {
+export const navigationReducer = (state, action) => {
   switch (action.type) {
-    case "nav--activate":
+    case "navigation--activate":
       return {
         ...state,
         active: true
       }
-    case "nav--deactivate":
+    case "navigation--deactivate":
       return {
         ...state,
         active: false

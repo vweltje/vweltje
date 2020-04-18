@@ -9,7 +9,7 @@ const ButtonOpen = () => {
     <button
       className="ButtonOpen"
       type="button"
-      onClick={() => dispatch("nav--activate")}
+      onClick={() => dispatch("navigation--activate")}
     >
       <span className="ButtonOpen--Line first left" />
       <span className="ButtonOpen--Line first right" />

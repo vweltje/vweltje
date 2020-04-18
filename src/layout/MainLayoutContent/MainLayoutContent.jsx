@@ -1,5 +1,5 @@
 import React, { useContext } from "react"
-import Nav from "../../components/Nav/Nav"
+import Navigation from "../../components/Navigation/Navigation"
 import PageSplitter from "../../components/PageSplitter/PageSplitter"
 import ContactOverlay from "../../components/ContactOverlay/ContactOverlay"
 import Footer from "../../components/Footer/Footer"
@@ -11,11 +11,11 @@ const MainLayoutContent = ({ children }) => {
   } = useContext(store)
   return (
     <>
-      <Nav />
+      <Navigation />
       <PageSplitter>
         <>
           {children}
-          {contactOverlay.active && <ContactOverlay />}
+          {contactOverlay?.active && <ContactOverlay />}
           <Footer />
         </>
       </PageSplitter>

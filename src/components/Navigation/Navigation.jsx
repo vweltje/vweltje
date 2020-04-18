@@ -8,18 +8,18 @@ import SocialIcons from "../SocialIcons/SocialIcons"
 
 import Logo from "../../svg/icon-1.svg"
 
-import "./Nav.scss"
+import "./Navigation.scss"
 
-const Nav = () => {
+const Navigation = () => {
   const {
     state: {
-      nav: { active }
+      navigation: { active }
     },
     dispatch
   } = useContext(store)
 
   const openContactOverlay = () => {
-    dispatch("nav--deactivate")
+    dispatch("navigation--deactivate")
     setTimeout(() => {
       dispatch("contactOverlay--activate")
     }, 200)
@@ -60,4 +60,4 @@ const Nav = () => {
   )
 }
 
-export default Nav
+export default Navigation

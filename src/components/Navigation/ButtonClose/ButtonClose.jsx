@@ -9,7 +9,7 @@ const ButtonClose = () => {
     <button
       className="ButtonClose"
       type="button"
-      onClick={() => dispatch("nav--deactivate")}
+      onClick={() => dispatch("navigation--deactivate")}
     >
       <span className="ButtonClose--Line first left" />
       <span className="ButtonClose--Line first right" />
