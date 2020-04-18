@@ -13,11 +13,22 @@ const useClickAwayListner = (ref, onClickAway, detectEvents) => {
   }, [ref, detectEvents])
 }
 
-const ClickAwayListner = ({ children, onClickAway, detectEvents = true }) => {
+const ClickAwayListner = ({
+  children,
+  onClickAway,
+  detectEvents = true,
+  element = "div",
+  className = false
+}) => {
+  const Element = element
   const ref = useRef()
   useClickAwayListner(ref, onClickAway, detectEvents)
 
-  return <div ref={ref}>{children}</div>
+  return (
+    <Element className={className} ref={ref}>
+      {children}
+    </Element>
+  )
 }
 
 export default ClickAwayListner
