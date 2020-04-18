@@ -1,5 +1,5 @@
 import React, { useContext } from "react"
-import { Link } from "gatsby"
+import { Link as GatsbyLink, navigate } from "gatsby"
 import ClickAwayListner from "../ClickAwayListner/ClickAwayListner"
 import ButtonOpen from "./ButtonOpen/ButtonOpen"
 import ButtonClose from "./ButtonClose/ButtonClose"
@@ -22,6 +22,21 @@ const Navigation = () => {
     }, 200)
   }
 
+  const Link = ({ to, children }) => (
+    <GatsbyLink
+      to={to}
+      onClick={(e) => {
+        e.preventDefault()
+        dispatch("navigation--deactivate")
+        setTimeout(() => {
+          navigate(to)
+        }, 200)
+      }}
+    >
+      {children}
+    </GatsbyLink>
+  )
+
   return (
     <>
       <ButtonOpen />
@@ -38,7 +53,9 @@ const Navigation = () => {
           </Link>
           <ul className="Navigation--Links">
             <li className="Navigation--Link">
-              <Link to="/">Home</Link>
+              <Link to="/" onClick={() => dispatch("navigation--deactivate")}>
+                Home
+              </Link>
             </li>
             <li className="Navigation--Link">
               <Link to="/cases">Cases</Link>

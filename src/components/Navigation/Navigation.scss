@@ -84,6 +84,7 @@
   }
 
   .Navigation--Links a,
+  .Navigation--Links button,
   .SocialIcons a {
     position: relative;
     padding: 20px;
@@ -96,6 +97,10 @@
     text-transform: uppercase;
     letter-spacing: 0.1rem;
     text-align: center;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    outline: none;
 
     &::before {
       content: "";
