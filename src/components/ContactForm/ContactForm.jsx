@@ -19,6 +19,7 @@ const ContactForm = () => {
           type={type}
           required={required}
           index={index}
+          key={name}
         />
       ))}
     </form>

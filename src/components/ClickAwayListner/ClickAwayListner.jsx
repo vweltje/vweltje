@@ -1,9 +1,9 @@
 import React, { useRef, useEffect } from "react"
 
-const useClickAwayListner = (ref, onClickAway) => {
+const useClickAwayListner = (ref, onClickAway, detectEvents) => {
   useEffect(() => {
     const handleClickAway = (event) => {
-      if (ref.current && !ref.current.contains(event.target)) {
+      if (detectEvents && ref.current && !ref.current.contains(event.target)) {
         onClickAway()
       }
     }
@@ -12,14 +12,14 @@ const useClickAwayListner = (ref, onClickAway) => {
     return () => {
       document.removeEventListener("mousedown", handleClickAway)
     }
-  }, [ref])
+  }, [ref, detectEvents])
 }
 
-const ClickAwayListner = ({ children, onClickAway }) => {
-  const wrapperRef = useRef(null)
-  useClickAwayListner(wrapperRef, onClickAway)
+const ClickAwayListner = ({ children, onClickAway, detectEvents = true }) => {
+  const ref = useRef()
+  useClickAwayListner(ref, onClickAway, detectEvents)
 
-  return <div ref={wrapperRef}>{children}</div>
+  return <div ref={ref}>{children}</div>
 }
 
 export default ClickAwayListner
