@@ -31,7 +31,14 @@ const Fieldset = ({ name, label, type, required, index }) => {
       style={style}
     >
       <div className="ContactForm--FieldsetTop">
-        <Field name={name} label={label} type={type} required={required} />
+        <Field
+          name={name}
+          label={label}
+          type={type}
+          required={required}
+          index={index}
+          focus={index === activeField - 1}
+        />
         <NavigationButtons />
       </div>
       <div className="ContactForm--FieldsetBottom">

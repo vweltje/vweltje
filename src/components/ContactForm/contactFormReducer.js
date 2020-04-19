@@ -1,5 +1,5 @@
 export const contactFormInitState = {
-  activeField: 4,
+  activeField: 1,
   activeFieldValid: false
 }
 

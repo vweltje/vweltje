@@ -1,11 +1,10 @@
-import React, { useRef, useContext, useState } from "react"
+import React, { useContext, useState } from "react"
 import TextareaOverlay from "../TextareaOverlay/TextareaOverlay"
 import { validate } from "../../../helpers/formHelper"
 import { store } from "../../../store"
 import "./Field.scss"
 
-const Field = ({ name, label, type, required }) => {
-  const textareaRef = useRef()
+const Field = ({ name, label, type, required, focus }) => {
   const { dispatch } = useContext(store)
   const [empty, setEmpty] = useState(true)
   const [textareaValue, setTextareaValue] = useState("")
@@ -27,17 +26,16 @@ const Field = ({ name, label, type, required }) => {
         <>
           <textarea
             className="ContactForm--Textarea"
-            ref={textareaRef}
             id={name}
             name={name}
             required={required}
             onInput={inputChanged}
             value={textareaValue}
+            onChange={() => {}}
             onClick={() => setTextareaOverlayActive(true)}
           />
           {textareaOverlayActive && (
             <TextareaOverlay
-              parrentRef={textareaRef}
               label={label}
               name={`textareaOverlay--${name}`}
               currentValue={textareaValue}
@@ -51,6 +49,7 @@ const Field = ({ name, label, type, required }) => {
       ) : (
         <input
           className="ContactForm--Input"
+          ref={(input) => focus && input?.focus()}
           id={name}
           name={name}
           type={type}
