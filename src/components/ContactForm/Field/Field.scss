@@ -1,16 +1,17 @@
 .ContactForm--Field {
   position: relative;
   flex-grow: 1;
-  font-size: 4rem;
+  font-size: 3rem;
 }
 
-.ContactForm--Input {
+.ContactForm--Input,
+.ContactForm--Textarea {
   position: absolute;
   left: 0;
   top: 0;
   border: none;
   background-color: transparent;
-  font-size: 4rem;
+  font-size: 3rem;
   font-family: $fontPrimary;
   padding: 0;
   outline: none;
