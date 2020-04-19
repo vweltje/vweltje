@@ -27,6 +27,9 @@ $bpLarge: 992px;
 $bpMedium: 768px;
 $bpSmall: 576px;
 
+// Other
+$cursorClose: url("/images/cursor-close.svg"), auto;
+
 @mixin Container {
   position: relative;
   display: block;
