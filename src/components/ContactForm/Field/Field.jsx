@@ -21,7 +21,7 @@ const Field = ({ name, label, type, required, focus }) => {
 
   return (
     <label htmlFor={name} className="ContactForm--Field">
-      {empty && !textareaValue.length && label}
+      {empty && label}
       {type === "textarea" ? (
         <>
           <textarea
@@ -40,8 +40,9 @@ const Field = ({ name, label, type, required, focus }) => {
               name={`textareaOverlay--${name}`}
               currentValue={textareaValue}
               onDeactivate={() => setTextareaOverlayActive(false)}
-              onInput={(value) => {
-                setTextareaValue(value)
+              onInput={(event) => {
+                inputChanged(event)
+                setTextareaValue(event.currentTarget.value)
               }}
             />
           )}

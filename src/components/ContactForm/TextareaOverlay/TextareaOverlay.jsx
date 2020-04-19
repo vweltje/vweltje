@@ -13,9 +13,10 @@ const TextareaOverlay = ({
 }) => {
   const [empty, setEmpty] = useState(true)
   const [active, setActive] = useState(false)
-  function handleChange({ currentTarget: { value } }) {
-    setEmpty(!value.length)
-    onInput(value)
+
+  function handleChange(event) {
+    setEmpty(!event.currentTarget.value.length)
+    onInput(event)
   }
   function deactivate() {
     setActive(false)
@@ -26,9 +27,11 @@ const TextareaOverlay = ({
   function onKeyPress(event) {
     if (event.which === 27) deactivate()
   }
+
   useEffect(() => {
     setActive(true)
   }, [parrentRef])
+
   return (
     <ClickAwayListner onClickAway={deactivate}>
       <div
@@ -41,9 +44,9 @@ const TextareaOverlay = ({
           name={name}
           onInput={handleChange}
           onKeyDown={onKeyPress}
-        >
-          {currentValue}
-        </textarea>
+          value={currentValue}
+          onChange={() => {}}
+        />
       </div>
     </ClickAwayListner>
   )
