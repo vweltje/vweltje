@@ -6,10 +6,15 @@ import {
   contactOverlayReducer,
   contactOverlayInitState
 } from "./components/ContactOverlay/contactOverlayReducer"
+import {
+  contactFormReducer,
+  contactFormInitState
+} from "./components/ContactForm/contactFormReducer"
 
 export const initState = {
   navigation: navigationInitState,
-  contactOverlay: contactOverlayInitState
+  contactOverlay: contactOverlayInitState,
+  contactForm: contactFormInitState
 }
 
 export const reducer = (state, action) => {
@@ -19,6 +24,7 @@ export const reducer = (state, action) => {
   }
   return {
     navigation: navigationReducer(state.navigation, mutatedAction),
-    contactOverlay: contactOverlayReducer(state.contactOverlay, mutatedAction)
+    contactOverlay: contactOverlayReducer(state.contactOverlay, mutatedAction),
+    contactForm: contactFormReducer(state.contactForm, mutatedAction)
   }
 }

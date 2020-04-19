@@ -6,7 +6,7 @@ import "./Progress.scss"
 const Progress = () => {
   const {
     state: {
-      contactOverlay: { activeField }
+      contactForm: { activeField }
     }
   } = useContext(store)
   return (

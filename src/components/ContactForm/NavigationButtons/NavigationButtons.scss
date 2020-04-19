@@ -11,10 +11,13 @@
   border: none;
   font-family: $fontPrimary;
   font-size: 3rem;
-
   background-color: transparent;
   outline: none;
   cursor: pointer;
+
+  &:disabled {
+    cursor: not-allowed;
+  }
 
   &.Prev {
     color: $colorLightGreen;

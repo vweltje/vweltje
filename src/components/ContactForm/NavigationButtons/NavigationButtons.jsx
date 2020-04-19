@@ -5,7 +5,7 @@ import "./NavigationButtons.scss"
 const NavigationButtons = () => {
   const {
     state: {
-      contactOverlay: { activeField, activeFieldValid }
+      contactForm: { activeField, activeFieldValid }
     },
     dispatch
   } = useContext(store)
@@ -17,7 +17,7 @@ const NavigationButtons = () => {
           <button
             className="ContactForm--NavigationButton Prev"
             type="button"
-            onClick={() => dispatch("contactOverlay--previousField")}
+            onClick={() => dispatch("contactForm--previousField")}
           >
             Prev
           </button>
@@ -28,7 +28,7 @@ const NavigationButtons = () => {
         className="ContactForm--NavigationButton Next"
         type="button"
         disabled={!activeFieldValid}
-        onClick={() => dispatch("contactOverlay--nextField")}
+        onClick={() => dispatch("contactForm--nextField")}
       >
         Next
       </button>
