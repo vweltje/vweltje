@@ -18,7 +18,7 @@ const ClickAwayListner = ({
   onClickAway,
   detectEvents = true,
   element = "div",
-  className = false
+  className = ""
 }) => {
   const Element = element
   const ref = useRef()
