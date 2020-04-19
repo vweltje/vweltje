@@ -1,6 +1,7 @@
 export const contactFormInitState = {
-  activeField: 4,
-  activeFieldValid: false
+  activeField: 1,
+  activeFieldValid: false,
+  validFields: []
 }
 
 export const contactFormReducer = (state, action) => {
@@ -15,15 +16,17 @@ export const contactFormReducer = (state, action) => {
         ...state,
         activeField: state.activeField - 1
       }
-    case "contactForm--markActiveFieldValid":
+    case "contactForm--markFieldValid":
       return {
         ...state,
-        activeFieldValid: true
+        validFields: !state.validFields.includes(action.value)
+          ? [...state.validFields, action.value]
+          : state.validFields
       }
-    case "contactForm--markActiveFieldInvalid":
+    case "contactForm--markFieldInvalid":
       return {
         ...state,
-        activeFieldValid: false
+        validFields: state.validFields.filter((field) => field !== action.value)
       }
     default:
       return state

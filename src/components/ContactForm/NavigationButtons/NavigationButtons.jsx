@@ -6,12 +6,11 @@ import "./NavigationButtons.scss"
 const NavigationButtons = () => {
   const {
     state: {
-      contactForm: { activeField, activeFieldValid }
+      contactForm: { activeField, validFields }
     },
     dispatch
   } = useContext(store)
   const isLastField = activeField === fields.length
-
   return (
     <div className="ContactForm--NavigationButtons">
       {activeField > 1 && (
@@ -30,8 +29,11 @@ const NavigationButtons = () => {
         <button
           className="ContactForm--NavigationButton Next"
           type="button"
-          disabled={!activeFieldValid}
-          onClick={() => dispatch("contactForm--nextField")}
+          disabled={!validFields.includes(activeField)}
+          onClick={() => {
+            dispatch("contactForm--nextField")
+            dispatch("contactForm--markActiveFieldInvalid")
+          }}
         >
           Next
         </button>
@@ -39,7 +41,7 @@ const NavigationButtons = () => {
         <button
           className="ContactForm--NavigationButton Submit"
           type="submit"
-          disabled={!activeFieldValid}
+          disabled={!validFields.includes(activeField)}
           onClick={() => dispatch("contactForm--submit")}
         >
           Send

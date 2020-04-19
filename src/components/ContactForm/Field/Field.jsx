@@ -5,17 +5,23 @@ import { store } from "../../../store"
 import "./Field.scss"
 
 const Field = ({ name, label, type, required, focus }) => {
-  const { dispatch } = useContext(store)
+  const {
+    state: {
+      contactForm: { activeField, validFields }
+    },
+    dispatch
+  } = useContext(store)
   const [empty, setEmpty] = useState(true)
   const [textareaValue, setTextareaValue] = useState("")
   const [textareaOverlayActive, setTextareaOverlayActive] = useState(false)
-
-  function inputChanged({ currentTarget }) {
-    setEmpty(!currentTarget.value.length)
-    if (validate[currentTarget.type](currentTarget.value)) {
-      dispatch("contactForm--markActiveFieldValid")
+  console.log(validFields)
+  function validateInput({ currentTarget: { value } }) {
+    setEmpty(!value.length)
+    console.log(validate[type](value))
+    if (validate[type](value)) {
+      dispatch({ type: "contactForm--markFieldValid", value: activeField })
     } else {
-      dispatch("contactForm--markActiveFieldInvalid")
+      dispatch({ type: "contactForm--markFieldInvalid", value: activeField })
     }
   }
 
@@ -29,7 +35,7 @@ const Field = ({ name, label, type, required, focus }) => {
             id={name}
             name={name}
             required={required}
-            onInput={inputChanged}
+            onInput={validateInput}
             value={textareaValue}
             onChange={() => {}}
             onClick={() => setTextareaOverlayActive(true)}
@@ -41,7 +47,7 @@ const Field = ({ name, label, type, required, focus }) => {
               currentValue={textareaValue}
               onDeactivate={() => setTextareaOverlayActive(false)}
               onInput={(event) => {
-                inputChanged(event)
+                validateInput(event)
                 setTextareaValue(event.currentTarget.value)
               }}
             />
@@ -55,7 +61,7 @@ const Field = ({ name, label, type, required, focus }) => {
           name={name}
           type={type}
           required={required}
-          onInput={inputChanged}
+          onInput={validateInput}
         />
       )}
     </label>
