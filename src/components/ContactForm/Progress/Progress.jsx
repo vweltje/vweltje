@@ -1,11 +1,20 @@
-import React from "react"
-
+import React, { useContext } from "react"
+import { store } from "../../../store"
+import fields from "../constants"
 import "./Progress.scss"
 
-const Progress = () => (
-  <div className="ContactForm--Progress">
-    Step 01 <span className="ContactForm--ProgressNext">/ 04</span>
-  </div>
-)
+const Progress = () => {
+  const {
+    state: {
+      contactOverlay: { activeField }
+    }
+  } = useContext(store)
+  return (
+    <div className="ContactForm--Progress">
+      Step {activeField}{" "}
+      <span className="ContactForm--ProgressNext">/ {fields.length}</span>
+    </div>
+  )
+}
 
 export default Progress
