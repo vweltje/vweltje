@@ -21,7 +21,7 @@ const NavigationButtons = () => {
           >
             Prev
           </button>
-          /
+          <span className="ContactForm--NavigationButtonsDivider">/</span>
         </>
       )}
       <button
