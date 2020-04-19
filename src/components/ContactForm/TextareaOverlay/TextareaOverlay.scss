@@ -27,7 +27,7 @@
     font-size: 1.8rem;
     font-family: $fontPrimary;
     outline: none;
-    resize: vertical;
+    resize: none;
     padding: #{$spacing * 2};
   }
 }

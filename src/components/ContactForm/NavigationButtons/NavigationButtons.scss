@@ -24,7 +24,8 @@
     color: $colorLightGreen;
   }
 
-  &.Next {
+  &.Next,
+  &.Submit {
     color: $colorGreen;
   }
 }
