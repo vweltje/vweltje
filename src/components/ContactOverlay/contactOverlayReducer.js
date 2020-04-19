@@ -1,6 +1,7 @@
 export const contactOverlayInitState = {
-  active: false,
-  activeField: 1
+  active: true,
+  activeField: 1,
+  activeFieldValid: false
 }
 
 export const contactOverlayReducer = (state, action) => {
@@ -24,6 +25,16 @@ export const contactOverlayReducer = (state, action) => {
       return {
         ...state,
         activeField: state.activeField - 1
+      }
+    case "contactOverlay--markActiveFieldValid":
+      return {
+        ...state,
+        activeFieldValid: true
+      }
+    case "contactOverlay--markActiveFieldInvalid":
+      return {
+        ...state,
+        activeFieldValid: false
       }
     default:
       return state
