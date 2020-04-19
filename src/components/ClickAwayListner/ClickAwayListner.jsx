@@ -3,6 +3,7 @@ import React, { useRef, useEffect } from "react"
 const useClickAwayListner = (ref, onClickAway, detectEvents) => {
   useEffect(() => {
     const handleClickAway = (event) => {
+      event.stopPropagation()
       if (detectEvents && ref.current && !ref.current.contains(event.target)) {
         onClickAway()
       }

@@ -5,5 +5,6 @@ export const validateText = (text) => text.length !== 0
 
 export const validate = {
   email: validateEmail,
-  text: validateText
+  text: validateText,
+  textarea: validateText
 }
