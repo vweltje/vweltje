@@ -7,15 +7,16 @@ import SimpleHeader from "../../components/SimpleHeader/SimpleHeader"
 import PageIntro from "../../components/PageIntro/PageIntro"
 import DefaultSection from "../../components/DefaultSection/DefaultSection"
 import LargeImage from "../../components/LargeImage/LargeImage"
-import { getPageData } from "../../helpers/graphqlHelper"
+import { getPageData, getMeta } from "../../helpers/graphqlHelper"
 import config from "../../../data/SiteConfig"
 
 const About = ({ data }) => {
   const pageData = getPageData(data)
+
   return (
     <Layout>
       <Helmet title={config.siteTitle} />
-      <Meta />
+      <Meta {...getMeta(pageData)} />
       <SimpleHeader />
       <article>
         <PageIntro title={pageData.title} paddingBottom={false} />
@@ -33,6 +34,7 @@ export default About
 export const pageQuery = graphql`
   query AboutQuery($id: String) {
     markdownRemark(id: { eq: $id }) {
+      ...Meta
       frontmatter {
         title
         firstSection {

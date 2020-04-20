@@ -6,7 +6,7 @@ import Meta from "../../components/Meta/Meta"
 import SimpleHeader from "../../components/SimpleHeader/SimpleHeader"
 import PageIntro from "../../components/PageIntro/PageIntro"
 import CasesGrid from "../../components/CasesGrid/CasesGrid"
-import { getPageData, getEdges } from "../../helpers/graphqlHelper"
+import { getPageData, getEdges, getMeta } from "../../helpers/graphqlHelper"
 import config from "../../../data/SiteConfig"
 
 const Cases = ({ data }) => {
@@ -16,7 +16,7 @@ const Cases = ({ data }) => {
   return (
     <Layout>
       <Helmet title={config.siteTitle} />
-      <Meta />
+      <Meta {...getMeta(pageData)} />
       <SimpleHeader />
       <PageIntro title={pageData?.title} excerpt={pageData?.excerpt} />
       <CasesGrid cases={cases} />
@@ -30,6 +30,7 @@ export default Cases
 export const pageQuery = graphql`
   query CasesQuery($id: String) {
     casesPage: markdownRemark(id: { eq: $id }) {
+      ...Meta
       frontmatter {
         title
         excerpt

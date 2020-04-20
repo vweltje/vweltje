@@ -8,15 +8,16 @@ import CaseIntroList from "../../components/CaseIntroList/CaseIntroList"
 import CaseDevicePreview from "../../components/CaseDevicePreview/CaseDevicePreview"
 import CaseContent from "../../components/CaseContent/CaseContent"
 import Meta from "../../components/Meta/Meta"
-import { getPageData } from "../../helpers/graphqlHelper"
+import { getPageData, getMeta } from "../../helpers/graphqlHelper"
 import config from "../../../data/SiteConfig"
 
 const SingleCase = ({ data }) => {
   const pageData = getPageData(data)
+
   return (
     <Layout>
       <Helmet title={config.siteTitle} />
-      <Meta />
+      <Meta {...getMeta(pageData)} />
       <SimpleHeader />
       <article className="SingleCase">
         <PageIntro
@@ -37,6 +38,7 @@ export default SingleCase
 export const pageQuery = graphql`
   query SingleCaseQuery($id: String) {
     markdownRemark(id: { eq: $id }) {
+      ...Meta
       fields {
         slug
       }

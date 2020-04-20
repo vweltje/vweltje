@@ -87,6 +87,7 @@ exports.createPages = async ({ graphql, actions }) => {
     // Generate a list of pages
     const { id } = node
     const name = _.capitalize(String(node.fields.name))
+    if (name === "_optional") return
     switch (node.fields.contentType) {
       case "cases":
         createPage({

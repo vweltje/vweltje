@@ -8,3 +8,5 @@ export const getEdges = (data, selector = "allMarkdownRemark") =>
     ...edge?.node?.frontmatter,
     ...edge?.node?.fields
   })) ?? []
+
+export const getMeta = (frontmatter) => frontmatter?.meta
