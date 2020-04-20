@@ -61,9 +61,6 @@ const Navigation = () => {
               <Link to="/cases">Cases</Link>
             </li>
             <li className="Navigation--Link">
-              <Link to="/photography">Photography</Link>
-            </li>
-            <li className="Navigation--Link">
               <Link to="/about-me">About me</Link>
             </li>
             <li className="Navigation--Link">
@@ -80,3 +77,7 @@ const Navigation = () => {
 }
 
 export default Navigation
+
+// <li className="Navigation--Link">
+//   <Link to="/photography">Photography</Link>
+// </li>
