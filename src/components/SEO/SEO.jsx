@@ -1,148 +1,79 @@
-import React, { Component } from "react"
+import React from "react"
+import { graphql } from "gatsby"
 import Helmet from "react-helmet"
-import urljoin from "url-join"
-import moment from "moment"
-import config from "../../../data/SiteConfig"
 
-class SEO extends Component {
-  render() {
-    const { postNode, postPath, postSEO } = this.props
-    let title
-    let description
-    let image
-    let postURL
-
-    if (postSEO) {
-      const postMeta = postNode.frontmatter
-      ;({ title } = postMeta)
-      description = postMeta.description
-        ? postMeta.description
-        : postNode.excerpt
-      image = postMeta.cover
-      postURL = urljoin(config.siteUrl, config.pathPrefix, postPath)
-    } else {
-      title = config.siteTitle
-      description = config.siteDescription
-      image = config.siteLogo
-    }
-
-    const getImagePath = (imageURI) => {
-      if (
-        !imageURI.match(
-          `(https?|ftp|file)://[-A-Za-z0-9+&@#/%?=~_|!:,.;]+[-A-Za-z0-9+&@#/%=~_|]`
-        )
-      )
-        return urljoin(config.siteUrl, config.pathPrefix, imageURI)
-
-      return imageURI
-    }
-
-    const getPublicationDate = () => {
-      if (!postNode) return null
-
-      if (!postNode.frontmatter) return null
-
-      if (!postNode.frontmatter.date) return null
-
-      return moment(postNode.frontmatter.date, config.dateFromFormat).toDate()
-    }
-
-    image = getImagePath(image)
-
-    const datePublished = getPublicationDate()
-
-    const authorJSONLD = {
-      "@type": "Person",
-      name: config.userName,
-      email: config.userEmail,
-      address: config.userLocation
-    }
-
-    const logoJSONLD = {
-      "@type": "ImageObject",
-      url: getImagePath(config.siteLogo)
-    }
-
-    const blogURL = urljoin(config.siteUrl, config.pathPrefix)
-    const schemaOrgJSONLD = [
-      {
-        "@context": "http://schema.org",
-        "@type": "WebSite",
-        url: blogURL,
-        name: title,
-        alternateName: config.siteTitleAlt ? config.siteTitleAlt : ""
+export const query = graphql`
+  fragment Meta on MarkdownRemark {
+    frontmatter {
+      meta {
+        title
+        description
+        noindex
+        canonicalLink
       }
-    ]
-    if (postSEO) {
-      schemaOrgJSONLD.push(
-        {
-          "@context": "http://schema.org",
-          "@type": "BreadcrumbList",
-          itemListElement: [
-            {
-              "@type": "ListItem",
-              position: 1,
-              item: {
-                "@id": postURL,
-                name: title,
-                image
-              }
-            }
-          ]
-        },
-        {
-          "@context": "http://schema.org",
-          "@type": "BlogPosting",
-          url: blogURL,
-          name: title,
-          alternateName: config.siteTitleAlt ? config.siteTitleAlt : "",
-          headline: title,
-          image: { "@type": "ImageObject", url: image },
-          author: authorJSONLD,
-          publisher: {
-            ...authorJSONLD,
-            "@type": "Organization",
-            logo: logoJSONLD
-          },
-          datePublished,
-          description
-        }
-      )
     }
-    return (
-      <Helmet>
-        {/* General tags */}
-        <meta name="description" content={description} />
-        <meta name="image" content={image} />
-
-        {/* Schema.org tags */}
-        <script type="application/ld+json">
-          {JSON.stringify(schemaOrgJSONLD)}
-        </script>
-
-        {/* OpenGraph tags */}
-        <meta property="og:url" content={postSEO ? postURL : blogURL} />
-        {postSEO ? <meta property="og:type" content="article" /> : null}
-        <meta property="og:title" content={title} />
-        <meta property="og:description" content={description} />
-        <meta property="og:image" content={image} />
-        <meta
-          property="fb:app_id"
-          content={config.siteFBAppID ? config.siteFBAppID : ""}
-        />
-
-        {/* Twitter Card tags */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          name="twitter:creator"
-          content={config.userTwitter ? config.userTwitter : ""}
-        />
-        <meta name="twitter:title" content={title} />
-        <meta name="twitter:description" content={description} />
-        <meta name="twitter:image" content={image} />
-      </Helmet>
-    )
   }
+`
+
+const Meta = ({
+  title,
+  url,
+  description,
+  absoluteImageUrl = "",
+  twitterSiteAccount,
+  twitterCreatorAccount,
+  noindex,
+  canonicalLink,
+  siteTitle,
+  siteDescription,
+  googleTrackingId
+  // overwrite { title, description } if in fields or fields.meta
+}) => {
+  return (
+    <Helmet>
+      {title && <title>{title}</title>}
+      {title && <meta property="og:title" content={title} />}
+      {description && <meta name="description" content={description} />}
+      {description && <meta property="og:description" content={description} />}
+      {url && <meta property="og:type" content="website" />}
+      {url && <meta property="og:url" content={url} />}
+      {twitterSiteAccount && (
+        <meta name="twitter:site" content={twitterSiteAccount} />
+      )}
+      {twitterCreatorAccount && (
+        <meta name="twitter:creator" content={twitterCreatorAccount} />
+      )}
+      {noindex && <meta name="robots" content="noindex" />}
+      {canonicalLink && <link rel="canonical" href={canonicalLink} />}
+
+      <meta property="og:locale" content="en_US" />
+      <meta property="og:site_name" content={siteTitle} />
+      <meta name="twitter:description" content={siteDescription} />
+      <meta name="twitter:title" content={siteTitle} />
+      <meta name="twitter:image" content={absoluteImageUrl} />
+      <meta property="og:image:secure_url" content={absoluteImageUrl} />
+      <meta property="og:image" content={absoluteImageUrl} />
+      <meta name="twitter:card" content={absoluteImageUrl} />
+
+      {googleTrackingId && (
+        <script
+          async
+          src={`https://www.googletagmanager.com/gtag/js?id=${googleTrackingId}`}
+        />
+      )}
+
+      {googleTrackingId && (
+        <script>
+          {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', '${googleTrackingId}');
+          `}
+        </script>
+      )}
+    </Helmet>
+  )
 }
 
-export default SEO
+export default Meta
