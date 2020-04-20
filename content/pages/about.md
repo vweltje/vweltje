@@ -40,4 +40,6 @@ secondSection:
 
     \- Vincent Weltje
 footerImage: https://ucarecdn.com/21d6f610-1984-4088-81f8-b705c69e6ab0/
+meta:
+  title: About me
 ---
