@@ -1,6 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Helmet from "react-helmet"
+import config from "../../../data/SiteConfig"
 
 export const query = graphql`
   fragment Meta on MarkdownRemark {
@@ -16,18 +17,15 @@ export const query = graphql`
 `
 
 const Meta = ({
-  title,
-  url,
-  description,
-  absoluteImageUrl = "",
-  twitterSiteAccount,
-  twitterCreatorAccount,
+  title = config.siteTitle,
+  url = window.location.href,
+  description = config.siteDescription,
   noindex,
   canonicalLink,
-  siteTitle,
-  siteDescription,
-  googleTrackingId
-  // overwrite { title, description } if in fields or fields.meta
+  absoluteImageUrl = config.socialMediaCard,
+  siteTitle = config.siteTitle,
+  siteDescription = config.siteDescription,
+  googleTrackingId = config.googleTrackingId
 }) => {
   return (
     <Helmet>
@@ -37,12 +35,6 @@ const Meta = ({
       {description && <meta property="og:description" content={description} />}
       {url && <meta property="og:type" content="website" />}
       {url && <meta property="og:url" content={url} />}
-      {twitterSiteAccount && (
-        <meta name="twitter:site" content={twitterSiteAccount} />
-      )}
-      {twitterCreatorAccount && (
-        <meta name="twitter:creator" content={twitterCreatorAccount} />
-      )}
       {noindex && <meta name="robots" content="noindex" />}
       {canonicalLink && <link rel="canonical" href={canonicalLink} />}
 
