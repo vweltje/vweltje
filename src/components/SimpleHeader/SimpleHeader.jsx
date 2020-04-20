@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 import Container from "../Container/Container"
-import Logo from "../../svg/icon-1.svg"
+import Logo from "../../svg/vw-logo.svg"
 import "./SimpleHeader.scss"
 
 const SimpleHeader = () => (

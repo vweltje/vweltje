@@ -4,7 +4,7 @@ import ClickAwayListner from "../ClickAwayListner/ClickAwayListner"
 import ButtonOpen from "./ButtonOpen/ButtonOpen"
 import ButtonClose from "./ButtonClose/ButtonClose"
 import SocialIcons from "../SocialIcons/SocialIcons"
-import Logo from "../../svg/icon-1.svg"
+import Logo from "../../svg/vw-logo.svg"
 import { store } from "../../store"
 import "./Navigation.scss"
 

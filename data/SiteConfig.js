@@ -1,7 +1,7 @@
 const config = {
   siteTitle: "Portfolio | Vincent Weltje", // Site title.
   siteTitleShort: "Portfolio vweltje", // Short site title for homescreen (PWA). Preferably should be under 12 characters to prevent truncation.
-  siteLogo: "/logos/logo-1024.png", // Logo used for SEO and manifest.
+  siteLogo: "/images/icon-1024.png", // Logo used for SEO and manifest.
   siteUrl: "https://vweltje.nl", // Domain of your website without pathPrefix.
   pathPrefix: "/", // Prefixes all links. For cases when deployed to example.github.io/gatsby-advanced-starter/.
   siteDescription: "Personal portfolio web site of Vincent Weltje", // Website description used for RSS feeds/meta description tag.
