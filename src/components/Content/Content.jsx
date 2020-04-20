@@ -2,7 +2,8 @@ import React from 'react'
 import { renderToStaticMarkup } from 'react-dom/server'
 import Marked from 'react-markdown'
 import Image from '../Image/Image'
-
+import HtmlBlock from './HtmlBlock/HtmlBlock'
+import ContentImage from './ContentImage/ContentImage'
 import './Content.scss'
 
 const encodeMarkdownURIs = (source = '') => {
@@ -54,32 +55,6 @@ const replaceCustomSelectors = (source, selectors) => {
   return source
 }
 
-const MyImage = ({ nodeKey, src, title, alt }) => {
-  const decodedSrc = decodeURI(src)
-  return (
-    <Image
-      className="Content--Image markdown-preview"
-      resolutions="medium"
-      lazy={false}
-      src={decodedSrc}
-      title={title}
-      alt={alt}
-    />
-  )
-}
-
-const HtmlBlock = ({ value }) => {
-  if (value.indexOf('<iframe') !== 0) return value
-  return (
-    <div
-      className={`Content--Iframe`}
-      dangerouslySetInnerHTML={{
-        __html: value
-      }}
-    />
-  )
-}
-
 const Content = ({
   source,
   src,
@@ -106,7 +81,7 @@ const Content = ({
       className={`Content ${className}`}
       source={encodeMarkdownURIs(source)}
       renderers={{
-        image: MyImage,
+        image: ContentImage,
         html: HtmlBlock
       }}
     />

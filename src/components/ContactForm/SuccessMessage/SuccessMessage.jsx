@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react"
 import { successMessage } from "../constants"
-
 import "./SuccessMessage.scss"
 
 const SuccessMessage = () => {
@@ -10,6 +9,7 @@ const SuccessMessage = () => {
       setVisible(true)
     }, 200)
   })
+
   return (
     <h2 className={`ContactForm--SuccessMessage${visible ? " visible" : ""}`}>
       {successMessage}

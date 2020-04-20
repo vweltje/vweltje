@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react"
 import ClickAwayListner from "../../ClickAwayListner/ClickAwayListner"
-
 import "./TextareaOverlay.scss"
 
 const TextareaOverlay = ({
@@ -34,9 +33,7 @@ const TextareaOverlay = ({
 
   return (
     <ClickAwayListner onClickAway={deactivate}>
-      <div
-        className={`ContactForm--TextareaOverlay ${active ? " active" : ""}`}
-      >
+      <div className={`ContactForm--TextareaOverlay${active ? " active" : ""}`}>
         {empty && !currentValue && <label htmlFor={name}>{label}</label>}
         <textarea
           ref={(input) => input && input.focus()}

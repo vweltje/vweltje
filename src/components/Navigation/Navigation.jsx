@@ -1,6 +1,6 @@
 import React, { useContext } from "react"
-import { Link as GatsbyLink, navigate } from "gatsby"
 import ClickAwayListner from "../ClickAwayListner/ClickAwayListner"
+import Link from "./Link/Link"
 import ButtonOpen from "./ButtonOpen/ButtonOpen"
 import ButtonClose from "./ButtonClose/ButtonClose"
 import SocialIcons from "../SocialIcons/SocialIcons"
@@ -15,27 +15,13 @@ const Navigation = () => {
     },
     dispatch
   } = useContext(store)
-  const openContactOverlay = () => {
+
+  function openContactOverlay() {
     dispatch("navigation--deactivate")
     setTimeout(() => {
       dispatch("contactOverlay--activate")
     }, 200)
   }
-
-  const Link = ({ to, children }) => (
-    <GatsbyLink
-      to={to}
-      onClick={(e) => {
-        e.preventDefault()
-        dispatch("navigation--deactivate")
-        setTimeout(() => {
-          navigate(to)
-        }, 200)
-      }}
-    >
-      {children}
-    </GatsbyLink>
-  )
 
   return (
     <>

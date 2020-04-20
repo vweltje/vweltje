@@ -2,9 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import Container from "../Container/Container"
 import SocialIcons from "../SocialIcons/SocialIcons"
-
 import Logo from "../../svg/vw-logo-full.svg"
-
 import "./Footer.scss"
 
 const Footer = () => {

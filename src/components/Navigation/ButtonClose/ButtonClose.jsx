@@ -1,10 +1,10 @@
 import React, { useContext } from "react"
 import { store } from "../../../store"
-
 import "./ButtonClose.scss"
 
 const ButtonClose = () => {
   const { dispatch } = useContext(store)
+
   return (
     <button
       className="ButtonClose"

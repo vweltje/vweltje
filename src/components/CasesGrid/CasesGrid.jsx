@@ -5,16 +5,16 @@ import "./CasesGrid.scss"
 
 const CasesGrid = ({ small, cases }) => (
   <Container size="small">
-    <div className={`CasesGrid ${small ? "small" : ""}`}>
+    <div className={`CasesGrid${small ? " small" : ""}`}>
       {!!cases.length &&
-        cases.map((singleCase) => (
-          <div className="CasesGrid--Item" key={singleCase.slug}>
+        cases.map(({ slug, featuredImage, title, excerpt }) => (
+          <div className="CasesGrid--Item" key={slug}>
             <PostCard
-              image={singleCase?.featuredImage}
-              title={singleCase?.title}
-              excerpt={singleCase.excerpt}
+              image={featuredImage}
+              title={title}
+              excerpt={excerpt}
               link={{
-                slug: `/cases/${singleCase?.slug}`,
+                slug: `/cases/${slug}`,
                 text: "View case study"
               }}
             />

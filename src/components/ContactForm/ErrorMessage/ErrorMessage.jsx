@@ -9,6 +9,7 @@ const ErrorMessage = ({ message = errorMessage }) => {
       setVisible(true)
     }, 200)
   })
+
   return (
     <p className={`ContactForm--ErrorMessage ${visible ? " visible" : ""}`}>
       {message}

@@ -9,6 +9,7 @@ const Progress = () => {
       contactForm: { activeField }
     }
   } = useContext(store)
+
   return (
     <div className="ContactForm--Progress">
       Step {activeField}{" "}

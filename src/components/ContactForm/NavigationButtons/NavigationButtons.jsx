@@ -11,6 +11,7 @@ const NavigationButtons = () => {
     dispatch
   } = useContext(store)
   const isLastField = activeField === fields.length
+
   return (
     <div className="ContactForm--NavigationButtons">
       {activeField > 1 && (

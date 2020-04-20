@@ -1,4 +1,3 @@
-// import React, { useContext, useState, useEffect } from "react"
 import React, { useContext } from "react"
 import Field from "../Field/Field"
 import NavigationButtons from "../NavigationButtons/NavigationButtons"

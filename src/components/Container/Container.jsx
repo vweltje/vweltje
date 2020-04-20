@@ -1,5 +1,4 @@
 import React from "react"
-
 import "./Container.scss"
 
 const Container = ({ children, noPadding = false, size = "" }) => (

@@ -8,6 +8,7 @@ import "./Form.scss"
 
 const Form = () => {
   const { dispatch } = useContext(store)
+
   function handleSubmit(event) {
     event.preventDefault()
     const form = event.target

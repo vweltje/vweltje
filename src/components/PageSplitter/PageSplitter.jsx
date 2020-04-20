@@ -24,11 +24,11 @@ const PageSplitter = ({ children }) => {
 
   return (
     <>
-      <main className={`PageSplitter--Main ${splitContent ? "splitted" : ""}`}>
+      <main className={`PageSplitter--Main${splitContent ? " splitted" : ""}`}>
         {children}
       </main>
       <div
-        className={`PageSplitter--Clone ${splitContent ? "splitted" : ""}`}
+        className={`PageSplitter--Clone${splitContent ? " splitted" : ""}`}
         style={{
           zIndex: splitContent || !splitted ? "1" : "-1"
         }}
