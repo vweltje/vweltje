@@ -7,17 +7,16 @@ import "./Field.scss"
 const Field = ({ name, label, type, required, focus }) => {
   const {
     state: {
-      contactForm: { activeField, validFields }
+      contactForm: { activeField }
     },
     dispatch
   } = useContext(store)
   const [empty, setEmpty] = useState(true)
   const [textareaValue, setTextareaValue] = useState("")
   const [textareaOverlayActive, setTextareaOverlayActive] = useState(false)
-  console.log(validFields)
+
   function validateInput({ currentTarget: { value } }) {
     setEmpty(!value.length)
-    console.log(validate[type](value))
     if (validate[type](value)) {
       dispatch({ type: "contactForm--markFieldValid", value: activeField })
     } else {
