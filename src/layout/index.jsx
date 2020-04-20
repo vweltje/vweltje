@@ -14,6 +14,8 @@ const MainLayout = ({ children }) => {
       <Helmet>
         <meta name="description" content={config.siteDescription} />
         <html lang="en" />
+        <link href="https://ucarecdn.com" rel="preconnect" crossOrigin />
+        <link rel="dns-prefetch" href="https://ucarecdn.com" />
       </Helmet>
       <ParallaxProvider>
         <MainLayoutContent>{children}</MainLayoutContent>
