@@ -2,7 +2,7 @@ import React from "react"
 import Helmet from "react-helmet"
 import { graphql } from "gatsby"
 import Layout from "../../layout"
-import SEO from "../../components/SEO/SEO"
+import Meta from "../../components/Meta/Meta"
 import Hero from "../../components/Hero/Hero"
 import VerticalHeading from "../../components/VerticalHeading/VerticalHeading"
 import SelectedCases from "../../components/SelectedCases/SelectedCases"
@@ -15,7 +15,7 @@ const Landing = ({ data }) => {
   return (
     <Layout>
       <Helmet title={config.siteTitle} />
-      <SEO />
+      <Meta />
       <Hero>{frontmatter?.hero?.text}</Hero>
       <section>
         <VerticalHeading

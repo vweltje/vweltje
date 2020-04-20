@@ -7,7 +7,7 @@ import PageIntro from "../../components/PageIntro/PageIntro"
 import CaseIntroList from "../../components/CaseIntroList/CaseIntroList"
 import CaseDevicePreview from "../../components/CaseDevicePreview/CaseDevicePreview"
 import CaseContent from "../../components/CaseContent/CaseContent"
-import SEO from "../../components/SEO/SEO"
+import Meta from "../../components/Meta/Meta"
 import { getPageData } from "../../helpers/graphqlHelper"
 import config from "../../../data/SiteConfig"
 
@@ -16,7 +16,7 @@ const SingleCase = ({ data }) => {
   return (
     <Layout>
       <Helmet title={config.siteTitle} />
-      <SEO />
+      <Meta />
       <SimpleHeader />
       <article className="SingleCase">
         <PageIntro

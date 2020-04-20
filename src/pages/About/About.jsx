@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import Helmet from "react-helmet"
 import Layout from "../../layout"
-import SEO from "../../components/SEO/SEO"
+import Meta from "../../components/Meta/Meta"
 import SimpleHeader from "../../components/SimpleHeader/SimpleHeader"
 import PageIntro from "../../components/PageIntro/PageIntro"
 import DefaultSection from "../../components/DefaultSection/DefaultSection"
@@ -15,7 +15,7 @@ const About = ({ data }) => {
   return (
     <Layout>
       <Helmet title={config.siteTitle} />
-      <SEO />
+      <Meta />
       <SimpleHeader />
       <article>
         <PageIntro title={pageData.title} paddingBottom={false} />

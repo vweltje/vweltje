@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import Helmet from "react-helmet"
 import Layout from "../../layout"
-import SEO from "../../components/SEO/SEO"
+import Meta from "../../components/Meta/Meta"
 import SimpleHeader from "../../components/SimpleHeader/SimpleHeader"
 import PageIntro from "../../components/PageIntro/PageIntro"
 import CasesGrid from "../../components/CasesGrid/CasesGrid"
@@ -16,7 +16,7 @@ const Cases = ({ data }) => {
   return (
     <Layout>
       <Helmet title={config.siteTitle} />
-      <SEO />
+      <Meta />
       <SimpleHeader />
       <PageIntro title={pageData?.title} excerpt={pageData?.excerpt} />
       <CasesGrid cases={cases} />
