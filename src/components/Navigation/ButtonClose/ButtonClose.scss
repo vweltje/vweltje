@@ -8,7 +8,7 @@
   width: 0;
   outline: none;
   cursor: pointer;
-  margin-bottom: 20px;
+  margin-bottom: #{$spacing * 8};
 
   .ButtonClose--Line {
     position: absolute;
