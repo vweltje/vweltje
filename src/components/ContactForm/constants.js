@@ -1,4 +1,4 @@
-const fields = [
+export const fields = [
   {
     name: "firstName",
     label: "First name",
@@ -25,4 +25,8 @@ const fields = [
   }
 ]
 
-export { fields as default }
+export const successMessage =
+  "Thank you for reaching out, I'll get back to you soon!"
+
+export const errorMessage =
+  "Oh snap, your message couldn't be send, try again later!"

@@ -1,5 +1,5 @@
 export const contactOverlayInitState = {
-  active: true
+  active: false
 }
 
 export const contactOverlayReducer = (state, action) => {

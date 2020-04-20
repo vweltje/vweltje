@@ -1,0 +1,14 @@
+.ContactForm--SuccessMessage {
+  color: $colorWhite;
+  font-size: 4rem;
+  line-height: 6rem;
+  text-align: center;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: ease all $transitionSpeed;
+
+  &.visible {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

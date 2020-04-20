@@ -1,7 +1,8 @@
 export const contactFormInitState = {
   activeField: 1,
-  activeFieldValid: false,
-  validFields: []
+  validFields: [],
+  successfulSubmit: false,
+  unsuccessfulSubmit: false
 }
 
 export const contactFormReducer = (state, action) => {
@@ -27,6 +28,18 @@ export const contactFormReducer = (state, action) => {
       return {
         ...state,
         validFields: state.validFields.filter((field) => field !== action.value)
+      }
+    case "contactForm--successfulSubmit":
+      return {
+        ...state,
+        successfulSubmit: true,
+        unsuccessfulSubmit: false
+      }
+    case "contactForm--unsuccessfulSubmit":
+      return {
+        ...state,
+        successfulSubmit: false,
+        unsuccessfulSubmit: true
       }
     default:
       return state

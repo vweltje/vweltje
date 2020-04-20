@@ -1,6 +1,6 @@
 import React, { useContext } from "react"
 import { store } from "../../../store"
-import fields from "../constants"
+import { fields } from "../constants"
 import "./NavigationButtons.scss"
 
 const NavigationButtons = () => {

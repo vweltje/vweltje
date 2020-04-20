@@ -1,29 +1,16 @@
-import React from "react"
-import Fieldset from "./Fieldset/Fieldset"
-import fields from "./constants"
-import "./ContactForm.scss"
+import React, { useContext } from "react"
+import Form from "./Form/Form"
+import SuccessMessage from "./SuccessMessage/SuccessMessage"
+import { store } from "../../store"
 
 const ContactForm = () => {
-  const handleSubmit = () => {}
-  return (
-    <form
-      className="ContactForm"
-      name="Contact"
-      onSubmit={handleSubmit}
-      data-netlify=""
-    >
-      {fields.map(({ name, label, type, required }, index) => (
-        <Fieldset
-          name={name}
-          label={label}
-          type={type}
-          required={required}
-          index={index}
-          key={name}
-        />
-      ))}
-    </form>
-  )
+  const {
+    state: {
+      contactForm: { successfulSubmit }
+    }
+  } = useContext(store)
+
+  return <>{successfulSubmit ? <SuccessMessage /> : <Form />}</>
 }
 
 export default ContactForm

@@ -4,13 +4,14 @@ import Field from "../Field/Field"
 import NavigationButtons from "../NavigationButtons/NavigationButtons"
 import Required from "../Required/Required"
 import Progress from "../Progress/Progress"
+import ErrorMessage from "../ErrorMessage/ErrorMessage"
 import { store } from "../../../store"
 import "./Fieldset.scss"
 
 const Fieldset = ({ name, label, type, required, index }) => {
   const {
     state: {
-      contactForm: { activeField }
+      contactForm: { activeField, unsuccessfulSubmit }
     }
   } = useContext(store)
   const order = index - (activeField - 1)
@@ -45,6 +46,7 @@ const Fieldset = ({ name, label, type, required, index }) => {
         <Required />
         <Progress />
       </div>
+      {unsuccessfulSubmit && <ErrorMessage />}
     </fieldset>
   )
 }
