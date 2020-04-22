@@ -6,10 +6,20 @@ list:
   url: https://www.ucdental.com.au/
   employer: thriveWeb
   projectType: wordpress
-excerpt: Custom theme for WordPress
+excerpt: Custom WordPress theme coded up with SASS, ES6 JavaScript and a local
+  Gulp script to compile assets.
 devicePreview: https://ucarecdn.com/368a03e0-92cb-4b1c-acdc-9201b775e3ae/
 content: >-
-  \
+  This project was still part of my internship at Thrive Web in 2017. As of this
+  stage, ES6 JavaScript was getting more and more popular. So I tried it out for
+  the first time in this project. Also I created a Gulp script to compile my
+  assets.
 
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nisl nunc mi ipsum faucibus vitae aliquet nec ullamcorper sit.
+
+  Quick links:
+
+
+  * [Gulp](https://gulpjs.com/)
+
+  * [SASS](https://sass-lang.com/)
 ---
