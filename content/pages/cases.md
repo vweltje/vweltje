@@ -1,8 +1,9 @@
 ---
 title: Cases
-excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-  eiusmod tempor incididunt ut labore et dolore magna aliqua. Nisl nunc mi ipsum
-  faucibus vitae aliquet nec ullamcorper sit. "
+excerpt: "Here is a selection of my past work. Get an impression of my
+  capabilities and get inspired. "
 meta:
   title: Cases
+  description: "Here is a selection of my past work. Get an impression of my
+    capabilities and get inspired. "
 ---
