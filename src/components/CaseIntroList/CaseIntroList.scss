@@ -19,6 +19,11 @@
 
   li {
     padding: $spacing 0;
+    margin-left: 0;
+
+    @media screen and (max-width: $bpMedium) {
+      padding: 0;
+    }
   }
 
   svg {
