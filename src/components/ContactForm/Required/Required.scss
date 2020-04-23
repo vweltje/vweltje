@@ -6,7 +6,10 @@
   @media screen and (max-width: $bpSmall) {
     position: absolute;
     right: 0;
-    top: -50px;
+    top: -70px;
     z-index: -1;
+    width: 20px;
+    height: 20px;
+    overflow: hidden;
   }
 }
