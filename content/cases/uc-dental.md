@@ -16,6 +16,9 @@ content: >-
   assets.
 
 
+  ![](https://ucarecdn.com/45a80706-0b70-46ea-a2b5-89b3a4150d95/)
+
+
   Quick links:
 
 

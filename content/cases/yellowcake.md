@@ -17,8 +17,11 @@ content: >-
   from several projects into this one starter kit.
 
 
-  It features:
 
+  ![](https://ucarecdn.com/074380d6-3ed0-406a-bf2b-380182d0bca5/)
+
+
+  It features:
 
   * [Gatsby](https://gatsbyjs.org/) static site generator
 

@@ -20,6 +20,8 @@ content: >-
   As design system I choose to make use of Google’s [Material UI](https://material-ui.com/). This design system speared me the hassle of developing all kinds of basic components and behaviours. This UI system was new to me but was very worthwhile using.
 
 
+  ![](https://ucarecdn.com/ef55cd35-b7f4-4d00-9665-692bf188a907/)
+
   Quick links
 
 

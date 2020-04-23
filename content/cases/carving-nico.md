@@ -19,6 +19,9 @@ content: >-
   I crafted this site with Yellow Cake, a starter kit I developed in the past, see case. I choose to use this starter kit as it suites perfectly with the requirements.
 
 
+  ![](https://ucarecdn.com/e4a09359-f632-459d-a320-677e96ed97cb/)
+
+
   Quick links
 
 
