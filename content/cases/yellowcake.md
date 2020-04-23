@@ -1,7 +1,7 @@
 ---
 title: Yellowcake
 date: 04/08/2020
-featuredImage: https://ucarecdn.com/a09c31dc-3f06-41b3-b117-5006ff79ec83/
+featuredImage: https://ucarecdn.com/074380d6-3ed0-406a-bf2b-380182d0bca5/
 list:
   employer: thriveWeb
   projectType: react
