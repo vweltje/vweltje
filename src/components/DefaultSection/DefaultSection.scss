@@ -1,6 +1,11 @@
 .DefaultSection {
   padding: #{$spacing * 4} 0;
 
+  @media screen and (max-width: $bpMedium) {
+    padding-top: 0;
+    padding-bottom: #{$spacing * 2};
+  }
+
   .Container {
     display: flex;
 
