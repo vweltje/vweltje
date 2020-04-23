@@ -22,7 +22,7 @@ content: >-
 
   ![](https://ucarecdn.com/ef55cd35-b7f4-4d00-9665-692bf188a907/)
 
-  Quick links
+  Quick links:
 
 
   * [Material UI](https://material-ui.com/)

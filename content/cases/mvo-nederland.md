@@ -32,7 +32,7 @@ content: >-
   This was a very fun project to work on and had lots of fun and challenging features. Checkout the [live site](https://www.mvonederland.nl/) to see the theme rocking.
 
 
-  Quick links
+  Quick links:
 
 
   * •Advanced Custom Fields([ACF](https://www.advancedcustomfields.com/))

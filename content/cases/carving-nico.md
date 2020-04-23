@@ -22,7 +22,7 @@ content: >-
   ![](https://ucarecdn.com/e4a09359-f632-459d-a320-677e96ed97cb/)
 
 
-  Quick links
+  Quick links:
 
 
   * [Yellow Cake](https://yellowcake.netlify.com/)
