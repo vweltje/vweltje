@@ -8,6 +8,7 @@ import PageIntro from "../../components/PageIntro/PageIntro"
 import DefaultSection from "../../components/DefaultSection/DefaultSection"
 import LargeImage from "../../components/LargeImage/LargeImage"
 import { getPageData, getMeta } from "../../helpers/graphqlHelper"
+import { downBreakpoint } from "../../helpers/breakpointHelper"
 import config from "../../../data/SiteConfig"
 
 const About = ({ data }) => {
@@ -21,8 +22,13 @@ const About = ({ data }) => {
       <article>
         <PageIntro title={pageData.title} paddingBottom={false} />
         <DefaultSection data={pageData.firstSection} />
-        <DefaultSection data={pageData.secondSection} imageFirst />
-        <LargeImage image={pageData.footerImage} />
+        <DefaultSection
+          data={pageData.secondSection}
+          imageFirst={!downBreakpoint("large")}
+        />
+        {!downBreakpoint("large") && (
+          <LargeImage image={pageData.footerImage} />
+        )}
       </article>
     </Layout>
   )
