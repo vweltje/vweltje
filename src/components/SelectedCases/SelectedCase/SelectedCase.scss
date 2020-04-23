@@ -2,7 +2,11 @@
   padding: #{$spacing * 7} 0;
 
   @media screen and (max-width: $bpLarge) {
-    padding-bottom: #{$spacing * 4};
+    padding: #{$spacing * 4} 0;
+  }
+
+  @media screen and (max-width: $bpMedium) {
+    padding: #{$spacing * 2} 0;
   }
 
   &:first-child {
@@ -14,6 +18,10 @@
 
     @media screen and (max-width: $bpLarge) {
       padding-bottom: #{$spacing * 8};
+    }
+
+    @media screen and (max-width: $bpMedium) {
+      padding-bottom: #{$spacing * 4};
     }
   }
 }
