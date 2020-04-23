@@ -1,7 +1,9 @@
 import React from "react"
 import Splitview, { SplitviewContainer } from "./Splitview/Splitview"
 import Logo from "../../svg/vw-logo-full.svg"
+import Icon from "../../svg/vw-logo.svg"
 import Content from "../Content/Content"
+import { downBreakpoint } from "../../helpers/breakpointHelper"
 import "./Hero.scss"
 
 const Hero = ({ children }) => (
@@ -11,7 +13,11 @@ const Hero = ({ children }) => (
         <Content>{children}</Content>
       </SplitviewContainer>
       <SplitviewContainer position="right">
-        <Logo className="Logo" />
+        {downBreakpoint("large") ? (
+          <Icon className="Logo" />
+        ) : (
+          <Logo className="Logo" />
+        )}
       </SplitviewContainer>
     </Splitview>
   </header>
