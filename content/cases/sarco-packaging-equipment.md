@@ -1,6 +1,6 @@
 ---
 title: Sarco Packaging & Equipment
-date: 04/23/2020
+date: 04/22/2020
 featuredImage: https://ucarecdn.com/9b720585-798f-41d4-8bd0-622d6e94e01b/
 list:
   employer: oddesseySolutions
