@@ -1,6 +1,6 @@
 ---
 title: MVO Nederland
-date: 04/12/2020
+date: 04/21/2020
 featuredImage: https://ucarecdn.com/446132f6-059f-4ebf-890d-62bab734b337/
 list:
   url: https://mvonederland.nl
