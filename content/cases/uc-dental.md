@@ -1,6 +1,6 @@
 ---
 title: UC Dental
-date: 04/11/2020
+date: 04/07/2020
 featuredImage: https://ucarecdn.com/45a80706-0b70-46ea-a2b5-89b3a4150d95/
 list:
   url: https://www.ucdental.com.au/
