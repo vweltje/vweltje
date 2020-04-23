@@ -80,8 +80,8 @@
   "license": "MIT",
   "main": "n/a",
   "scripts": {
-    "start": "npm run clean && gatsby develop",
-    "develop": "gatsby develop",
+    "start": "npm run clean && gatsby develop -H 0.0.0.0 -p 8000",
+    "develop": "gatsby develop -H 0.0.0.0 -p 8000",
     "dev": "npm run develop",
     "serve": "gatsby serve",
     "build": "gatsby build",
