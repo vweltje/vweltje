@@ -27,6 +27,11 @@
   align-items: flex-start;
   justify-content: flex-start;
 
+  @media screen and (max-width: $bpMedium) {
+    width: 100%;
+    align-items: flex-start;
+  }
+
   &:nth-child(2) {
     align-items: center;
 
@@ -42,10 +47,6 @@
     @media screen and (max-width: $bpMedium) {
       align-items: flex-start;
     }
-  }
-
-  @media screen and (max-width: $bpMedium) {
-    align-items: flex-start;
   }
 }
 
