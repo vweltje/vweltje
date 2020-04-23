@@ -4,6 +4,7 @@ import Marked from 'react-markdown'
 import Image from '../Image/Image'
 import HtmlBlock from './HtmlBlock/HtmlBlock'
 import ContentImage from './ContentImage/ContentImage'
+import ContentLink from './ContentLink/ContentLink'
 import './Content.scss'
 
 const encodeMarkdownURIs = (source = '') => {
@@ -82,6 +83,7 @@ const Content = ({
       source={encodeMarkdownURIs(source)}
       renderers={{
         image: ContentImage,
+        link: ContentLink,
         html: HtmlBlock
       }}
     />
