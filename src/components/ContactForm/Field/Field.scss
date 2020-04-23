@@ -2,7 +2,13 @@
   position: relative;
   flex-grow: 1;
   font-size: 3rem;
+  height: 4rem;
   margin-right: #{$spacing * 2};
+
+  @media screen and (max-width: $bpSmall) {
+    margin-right: 0;
+    margin-bottom: #{$spacing * 2};
+  }
 }
 
 .ContactForm--Input,
@@ -20,6 +26,7 @@
   top: 50%;
   letter-spacing: 0.1rem;
   width: 100%;
+  overflow: hidden;
 }
 
 .ContactForm--Textarea {

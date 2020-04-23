@@ -5,6 +5,13 @@
   font-size: 3rem;
   font-family: $fontPrimary;
   color: $colorLightGreen;
+
+  @media screen and (max-width: $bpSmall) {
+    right: 0;
+    top: 100%;
+    position: absolute;
+    justify-content: flex-end;
+  }
 }
 
 .ContactForm--NavigationButton {

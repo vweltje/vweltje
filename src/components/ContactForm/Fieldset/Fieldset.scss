@@ -19,11 +19,21 @@
 
 .ContactForm--FieldsetTop,
 .ContactForm--FieldsetBottom {
+  position: relative;
   display: flex;
   width: 100%;
   justify-content: space-between;
+
+  @media screen and (max-width: $bpSmall) {
+    flex-direction: column;
+  }
 }
 
 .ContactForm--FieldsetTop {
   padding-bottom: #{$spacing * 2};
+
+  @media screen and (max-width: $bpSmall) {
+    z-index: 1;
+    padding-bottom: 0;
+  }
 }

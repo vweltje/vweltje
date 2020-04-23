@@ -2,6 +2,10 @@
   font-size: 1.6rem;
   color: $colorGreen;
   font-weight: 600;
+
+  @media screen and (max-width: $bpSmall) {
+    line-height: 4rem;
+  }
 }
 
 .ContactForm--ProgressNext {
