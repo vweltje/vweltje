@@ -51,10 +51,6 @@
     left: 100%;
   }
 
-  .Navigation--IconLink {
-    margin-top: #{$spacing * 6};
-  }
-
   .Navigation--Icon {
     display: block;
     height: 40px;
@@ -71,6 +67,7 @@
     .Navigation--Link {
       margin-left: 0;
       margin-bottom: 0;
+      margin-top: 0;
       text-align: center;
 
       &:last-of-type {
@@ -80,7 +77,7 @@
   }
 
   .SocialIcons {
-    margin-top: #{$spacing * 4};
+    margin-top: #{$spacing * 2};
   }
 
   .Navigation--Links a,

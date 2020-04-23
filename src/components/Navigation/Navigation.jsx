@@ -34,15 +34,10 @@ const Navigation = () => {
       >
         <div className="Navigation--Container">
           <ButtonClose />
-          <Link to="/" className="Navigation--IconLink">
+          <Link to="/">
             <Logo className="Navigation--Icon" />
           </Link>
           <ul className="Navigation--Links">
-            <li className="Navigation--Link">
-              <Link to="/" onClick={() => dispatch("navigation--deactivate")}>
-                Home
-              </Link>
-            </li>
             <li className="Navigation--Link">
               <Link to="/cases">Cases</Link>
             </li>
