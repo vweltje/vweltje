@@ -1,6 +1,6 @@
 ---
 title: Futureproof Community
-date: 04/22/2020
+date: 04/23/2020
 featuredImage: https://ucarecdn.com/ef55cd35-b7f4-4d00-9665-692bf188a907/
 list:
   employer: oddesseySolutions
