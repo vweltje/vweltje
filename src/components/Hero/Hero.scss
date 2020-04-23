@@ -21,5 +21,10 @@
       max-width: 200px;
       align-self: flex-start;
     }
+
+    @media screen and (max-width: $bpMedium) {
+      margin-left: -#{$spacing * 2};
+      max-width: 150px;
+    }
   }
 }
