@@ -1,6 +1,6 @@
 ---
 title: Carving Nico
-date: 04/23/2020
+date: 04/22/2020
 featuredImage: https://ucarecdn.com/e4a09359-f632-459d-a320-677e96ed97cb/
 list:
   employer: personalProject
