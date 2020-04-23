@@ -13,6 +13,11 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: stretch;
+
+  @media screen and (max-width: $bpMedium) {
+    align-items: flex-start;
+    flex-direction: column;
+  }
 }
 
 .Footer--Column {
@@ -24,10 +29,23 @@
 
   &:nth-child(2) {
     align-items: center;
+
+    @media screen and (max-width: $bpMedium) {
+      align-items: flex-start;
+      padding: #{$spacing * 2} 0;
+    }
   }
 
   &:nth-child(3) {
     align-items: flex-end;
+
+    @media screen and (max-width: $bpMedium) {
+      align-items: flex-start;
+    }
+  }
+
+  @media screen and (max-width: $bpMedium) {
+    align-items: flex-start;
   }
 }
 
@@ -48,6 +66,10 @@
 
 .Footer .SocialIcons {
   margin-left: -20px;
+
+  @media screen and (max-width: $bpMedium) {
+    margin-left: -#{$spacing * 2};
+  }
 }
 
 .Footer .SocialIcons a {

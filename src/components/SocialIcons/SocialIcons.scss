@@ -17,6 +17,11 @@
   text-transform: uppercase;
   letter-spacing: 0.1rem;
   text-align: center;
+
+  @media screen and (max-width: $bpMedium) {
+    padding-left: #{$spacing * 1};
+    padding-right: #{$spacing * 1};
+  }
 }
 
 .SocialIcons--Icon {
