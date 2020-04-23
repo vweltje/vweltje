@@ -44,3 +44,9 @@
   margin-top: 3rem;
   margin-bottom: 0;
 }
+
+.PostCard--Excerpt {
+  @media screen and (max-width: $bpMedium) {
+    margin: #{$spacing} 0;
+  }
+}

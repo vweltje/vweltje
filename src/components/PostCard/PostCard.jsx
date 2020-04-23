@@ -10,7 +10,7 @@ const PostCard = ({ image, title, excerpt, link }) => (
         <Image background src={image} lazy size="small" alt={image} />
       </figure>
       <h2 className="PostCard--title">{title}</h2>
-      <p>{excerpt}</p>
+      <p className="PostCard--Excerpt">{excerpt}</p>
     </Link>
     <div>
       <Link className="Link" to={`${link.slug}`}>
