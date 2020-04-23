@@ -6,6 +6,10 @@
   margin-bottom: 2.5rem;
 }
 
+.Content a {
+  color: lighten($colorGreen, 20%);
+}
+
 .Content--Iframe {
   position: relative;
   padding-bottom: 56.25%;
