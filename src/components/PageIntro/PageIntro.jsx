@@ -16,7 +16,7 @@ const PageIntro = ({
         {!!aditionalStartContent && aditionalStartContent}
       </div>
       <div className="PageIntro--End">
-        <p>{excerpt}</p>
+        {excerpt && <p>{excerpt}</p>}
         {!!aditionalEndContent && aditionalEndContent}
       </div>
     </Container>

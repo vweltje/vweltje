@@ -2,6 +2,10 @@
   padding-top: #{$spacing * 4};
   padding-bottom: #{$spacing * 8};
 
+  @media screen and (max-width: $bpMedium) {
+    padding-bottom: #{$spacing * 4};
+  }
+
   &.resetBottomPadding {
     padding-bottom: 0;
   }
@@ -31,4 +35,8 @@
 .PageIntro-heading {
   font-size: 3rem;
   line-height: 4rem;
+
+  @media screen and (max-width: $bpMedium) {
+    margin-top: 0;
+  }
 }
