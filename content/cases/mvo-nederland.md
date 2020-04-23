@@ -35,13 +35,13 @@ content: >-
   Quick links:
 
 
-  * •Advanced Custom Fields([ACF](https://www.advancedcustomfields.com/))
+  * Advanced Custom Fields([ACF](https://www.advancedcustomfields.com/))
 
-  * •Multilingual support ([Polylang](https://polylang.pro/))
+  * Multilingual support ([Polylang](https://polylang.pro/))
 
-  * •CRM implementation ([Insightly API](https://api.insightly.com/))
+  * CRM implementation ([Insightly API](https://api.insightly.com/))
 
-  * •Business number validation ([KVK API](https://developers.kvk.nl/))
+  * Business number validation ([KVK API](https://developers.kvk.nl/))
 
-  * •PDF generator ([mPDF](https://github.com/mpdf/mpdf))
+  * PDF generator ([mPDF](https://github.com/mpdf/mpdf))
 ---
