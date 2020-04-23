@@ -8,4 +8,8 @@
 
 .SimpleHeader--Logo {
   height: 45px;
+
+  @media screen and (max-width: $bpSmall) {
+    height: 35px;
+  }
 }
