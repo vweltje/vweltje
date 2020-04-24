@@ -1,5 +1,10 @@
 .CaseEdgeNavigation {
-  padding: #{$spacing * 7} 0;
+  padding-top: #{$spacing * 4};
+  padding-bottom: #{$spacing * 7};
+
+  @media screen and (max-width: $bpMedium) {
+    padding: #{$spacing * 4} 0;
+  }
 }
 
 .CaseEdgeNavigation--Inner {
@@ -8,12 +13,94 @@
 }
 
 .CaseEdgeNavigation--Link {
+  position: relative;
   font-size: 2rem;
   font-weight: 400;
   text-transform: uppercase;
+  padding-left: #{$spacing * 1};
+  overflow: hidden;
+  transition: ease all $transitionSpeed;
+
+  @media screen and (min-width: $bpMedium) {
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      transition: ease all $transitionSpeed;
+    }
+
+    &::before {
+      @include ArrowIconLeft;
+      top: 50%;
+      right: 100%;
+      z-index: 1;
+      background-color: currentColor;
+      transform: translate(-50%, -50%);
+    }
+
+    &::after {
+      width: #{$spacing * 6};
+      height: 100%;
+      left: -#{$spacing * 6};
+      background-color: $colorLightGreen;
+      top: 0;
+    }
+
+    &:hover {
+      padding-left: #{$spacing * 7};
+
+      &::before {
+        right: calc(100% - #{$spacing * 5});
+      }
+
+      &::after {
+        left: 0;
+      }
+    }
+
+    &.next {
+      &::before {
+        @include ArrowIcon;
+        right: unset;
+        left: calc(100% + #{$spacing * 4});
+      }
+
+      &::after {
+        right: -#{$spacing * 6};
+        left: unset;
+      }
+
+      &:hover {
+        padding-right: #{$spacing * 7};
+        padding-left: 0;
+
+        &::before {
+          left: calc(100% - #{$spacing * 4});
+          right: unset;
+        }
+
+        &::after {
+          left: unset;
+          right: 0;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: $bpMedium) {
+    text-align: right;
+  }
+
+  @media screen and (max-width: $bpMedium) {
+    font-size: 1.6rem;
+  }
 
   &.next {
     text-align: right;
+
+    @media screen and (max-width: $bpMedium) {
+      text-align: left;
+    }
   }
 }
 
@@ -22,4 +109,8 @@
   text-transform: initial;
   font-size: 1.4rem;
   opacity: 0.75;
+
+  @media screen and (max-width: $bpMedium) {
+    display: none;
+  }
 }

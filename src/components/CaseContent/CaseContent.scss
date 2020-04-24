@@ -1,3 +1,7 @@
 .CaseContent {
   padding-bottom: #{$spacing * 8};
+
+  @media screen and (max-width: $bpMedium) {
+    padding-bottom: #{$spacing * 4};
+  }
 }
