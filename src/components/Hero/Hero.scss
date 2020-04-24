@@ -18,13 +18,13 @@
     display: block;
 
     @media screen and (max-width: $bpLarge) {
-      max-width: 45px;
+      height: 45px;
       align-self: flex-start;
     }
 
     @media screen and (max-width: $bpMedium) {
       margin-left: -#{$spacing * 2};
-      max-width: 35px;
+      height: 35px;
     }
   }
 }

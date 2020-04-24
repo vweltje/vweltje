@@ -2,14 +2,23 @@
   padding: #{$spacing * 4} 0;
 
   @media screen and (max-width: $bpLarge) {
-    padding: #{$spacing * 2} 0;
+    padding: 0;
+    height: 70px;
+    display: flex;
+    align-items: center;
+
+    .Container {
+      display: flex;
+      align-items: center;
+    }
   }
 }
 
 .SimpleHeader--Logo {
   height: 45px;
+  display: block;
 
-  @media screen and (max-width: $bpSmall) {
+  @media screen and (max-width: $bpMedium) {
     height: 35px;
   }
 }
