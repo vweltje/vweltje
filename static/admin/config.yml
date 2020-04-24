@@ -42,6 +42,7 @@ collections: # A list of collections the CMS should be able to edit
             fields:
               - { label: Slug, name: slug, widget: hidden, default: "/" }
               - { label: Text, name: text, widget: markdown }
+              - { label: Button text, name: buttonText, widget: text }
           - label: 'Work heading'
             required: true
             name: 'workHeading'

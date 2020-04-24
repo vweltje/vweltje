@@ -16,7 +16,9 @@ const Landing = ({ data }) => {
     <Layout>
       <Helmet title={config.siteTitle} />
       <Meta {...getMeta(frontmatter)} />
-      <Hero>{frontmatter?.hero?.text}</Hero>
+      <Hero buttonText={frontmatter?.hero?.buttonText}>
+        {frontmatter?.hero?.text}
+      </Hero>
       <section>
         <VerticalHeading
           textLeft={frontmatter?.workHeading?.left}
@@ -38,6 +40,7 @@ export const pageQuery = graphql`
       frontmatter {
         hero {
           text
+          buttonText
         }
         workHeading {
           left
