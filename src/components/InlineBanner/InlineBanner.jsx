@@ -9,12 +9,14 @@ const InlineBanner = ({ children }) => {
 
   return (
     <section className="InlineBanner">
-      <Container className="InlineBanner--Inner">
-        {children || (
-          <Button onClick={() => dispatch("contactOverlay--activate")}>
-            Ok, let's talk
-          </Button>
-        )}
+      <Container>
+        <div className="InlineBanner--Inner">
+          {children || (
+            <Button onClick={() => dispatch("contactOverlay--activate")}>
+              Ok, let's talk
+            </Button>
+          )}
+        </div>
       </Container>
     </section>
   )
