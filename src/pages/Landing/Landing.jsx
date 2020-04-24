@@ -6,6 +6,7 @@ import Meta from "../../components/Meta/Meta"
 import Hero from "../../components/Hero/Hero"
 import VerticalHeading from "../../components/VerticalHeading/VerticalHeading"
 import SelectedCases from "../../components/SelectedCases/SelectedCases"
+import InlineBanner from "../../components/InlineBanner/InlineBanner"
 import { getPageData, getMeta } from "../../helpers/graphqlHelper"
 import config from "../../../data/SiteConfig"
 
@@ -26,6 +27,7 @@ const Landing = ({ data }) => {
         />
         <SelectedCases />
       </section>
+      <InlineBanner />
     </Layout>
   )
 }
