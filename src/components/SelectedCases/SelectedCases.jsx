@@ -18,7 +18,7 @@ const SelectedCases = ({ items }) => {
             />
           ))}
       </div>
-      <SeeMoreCases />
+      {!downBreakpoint("large") && <SeeMoreCases />}
     </>
   )
 }
