@@ -1,11 +1,31 @@
 .SimpleHeader {
+  position: relative;
   padding: #{$spacing * 4} 0;
+  transition: ease background-color $transitionSpeed;
 
   @media screen and (max-width: $bpLarge) {
     padding: 0;
     height: 70px;
     display: flex;
     align-items: center;
+
+    &::after {
+      content: "";
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 0;
+      width: 100%;
+      z-index: -1;
+      display: block;
+      position: absolute;
+      background-color: $colorLightGreen;
+      transition: ease height $transitionSpeed;
+    }
+
+    &.MobleMenuActive::after {
+      height: 100%;
+    }
 
     .Container {
       display: flex;
