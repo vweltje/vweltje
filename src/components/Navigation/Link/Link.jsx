@@ -1,6 +1,7 @@
 import React, { useContext } from "react"
 import { Link as GatsbyLink, navigate } from "gatsby"
 import { store } from "../../../store"
+import "./Link.scss"
 
 const Link = ({ to, children }) => {
   const { dispatch } = useContext(store)

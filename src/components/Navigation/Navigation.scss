@@ -14,18 +14,25 @@
   overflow-x: hidden;
   overflow-y: auto;
 
-  .Navigation--Container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: #{$spacing * 4} 0;
-    width: 650px;
-    transition: ease all $transitionSpeed;
-    transform: scale(0.8);
+  @media screen and (max-width: $bpLarge) {
+    background: $colorLightGreen;
+    top: 70px;
+    bottom: 100%;
+    left: 0;
+    height: 0;
+    width: 100%;
+    transform: translateX(0);
+    align-items: flex-start;
   }
 
   &.active {
     width: 650px;
+
+    @media screen and (max-width: $bpLarge) {
+      width: 100%;
+      height: calc(100% - 70px);
+      bottom: 0;
+    }
 
     .Navigation--Container {
       transform: scale(1);
@@ -41,6 +48,10 @@
     width: 50vw;
     top: 0;
     bottom: 0;
+
+    @media screen and (max-width: $bpLarge) {
+      display: none;
+    }
   }
 
   &::before {
@@ -51,72 +62,33 @@
     left: 100%;
   }
 
+  .Navigation--Container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: #{$spacing * 4} 0;
+    width: 650px;
+    transition: ease all $transitionSpeed;
+    transform: scale(0.8);
+
+    @media screen and (max-width: $bpLarge) {
+      align-items: flex-start;
+      padding: #{$spacing * 4} #{$spacing * 4};
+      width: 100%;
+      transform: scale(1);
+    }
+  }
+
   .Navigation--Icon {
     display: block;
     height: 40px;
   }
 
-  .Navigation--Links {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    margin-top: #{$spacing * 4};
-    display: flex;
-    flex-direction: column;
-
-    .Navigation--Link {
-      margin-left: 0;
-      margin-bottom: 0;
-      margin-top: 0;
-      text-align: center;
-
-      &:last-of-type {
-        margin-bottom: 0;
-      }
-    }
-  }
-
   .SocialIcons {
     margin-top: #{$spacing * 2};
-  }
 
-  .Navigation--Links a,
-  .Navigation--Links button,
-  .SocialIcons a {
-    position: relative;
-    padding: 20px;
-    display: inline-block;
-    text-decoration: none;
-    color: inherit;
-    z-index: 0;
-    font-weight: 600;
-    font-size: 1.8rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1rem;
-    text-align: center;
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
-    outline: none;
-
-    &::before {
-      content: "";
-      position: absolute;
-      display: block;
-      width: 100%;
-      height: 20px;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background-color: rgba($colorGreen, 0.3);
-      opacity: 0;
-      transition: ease all $transitionSpeed;
-      z-index: -1;
-    }
-
-    &:hover::before {
-      opacity: 1;
-      bottom: 10px;
+    @media screen and (max-width: $bpLarge) {
+      margin-left: 0;
     }
   }
 }

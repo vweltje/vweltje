@@ -3,8 +3,10 @@ import ClickAwayListner from "../ClickAwayListner/ClickAwayListner"
 import Link from "./Link/Link"
 import ButtonOpen from "./ButtonOpen/ButtonOpen"
 import ButtonClose from "./ButtonClose/ButtonClose"
+import NavigationLinks from "./NavigationLinks/NavigationLinks"
 import SocialIcons from "../SocialIcons/SocialIcons"
 import Logo from "../../svg/vw-logo.svg"
+import { downBreakpoint } from "../../helpers/breakpointHelper"
 import { store } from "../../store"
 import "./Navigation.scss"
 
@@ -16,13 +18,6 @@ const Navigation = () => {
     dispatch
   } = useContext(store)
 
-  function openContactOverlay() {
-    dispatch("navigation--deactivate")
-    setTimeout(() => {
-      dispatch("contactOverlay--activate")
-    }, 200)
-  }
-
   return (
     <>
       <ButtonOpen />
@@ -33,23 +28,15 @@ const Navigation = () => {
         detectEvents={active}
       >
         <div className="Navigation--Container">
-          <ButtonClose />
-          <Link to="/">
-            <Logo className="Navigation--Icon" />
-          </Link>
-          <ul className="Navigation--Links">
-            <li className="Navigation--Link">
-              <Link to="/cases">Cases</Link>
-            </li>
-            <li className="Navigation--Link">
-              <Link to="/about-me">About me</Link>
-            </li>
-            <li className="Navigation--Link">
-              <button type="button" onClick={openContactOverlay}>
-                Contact
-              </button>
-            </li>
-          </ul>
+          {!downBreakpoint("large") && (
+            <>
+              <ButtonClose />
+              <Link to="/">
+                <Logo className="Navigation--Icon" />
+              </Link>
+            </>
+          )}
+          <NavigationLinks />
           <SocialIcons />
         </div>
       </ClickAwayListner>

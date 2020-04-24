@@ -85,45 +85,47 @@
     }
   }
 
-  &:hover {
-    .ButtonOpen--Line {
-      &.first {
-        top: calc(50% - 12px);
+  @media screen and (min-width: $bpLarge) {
+    &:hover {
+      .ButtonOpen--Line {
+        &.first {
+          top: calc(50% - 12px);
 
-        &.left {
-          transform: rotate(-45deg);
-          left: -4px;
+          &.left {
+            transform: rotate(-45deg);
+            left: -4px;
+          }
+
+          &.right {
+            transform: rotate(45deg);
+            right: -4px;
+          }
         }
 
-        &.right {
-          transform: rotate(45deg);
-          right: -4px;
-        }
-      }
+        &.second {
+          width: 20px;
 
-      &.second {
-        width: 20px;
+          &.left {
+            left: 0;
+          }
 
-        &.left {
-          left: 0;
-        }
-
-        &.right {
-          right: 0;
-        }
-      }
-
-      &.third {
-        top: calc(50% + 8px);
-
-        &.left {
-          transform: rotate(45deg);
-          left: -4px;
+          &.right {
+            right: 0;
+          }
         }
 
-        &.right {
-          transform: rotate(-45deg);
-          right: -4px;
+        &.third {
+          top: calc(50% + 8px);
+
+          &.left {
+            transform: rotate(45deg);
+            left: -4px;
+          }
+
+          &.right {
+            transform: rotate(-45deg);
+            right: -4px;
+          }
         }
       }
     }
