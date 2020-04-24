@@ -1,21 +1,25 @@
 import React from "react"
 import { StaticQuery, graphql } from "gatsby"
 import SelectedCase from "./SelectedCase/SelectedCase"
+import SeeMoreCases from "./SeeMoreCases/SeeMoreCases"
 import { getEdges } from "../../helpers/graphqlHelper"
 import { downBreakpoint } from "../../helpers/breakpointHelper"
 
 const SelectedCases = ({ items }) => {
   return (
-    <div className="SelectedCases">
-      {!!items.length &&
-        items.map((item, index) => (
-          <SelectedCase
-            item={item}
-            textFirst={!downBreakpoint("large") && index % 2 !== 0}
-            key={item.slug}
-          />
-        ))}
-    </div>
+    <>
+      <div className="SelectedCases">
+        {!!items.length &&
+          items.map((item, index) => (
+            <SelectedCase
+              item={item}
+              textFirst={!downBreakpoint("large") && index % 2 !== 0}
+              key={item.slug}
+            />
+          ))}
+      </div>
+      <SeeMoreCases />
+    </>
   )
 }
 
