@@ -3,8 +3,9 @@
   color: $colorGreen;
   font-weight: 600;
 
-  @media screen and (max-width: $bpSmall) {
-    line-height: 4rem;
+  @media screen and (max-width: $bpMedium) {
+    font-size: 1.4rem;
+    line-height: 3.4rem;
   }
 }
 

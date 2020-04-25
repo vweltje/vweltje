@@ -6,6 +6,10 @@
   font-family: $fontPrimary;
   color: $colorLightGreen;
 
+  @media screen and (max-width: $bpMedium) {
+    font-size: 2.4rem;
+  }
+
   @media screen and (max-width: $bpSmall) {
     right: 0;
     top: 100%;
@@ -22,6 +26,10 @@
   background-color: transparent;
   outline: none;
   cursor: pointer;
+
+  @media screen and (max-width: $bpMedium) {
+    font-size: 2.4rem;
+  }
 
   &:disabled {
     cursor: not-allowed;

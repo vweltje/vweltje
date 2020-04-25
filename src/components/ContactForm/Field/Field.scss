@@ -5,6 +5,10 @@
   height: 4rem;
   margin-right: #{$spacing * 2};
 
+  @media screen and (max-width: $bpMedium) {
+    font-size: 2.4rem;
+  }
+
   @media screen and (max-width: $bpSmall) {
     margin-right: 0;
     margin-bottom: #{$spacing * 2};
@@ -27,6 +31,10 @@
   letter-spacing: 0.1rem;
   width: 100%;
   overflow: hidden;
+
+  @media screen and (max-width: $bpMedium) {
+    font-size: 2.4rem;
+  }
 }
 
 .ContactForm--Textarea {

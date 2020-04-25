@@ -12,6 +12,11 @@
   transition: ease all $transitionSpeed;
   box-shadow: $boxShadow;
 
+  @media screen and (max-width: $bpMedium) {
+    padding: #{$spacing * 2};
+    padding-bottom: #{$spacing * 1.5};
+  }
+
   &.active {
     background-color: $colorWhite;
   }
