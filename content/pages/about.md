@@ -11,9 +11,9 @@ firstSection:
 
 
     By this date I am a graduated media developer with nearly five years of experience in the branch. In those years I had the opportunity to work on my development skills in both my home country The Netherlands and abroad in Australia. In both places I worked as a full stack web developer mainly with React and PHP.
-  image: https://ucarecdn.com/8d15ad12-e542-488d-8fa0-29b5cb040a92/
+  image: https://ucarecdn.com/afab04c3-9ce6-4ac8-a62e-13b3dfb8a851/
 secondSection:
-  image: https://ucarecdn.com/9104bee5-e9f0-4946-9d2d-7662f93ec2ac/
+  image: https://ucarecdn.com/b2a14e1d-5cac-4ae2-a225-32d7e6c774a5/
   content: >-
     ### Here are some facts about me:
 
@@ -31,7 +31,7 @@ secondSection:
 
 
     \- Vincent Weltje
-footerImage: https://ucarecdn.com/21d6f610-1984-4088-81f8-b705c69e6ab0/
+footerImage: https://ucarecdn.com/8b874545-8838-4db9-899b-90a0e6904ded/
 meta:
   title: About me
   description: I am Vincent Weltje, a full stack web developer specialised in
