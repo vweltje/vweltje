@@ -19,6 +19,7 @@ const getCurrentBreakpoint = (width) => {
 const isDownBreakpoint = (breakpoint, width) => width <= breakpoints[breakpoint]
 
 const useBreakpoint = () => {
+  if (typeof window === "undefined") return false
   const [breakpoint, setBreakpoint] = useState(() =>
     getCurrentBreakpoint(window.innerWidth)
   )
@@ -35,6 +36,7 @@ const useBreakpoint = () => {
 }
 
 const downBreakpoint = (breakpoint) => {
+  if (typeof window === "undefined") return false
   const [isDown, setIsDown] = useState(() =>
     isDownBreakpoint(breakpoint, window.innerWidth)
   )

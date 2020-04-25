@@ -18,7 +18,7 @@ export const query = graphql`
 
 const Meta = ({
   title = config.siteTitle,
-  url = window.location.href,
+  url = typeof window !== "undefined" ? window.location.href : false,
   description = config.siteDescription,
   noindex,
   canonicalLink,
