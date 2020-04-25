@@ -25,17 +25,22 @@ const SimpleHeader = () => {
   }, [changeBackgroundColor])
 
   return (
-    <header
-      className={`SimpleHeader${
-        isMobileNavigationAtive ? " MobleMenuActive" : ""
-      }`}
-    >
-      <Container>
-        <Link to="/">
-          <Logo className="SimpleHeader--Logo" />
-        </Link>
-      </Container>
-    </header>
+    <>
+      <header
+        className={`SimpleHeader${
+          isMobileNavigationAtive ? " MobleMenuActive" : ""
+        }`}
+      >
+        <Container>
+          <Link to="/">
+            <Logo className="SimpleHeader--Logo" />
+          </Link>
+        </Container>
+      </header>
+      {downBreakpoint("large") && (
+        <div className="SimpleHeader--MobileSpacer" />
+      )}
+    </>
   )
 }
 
