@@ -16,7 +16,7 @@ content: >-
   his passion for wood carving.
 
 
-  I crafted this site with Yellow Cake, a starter kit I developed in the past, see [case](/cases/yellow-cake). I choose to use this starter kit as it suites perfectly with the requirements.
+  I crafted this site with Yellow Cake, a starter kit I developed in the past, see [case](/cases/yellowcake). I choose to use this starter kit as it suites perfectly with the requirements.
 
 
   ![](https://ucarecdn.com/e4a09359-f632-459d-a320-677e96ed97cb/)
