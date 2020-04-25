@@ -11,8 +11,8 @@ excerpt: Serverless powered site running on the blazing fast services of
 devicePreview: https://ucarecdn.com/30733ac6-701c-4a4a-b05e-175ea7b3bb10/
 content: This serverless site is powered by React and Gatsby and running on
   Netlify. This was the first project initialized with my previously crafted
-  starter kit Yellow Cake, see case. It turned out to be an amazing kit with
-  lots of handy stuff.
+  starter kit Yellow Cake, see [case](/cases/yellowcake). It turned out to be an
+  amazing kit with lots of handy stuff.
 meta:
   title: Renew Administration
   description: Serverless powered site running on the blazing fast services of
