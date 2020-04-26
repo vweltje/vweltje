@@ -9,18 +9,14 @@ const DefaultSection = ({ data, imageFirst = false }) => {
     <section className="DefaultSection">
       <Container>
         <div className="DefaultSection--Start">
-          {imageFirst ? (
-            <ImageWrapper image={data.image} />
-          ) : (
-            <Content>{data.content}</Content>
-          )}
+          {imageFirst
+            ? data?.image && <ImageWrapper image={data.image} />
+            : data?.content && <Content>{data.content}</Content>}
         </div>
         <div className="DefaultSection--End">
-          {imageFirst ? (
-            <Content>{data.content}</Content>
-          ) : (
-            <ImageWrapper image={data.image} />
-          )}
+          {imageFirst
+            ? data?.content && <Content>{data.content}</Content>
+            : data?.image && <ImageWrapper image={data.image} />}
         </div>
       </Container>
     </section>
