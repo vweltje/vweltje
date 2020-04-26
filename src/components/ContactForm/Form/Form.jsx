@@ -18,6 +18,7 @@ const Form = () => {
     })
       .then((result) => {
         if (result.ok) return result
+        console.log(result)
         throw new Error("Network error")
       })
       .then(() => {
@@ -33,7 +34,7 @@ const Form = () => {
   return (
     <form
       className="ContactForm--Form"
-      name="Contact"
+      name="contact"
       method="POST"
       onSubmit={handleSubmit}
       data-netlify="true"
@@ -48,6 +49,7 @@ const Form = () => {
           key={name}
         />
       ))}
+      <input type="hidden" name="form-name" value="contact" />
     </form>
   )
 }
