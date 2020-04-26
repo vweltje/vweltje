@@ -7,7 +7,6 @@ const config = {
   siteDescription: "Personal portfolio web site of Vincent Weltje", // Website description used for RSS feeds/meta description tag.
   siteRss: "/rss.xml", // Path to the RSS file.
   siteRssTitle: "Portfolio | Vincent Weltje", // Title of the RSS feed
-  googleTrackingId: "", // GA tracking ID.
   dateFromFormat: "YYYY-MM-DD", // Date format used in the frontmatter.
   copyright: "Copyright © 2020. vweltje.nl", // Copyright string for the footer of the website and RSS feed.
   themeColor: "#2a4742", // Used for setting manifest and progress theme colors.
