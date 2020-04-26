@@ -6,24 +6,28 @@ import "./CaseIntroList.scss"
 
 const CaseIntroList = ({ list }) => {
   return (
-    <ul className="CaseIntroList">
-      {!!Object.keys(list).length &&
-        Object.keys(list).map((type) => {
-          let content
-          switch (type) {
-            case "projectType":
-              content = <ProjectType type={list[type]} />
-              break
-            case "employer":
-              content = <Employer name={list[type]} />
-              break
-            default:
-              content = <SiteUrl url={list[type]} />
-              break
-          }
-          return <li key={type}>{content}</li>
-        })}
-    </ul>
+    <>
+      {list && (
+        <ul className="CaseIntroList">
+          {!!Object.keys(list).length &&
+            Object.keys(list).map((type) => {
+              let content
+              switch (type) {
+                case "projectType":
+                  content = <ProjectType type={list[type]} />
+                  break
+                case "employer":
+                  content = <Employer name={list[type]} />
+                  break
+                default:
+                  content = <SiteUrl url={list[type]} />
+                  break
+              }
+              return <li key={type}>{content}</li>
+            })}
+        </ul>
+      )}
+    </>
   )
 }
 
