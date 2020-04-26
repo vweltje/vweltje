@@ -34,7 +34,7 @@ const Form = () => {
       className="ContactForm--Form"
       name="Contact"
       onSubmit={handleSubmit}
-      data-netlify=""
+      data-netlify="true"
     >
       {fields.map(({ name, label, type, required }, index) => (
         <Fieldset
