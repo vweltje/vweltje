@@ -24,8 +24,9 @@ const Form = () => {
         form.reset()
         dispatch("contactForm--successfulSubmit")
       })
-      .catch(() => {
-        dispatch("contactForm--successfulSubmit")
+      .catch((e) => {
+        console.log(e)
+        dispatch("contactForm--unsuccessfulSubmit")
       })
   }
 
@@ -33,6 +34,7 @@ const Form = () => {
     <form
       className="ContactForm--Form"
       name="Contact"
+      method="POST"
       onSubmit={handleSubmit}
       data-netlify="true"
     >
