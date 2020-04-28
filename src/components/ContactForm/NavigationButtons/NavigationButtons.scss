@@ -19,12 +19,12 @@
 }
 
 .ContactForm--NavigationButton {
+  position: relative;
   border: none;
   font-family: $fontPrimary;
   padding: 0;
   font-size: 3rem;
   background-color: transparent;
-  outline: none;
   cursor: pointer;
 
   @media screen and (max-width: $bpMedium) {

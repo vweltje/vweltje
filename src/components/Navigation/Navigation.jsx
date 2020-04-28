@@ -33,6 +33,7 @@ const Navigation = () => {
               <ButtonClose />
               <Link to="/">
                 <Logo className="Navigation--Icon" />
+                <span className="Hidden">Go to home</span>
               </Link>
             </>
           )}

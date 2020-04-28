@@ -10,6 +10,7 @@ const ButtonClose = () => {
       className="ButtonClose"
       type="button"
       onClick={() => dispatch("navigation--deactivate")}
+      aria-label="Close navigation"
     >
       <span className="ButtonClose--Line first left" />
       <span className="ButtonClose--Line first right" />

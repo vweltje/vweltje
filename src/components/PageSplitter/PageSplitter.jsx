@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useContext } from "react"
+import Clone from "./Clone/Clone"
 import { store } from "../../store"
 import "./PageSplitter.scss"
 
@@ -8,33 +9,25 @@ const PageSplitter = ({ children }) => {
       navigation: { active }
     }
   } = useContext(store)
-  const [splitted, setSplitted] = useState(true)
-  const splitContent = active
+  const [splitted, setSplitted] = useState(false)
 
   useEffect(() => {
-    if (splitContent) {
-      setSplitted(false)
+    if (active) {
+      setSplitted(true)
     }
-    if (!splitContent) {
+    if (!active && splitted) {
       setTimeout(() => {
-        setSplitted(true)
+        setSplitted(false)
       }, 200)
     }
-  }, [splitContent])
+  }, [active])
 
   return (
     <>
-      <main className={`PageSplitter--Main${splitContent ? " splitted" : ""}`}>
+      <main className={`PageSplitter--Main${active ? " splitted" : ""}`}>
         {children}
       </main>
-      <div
-        className={`PageSplitter--Clone${splitContent ? " splitted" : ""}`}
-        style={{
-          zIndex: splitContent || !splitted ? "1" : "-1"
-        }}
-      >
-        {children}
-      </div>
+      {(active || splitted) && <Clone splitted={splitted}>{children}</Clone>}
     </>
   )
 }

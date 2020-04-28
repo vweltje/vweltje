@@ -29,7 +29,12 @@ const ButtonOpen = () => {
   }
 
   return (
-    <button className="ButtonOpen" type="button" onClick={openCloseNav}>
+    <button
+      className="ButtonOpen"
+      type="button"
+      onClick={openCloseNav}
+      aria-label="Open navigation"
+    >
       <span className="ButtonOpen--Line first left" />
       <span className="ButtonOpen--Line first right" />
       <span className="ButtonOpen--Line second left" />
