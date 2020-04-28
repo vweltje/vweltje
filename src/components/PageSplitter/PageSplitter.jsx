@@ -1,35 +1,7 @@
 import React, { useState, useEffect, useContext } from "react"
+import Clone from "./Clone/Clone"
 import { store } from "../../store"
 import "./PageSplitter.scss"
-
-const SplitContainer = ({ active, children }) => {
-  const [splitContent, setSplitContent] = useState(false)
-  const [zIndex, setZindex] = useState("-1")
-
-  useEffect(() => {
-    setSplitContent(true)
-  })
-  useEffect(() => {
-    if (!active) {
-      setTimeout(() => {
-        setZindex("-1")
-      }, 200)
-    } else {
-      setZindex("1")
-    }
-  }, [active])
-
-  return (
-    <div
-      className={`PageSplitter--Clone${
-        splitContent && active ? " splitted" : ""
-      }`}
-      style={{ zIndex }}
-    >
-      {children}
-    </div>
-  )
-}
 
 const PageSplitter = ({ children }) => {
   const {
@@ -55,11 +27,7 @@ const PageSplitter = ({ children }) => {
       <main className={`PageSplitter--Main${active ? " splitted" : ""}`}>
         {children}
       </main>
-      {(active || splitted) && (
-        <SplitContainer active={active} splitted={splitted}>
-          {children}
-        </SplitContainer>
-      )}
+      {(active || splitted) && <Clone splitted={splitted}>{children}</Clone>}
     </>
   )
 }
