@@ -5,6 +5,16 @@ import ContactForm from "../ContactForm/ContactForm"
 import { store } from "../../store"
 import "./ContactOverlay.scss"
 
+const Overlay = ({ active, visible, children }) => (
+  <>
+    {active && (
+      <div className={`ContactOverlay${visible ? " visible" : ""}`}>
+        {children}
+      </div>
+    )}
+  </>
+)
+
 const ContactOverlay = () => {
   const {
     state: {
@@ -19,25 +29,22 @@ const ContactOverlay = () => {
       dispatch("contactOverlay--deactivate")
     }, 200)
   }
+  const isStaticContentRender = typeof window === "undefined"
 
   useEffect(() => {
     if (active) setVisible(true)
   }, [active])
 
   return (
-    <>
-      {active && (
-        <div className={`ContactOverlay${visible ? " visible" : ""}`}>
-          <Container size="smaller">
-            <div className="ContactOverlay--Inner">
-              <ClickAwayListner detectEvents={active} onClickAway={deactivate}>
-                <ContactForm />
-              </ClickAwayListner>
-            </div>
-          </Container>
+    <Overlay active={active || isStaticContentRender} visible={visible}>
+      <Container size="smaller">
+        <div className="ContactOverlay--Inner">
+          <ClickAwayListner detectEvents={active} onClickAway={deactivate}>
+            <ContactForm />
+          </ClickAwayListner>
         </div>
-      )}
-    </>
+      </Container>
+    </Overlay>
   )
 }
 
