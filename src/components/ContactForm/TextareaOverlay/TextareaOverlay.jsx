@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react"
 import ClickAwayListner from "../../ClickAwayListner/ClickAwayListner"
+import Button from "../../Button/Button"
 import "./TextareaOverlay.scss"
 
 const TextareaOverlay = ({
@@ -44,6 +45,13 @@ const TextareaOverlay = ({
           value={currentValue}
           onChange={() => {}}
         />
+        <Button
+          className="ContactForm--TextareaOverlayButton"
+          noHover
+          onClick={deactivate}
+        >
+          Done
+        </Button>
       </div>
     </ClickAwayListner>
   )

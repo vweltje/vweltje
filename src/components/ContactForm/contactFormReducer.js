@@ -1,5 +1,5 @@
 export const contactFormInitState = {
-  activeField: 1,
+  activeField: 4,
   validFields: [],
   successfulSubmit: false,
   unsuccessfulSubmit: false

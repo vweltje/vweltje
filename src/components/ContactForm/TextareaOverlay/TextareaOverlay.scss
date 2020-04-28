@@ -7,10 +7,13 @@
   z-index: 1;
   background-color: $colorWhite;
   transition: ease all $transitionSpeed;
+  opacity: 0;
 
   &.active {
     box-shadow: $boxShadow;
-    height: 250px;
+    height: 40vh;
+    max-height: 250px;
+    opacity: 1;
   }
 
   label {
@@ -31,4 +34,8 @@
     resize: none;
     padding: #{$spacing * 2};
   }
+}
+
+.ContactForm--TextareaOverlayButton {
+  width: 100%;
 }
