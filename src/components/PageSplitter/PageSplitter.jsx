@@ -2,39 +2,64 @@ import React, { useState, useEffect, useContext } from "react"
 import { store } from "../../store"
 import "./PageSplitter.scss"
 
+const SplitContainer = ({ active, children }) => {
+  const [splitContent, setSplitContent] = useState(false)
+  const [zIndex, setZindex] = useState("-1")
+
+  useEffect(() => {
+    setSplitContent(true)
+  })
+  useEffect(() => {
+    if (!active) {
+      setTimeout(() => {
+        setZindex("-1")
+      }, 200)
+    } else {
+      setZindex("1")
+    }
+  }, [active])
+
+  return (
+    <div
+      className={`PageSplitter--Clone${
+        splitContent && active ? " splitted" : ""
+      }`}
+      style={{ zIndex }}
+    >
+      {children}
+    </div>
+  )
+}
+
 const PageSplitter = ({ children }) => {
   const {
     state: {
       navigation: { active }
     }
   } = useContext(store)
-  const [splitted, setSplitted] = useState(true)
-  const splitContent = active
+  const [splitted, setSplitted] = useState(false)
 
   useEffect(() => {
-    if (splitContent) {
-      setSplitted(false)
+    if (active) {
+      setSplitted(true)
     }
-    if (!splitContent) {
+    if (!active && splitted) {
       setTimeout(() => {
-        setSplitted(true)
+        setSplitted(false)
       }, 200)
     }
-  }, [splitContent])
+  }, [active])
 
   return (
     <>
-      <main className={`PageSplitter--Main${splitContent ? " splitted" : ""}`}>
+      <main className={`PageSplitter--Main${active ? " splitted" : ""}`}>
         {children}
       </main>
-      <div
-        className={`PageSplitter--Clone${splitContent ? " splitted" : ""}`}
-        style={{
-          zIndex: splitContent || !splitted ? "1" : "-1"
-        }}
-      >
-        {children}
-      </div>
+      {(active || splitted) && (
+        <SplitContainer active={active} splitted={splitted}>
+          {children}
+        </SplitContainer>
+      )}
     </>
   )
 }
