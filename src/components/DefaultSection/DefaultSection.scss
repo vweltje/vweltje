@@ -10,12 +10,8 @@
     display: flex;
 
     @media screen and (max-width: $bpExtraLarge) {
-      flex-direction: column;
+      flex-direction: column-reverse;
     }
-  }
-
-  p:first-of-type {
-    margin-top: 0;
   }
 }
 
