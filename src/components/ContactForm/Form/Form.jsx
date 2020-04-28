@@ -14,7 +14,8 @@ const Form = () => {
     const form = event.target
 
     fetch(`${form.action}?${stringify(serialize(form))}`, {
-      method: "POST"
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" }
     })
       .then((result) => {
         if (result.ok) return result

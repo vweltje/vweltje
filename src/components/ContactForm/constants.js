@@ -1,12 +1,12 @@
 export const fields = [
   {
-    name: "firstName",
+    name: "firstname",
     label: "First name",
     type: "text",
     required: true
   },
   {
-    name: "lastName",
+    name: "lastname",
     label: "Last name",
     type: "text",
     required: true

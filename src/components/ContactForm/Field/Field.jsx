@@ -42,7 +42,7 @@ const Field = ({ name, label, type, required, focus }) => {
           {textareaOverlayActive && (
             <TextareaOverlay
               label={label}
-              name={`textareaOverlay--${name}`}
+              name={`textarea-overlay--${name}`}
               currentValue={textareaValue}
               onDeactivate={() => setTextareaOverlayActive(false)}
               onInput={(event) => {
