@@ -1,10 +1,12 @@
-import React from "react"
-import WordPressIcon from "../../../svg/wordpress-icon.svg"
-import ReactIcon from "../../../svg/react-icon.svg"
+import React from 'react'
+import WordPressIcon from '../../../svg/wordpress-icon.svg'
+import ReactIcon from '../../../svg/react-icon.svg'
 
 const projectTypes = {
-  wordpress: { icon: <WordPressIcon />, name: "WordPress" },
-  react: { icon: <ReactIcon />, name: "React" }
+  wordpress: { icon: <WordPressIcon />, name: 'WordPress' },
+  react: { icon: <ReactIcon />, name: 'React' },
+  vue: { icon: <ReactIcon />, name: 'Vue' },
+  nextjs: { icon: <ReactIcon />, name: 'Next.js' },
 }
 
 const ProjectType = ({ type }) => {

@@ -4,10 +4,10 @@ date: 04/21/2020
 featuredImage: https://ucarecdn.com/446132f6-059f-4ebf-890d-62bab734b337/
 list:
   url: https://mvonederland.nl
-  employer: oddesseySolutions
+  employer: Oddessey Solutions
   projectType: wordpress
-excerpt: "Crafted a custom WordPress theme. Pages are fully customizable, site
-  got multilingual support and has several external API implementations. "
+excerpt: 'Crafted a custom WordPress theme. Pages are fully customizable, site
+  got multilingual support and has several external API implementations. '
 devicePreview: https://ucarecdn.com/20b112b2-d5a4-4fdc-8cd0-724b7a7c9b21/
 content: >-
   Here I crafted a complete custom WordPress theme. One of the key plugins used

@@ -1,8 +1,8 @@
-import React from "react"
-import ProjectType from "./ProjectType/ProjectType"
-import Employer from "./Employer/Employer"
-import SiteUrl from "./SiteUrl/SiteUrl"
-import "./CaseIntroList.scss"
+import React from 'react'
+import ProjectType from './ProjectType/ProjectType'
+import Employer from './Employer/Employer'
+import SiteUrl from './SiteUrl/SiteUrl'
+import './CaseIntroList.scss'
 
 const CaseIntroList = ({ list }) => {
   return (
@@ -13,10 +13,10 @@ const CaseIntroList = ({ list }) => {
             Object.keys(list).map((type) => {
               let content
               switch (type) {
-                case "projectType":
+                case 'projectType':
                   content = <ProjectType type={list[type]} />
                   break
-                case "employer":
+                case 'employer':
                   content = <Employer name={list[type]} />
                   break
                 default:
