@@ -2,14 +2,14 @@
 draft: false
 title: DAF Trucks
 date: 01/27/2023
-featuredImage:
+featuredImage: /images/cases/daf-featured.jpg
 list:
   employer: io
   projectType: react
   url: http://parts.daf.com/
 excerpt: A brand new parts web shop and e-catalogue for DAF and TRP, built from
   scratch with React and Sitecore JSS. One codebase, two brands.
-devicePreview:
+devicePreview: /images/cases/daf-device-preview.png
 content: >-
   Through We Are You (now part of [iO](https://iodigital.nl/)) I spent over three
   years working on the DAF and TRP platforms. We Are You placed me at DAF, so

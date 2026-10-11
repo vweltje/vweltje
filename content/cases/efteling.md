@@ -2,7 +2,7 @@
 draft: false
 title: Efteling
 date: current
-featuredImage:
+featuredImage: /images/cases/efteling-featured.jpg
 list:
   employer: efteling
   projectType: nextjs
@@ -10,7 +10,7 @@ list:
 excerpt: Moving the Efteling website from the classic platform to a brand new
   Next.js and SitecoreAI platform, with a complete redesign. From the Grand
   Hotel landing page to the full hotel booking flow.
-devicePreview:
+devicePreview: /images/cases/efteling-device-preview.png
 content: >-
   Through [iO](https://iodigital.nl/) I ended up at the Efteling. When I joined
   in early 2023, the mission was clear and we had to phase out the classic platform.
