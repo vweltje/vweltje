@@ -2,14 +2,14 @@
 draft: false
 title: DAF Trucks
 date: 01/27/2023
-featuredImage: /images/cases/daf-featured.jpg
+featuredImage: https://ucarecdn.com/659ebf7a-460a-46d0-aaf3-fde4ecd77890/
 list:
   employer: iO
   projectType: React / Sitecore XMC
   url: http://parts.daf.com/
 excerpt: A brand new parts web shop and e-catalogue for DAF and TRP, built from
   scratch with React and Sitecore JSS. One codebase, two brands.
-devicePreview: /images/cases/daf-device-preview.png
+devicePreview: https://ucarecdn.com/17207692-1407-4623-94a9-6fd3458c862f/
 content: >-
   Through We Are You (now part of [iO](https://iodigital.nl/)) I spent over three
   years working on the DAF and TRP platforms. We Are You placed me at DAF, so
