@@ -5,7 +5,7 @@ date: current
 featuredImage: /images/cases/efteling-featured.jpg
 list:
   employer: efteling
-  projectType: nextjs
+  projectType: NextJS / SitecoreAi
   url: https://efteling.com/
 excerpt: Moving the Efteling website from the classic platform to a brand new
   Next.js and SitecoreAI platform, with a complete redesign. From the Grand

@@ -1,4 +1,4 @@
-import ProjectType, { type ProjectTypeName } from "./ProjectType/ProjectType"
+import ProjectType from "./ProjectType/ProjectType"
 import Employer, { type EmployerName } from "./Employer/Employer"
 import SiteUrl from "./SiteUrl/SiteUrl"
 import type { CaseList } from "@/lib/content"
@@ -21,7 +21,7 @@ export default function CaseIntroList({ list }: { list?: CaseList }) {
       )}
       {projectType && (
         <li>
-          <ProjectType type={projectType as ProjectTypeName} />
+          <ProjectType type={projectType} />
         </li>
       )}
     </ul>

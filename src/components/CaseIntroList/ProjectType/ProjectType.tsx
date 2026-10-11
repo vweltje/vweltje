@@ -10,11 +10,28 @@ const projectTypes = {
 
 export type ProjectTypeName = keyof typeof projectTypes
 
-export default function ProjectType({ type }: { type: ProjectTypeName }) {
+// Accepts a known key ("react") or free text ("React / Sitecore XMC");
+// for free text the icon is taken from the first known type it mentions.
+export default function ProjectType({ type }: { type: string }) {
+  const known = projectTypes[type as ProjectTypeName]
+  if (known) {
+    return (
+      <>
+        {known.icon}
+        {known.name}
+      </>
+    )
+  }
+
+  const normalized = type.toLowerCase().replace(/[^a-z]/g, "")
+  const match = Object.entries(projectTypes).find(([key]) =>
+    normalized.includes(key)
+  )?.[1]
+
   return (
     <>
-      {projectTypes[type].icon}
-      {projectTypes[type].name}
+      {match?.icon}
+      {type}
     </>
   )
 }

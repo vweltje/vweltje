@@ -4,8 +4,8 @@ title: DAF Trucks
 date: 01/27/2023
 featuredImage: /images/cases/daf-featured.jpg
 list:
-  employer: io
-  projectType: react
+  employer: iO
+  projectType: React / Sitecore XMC
   url: http://parts.daf.com/
 excerpt: A brand new parts web shop and e-catalogue for DAF and TRP, built from
   scratch with React and Sitecore JSS. One codebase, two brands.

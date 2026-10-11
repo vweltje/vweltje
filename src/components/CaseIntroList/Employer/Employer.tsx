@@ -1,3 +1,5 @@
+import EftelingIcon from "../../icons/EftelingIcon"
+import IODigitalIcon from "../../icons/IODigitalIcon"
 import OddesseySolutionsIcon from "../../icons/OddesseySolutionsIcon"
 import ThriveWebIcon from "../../icons/ThriveWebIcon"
 import VWLogo from "../../icons/VWLogo"
@@ -5,12 +7,12 @@ import VWLogo from "../../icons/VWLogo"
 const employers = {
   efteling: {
     url: "https://efteling.com/",
-    icon: <OddesseySolutionsIcon />,
+    icon: <EftelingIcon />,
     name: "Efteling",
   },
-  io: {
+  iO: {
     url: "https://iodigital.nl/",
-    icon: <OddesseySolutionsIcon />,
+    icon: <IODigitalIcon />,
     name: "iO digital",
   },
   daf: {
