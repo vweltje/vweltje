@@ -1,7 +1,9 @@
 import type { Metadata, Viewport } from "next"
 import { Libre_Caslon_Text, Nunito } from "next/font/google"
 import { UIProvider } from "@/lib/UIContext"
+import { ErrorPageProvider } from "@/lib/ErrorPageContext"
 import Layout from "@/components/Layout/Layout"
+import { getPage, type ErrorPage } from "@/lib/content"
 import { pageMetadata, site } from "@/lib/site"
 import "@/scss/globals.scss"
 
@@ -49,7 +51,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body>
         <UIProvider>
-          <Layout>{children}</Layout>
+          <ErrorPageProvider page={getPage<ErrorPage>("error")}>
+            <Layout>{children}</Layout>
+          </ErrorPageProvider>
         </UIProvider>
       </body>
     </html>

@@ -53,6 +53,28 @@ export type CasesPage = {
   meta?: Meta
 }
 
+export type PageLink = {
+  text: string
+  link: string
+}
+
+export type NotFoundPage = {
+  label: string
+  title: string
+  excerpt: string
+  button: PageLink
+  link: PageLink
+  meta?: Meta
+}
+
+export type ErrorPage = {
+  label: string
+  title: string
+  excerpt: string
+  button: { text: string }
+  link: PageLink
+}
+
 function readFrontmatter<T>(file: string): T {
   return matter(fs.readFileSync(path.join(contentDir, file), "utf8")).data as T
 }
@@ -63,7 +85,9 @@ function toTime(date: string) {
   return new Date(year, month - 1, day).getTime()
 }
 
-export function getPage<T>(name: "landing" | "about" | "cases"): T {
+export function getPage<T>(
+  name: "landing" | "about" | "cases" | "not-found" | "error",
+): T {
   return readFrontmatter<T>(`pages/${name}.md`)
 }
 

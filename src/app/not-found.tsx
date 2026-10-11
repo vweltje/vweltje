@@ -1,19 +1,25 @@
 import Link from "next/link"
-import { site } from "@/lib/site"
+import ErrorLayout from "@/components/ErrorLayout/ErrorLayout"
+import Button from "@/components/Button/Button"
+import { getPage, type NotFoundPage } from "@/lib/content"
+import { pageMetadata } from "@/lib/site"
 
-export const metadata = { title: site.title }
+const page = getPage<NotFoundPage>("not-found")
+
+export const metadata = pageMetadata(page.meta)
 
 export default function NotFound() {
   return (
-    <section className="section thick">
-      <div className="container skinny taCenter">
-        <h1>404 - Page Not Found</h1>
-        <p>
-          We can&apos;t find the page you are looking for!
-          <br />
-          Head back to <Link href="/">{site.title}</Link>
-        </p>
-      </div>
-    </section>
+    <ErrorLayout
+      label={page.label}
+      title={page.title}
+      excerpt={page.excerpt}
+      code="404"
+    >
+      <Button link={page.button.link}>{page.button.text}</Button>
+      <Link className="Link" href={page.link.link}>
+        {page.link.text}
+      </Link>
+    </ErrorLayout>
   )
 }
