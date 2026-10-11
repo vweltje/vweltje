@@ -6,7 +6,6 @@ import Button from "../Button/Button"
 import VWLogo from "../icons/VWLogo"
 import VWLogoFull from "../icons/VWLogoFull"
 import { useUI } from "@/lib/UIContext"
-import { useIsMobile } from "@/lib/useIsMobile"
 
 type Props = {
   buttonText: string
@@ -16,7 +15,6 @@ type Props = {
 
 export default function Hero({ buttonText, children }: Props) {
   const { setContactOverlayActive } = useUI()
-  const isMobile = useIsMobile()
 
   return (
     <header className="Hero">
@@ -28,11 +26,8 @@ export default function Hero({ buttonText, children }: Props) {
           </Button>
         </SplitviewContainer>
         <SplitviewContainer position="Right">
-          {isMobile ? (
-            <VWLogo className="Logo" />
-          ) : (
-            <VWLogoFull className="Logo" />
-          )}
+          <VWLogo className="Logo Logo--Mobile" />
+          <VWLogoFull className="Logo Logo--Desktop" />
         </SplitviewContainer>
       </Splitview>
     </header>

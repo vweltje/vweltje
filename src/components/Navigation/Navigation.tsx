@@ -8,11 +8,9 @@ import NavigationLinks from "./NavigationLinks/NavigationLinks"
 import SocialIcons from "../SocialIcons/SocialIcons"
 import VWLogo from "../icons/VWLogo"
 import { useUI } from "@/lib/UIContext"
-import { useIsMobile } from "@/lib/useIsMobile"
 
 export default function Navigation() {
   const { navigationActive, setNavigationActive } = useUI()
-  const isMobile = useIsMobile()
 
   // The open button toggles the navigation itself on mobile
   function onClickAway(event: MouseEvent) {
@@ -30,15 +28,11 @@ export default function Navigation() {
         detectEvents={navigationActive}
       >
         <div className="Navigation--Container">
-          {!isMobile && (
-            <>
-              <ButtonClose />
-              <Link to="/">
-                <VWLogo className="Navigation--Icon" />
-                <span className="Hidden">Go to home</span>
-              </Link>
-            </>
-          )}
+          <ButtonClose />
+          <Link to="/" className="Navigation--HomeLink">
+            <VWLogo className="Navigation--Icon" />
+            <span className="Hidden">Go to home</span>
+          </Link>
           <NavigationLinks />
           <SocialIcons />
         </div>

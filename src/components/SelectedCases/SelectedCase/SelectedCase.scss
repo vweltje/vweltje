@@ -38,3 +38,14 @@
     justify-content: flex-start;
   }
 }
+
+.SelectedCase.textFirst .SelectedCaseText {
+  @media screen and (min-width: #{$bpLarge + 1px}) {
+    order: -1;
+
+    .SelectedCaseText--Inner {
+      padding-left: 0;
+      padding-right: #{$spacing * 2};
+    }
+  }
+}

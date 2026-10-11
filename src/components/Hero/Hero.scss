@@ -29,4 +29,18 @@
       height: 35px;
     }
   }
+
+  .Logo--Mobile {
+    display: none;
+  }
+
+  @media screen and (max-width: $bpLarge) {
+    .Logo--Mobile {
+      display: block;
+    }
+
+    .Logo--Desktop {
+      display: none;
+    }
+  }
 }

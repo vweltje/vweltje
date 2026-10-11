@@ -1,29 +1,23 @@
-import type { ReactNode } from "react"
 import Container from "../Container/Container"
 import ImageWrapper from "./ImageWrapper/ImageWrapper"
-
-export type DefaultSectionData = {
-  content?: ReactNode
-  image?: string
-}
+import Content from "../Content/Content"
+import type { Section } from "@/lib/content"
 
 type Props = {
-  data: DefaultSectionData
+  data: Section
+  // Only applies on desktop, on mobile the image always goes first
   imageFirst?: boolean
 }
 
 export default function DefaultSection({ data, imageFirst = false }: Props) {
-  const image = data.image && <ImageWrapper image={data.image} />
-  const content = data.content
-
   return (
-    <section className="DefaultSection">
+    <section className={`DefaultSection${imageFirst ? " imageFirst" : ""}`}>
       <Container>
         <div className="DefaultSection--Start">
-          {imageFirst ? image : content}
+          {data.content && <Content>{data.content}</Content>}
         </div>
         <div className="DefaultSection--End">
-          {imageFirst ? content : image}
+          {data.image && <ImageWrapper image={data.image} />}
         </div>
       </Container>
     </section>

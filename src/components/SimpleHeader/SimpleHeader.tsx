@@ -4,18 +4,14 @@ import Link from "next/link"
 import Container from "../Container/Container"
 import VWLogo from "../icons/VWLogo"
 import { useUI } from "@/lib/UIContext"
-import { useIsMobile } from "@/lib/useIsMobile"
 
 export default function SimpleHeader() {
   const { navigationActive } = useUI()
-  const isMobile = useIsMobile()
 
   return (
     <>
       <header
-        className={`SimpleHeader${
-          isMobile && navigationActive ? " MobleMenuActive" : ""
-        }`}
+        className={`SimpleHeader${navigationActive ? " MobleMenuActive" : ""}`}
       >
         <Container>
           <Link href="/">
@@ -23,7 +19,7 @@ export default function SimpleHeader() {
           </Link>
         </Container>
       </header>
-      {isMobile && <div className="SimpleHeader--MobileSpacer" />}
+      <div className="SimpleHeader--MobileSpacer" />
     </>
   )
 }
