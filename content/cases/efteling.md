@@ -1,4 +1,5 @@
 ---
+draft: true
 title: Efteling
 date: current
 featuredImage:
@@ -6,13 +7,15 @@ list:
   employer: efteling
   projectType: nextjs
   url: https://efteling.com/
-excerpt: ''
+excerpt: ""
 devicePreview:
 content: >-
   Content
 
 
   Quick links:
+
+  * [Sitecore AI](https://www.gatsbyjs.org/)
 
   * [TypeScript](https://www.gatsbyjs.org/)
 

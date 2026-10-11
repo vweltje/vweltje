@@ -1,3 +1,5 @@
+@use "../../scss/variables" as *;
+
 .DefaultSection {
   padding: #{$spacing * 4} 0;
 

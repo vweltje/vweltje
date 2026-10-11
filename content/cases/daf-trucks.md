@@ -1,4 +1,5 @@
 ---
+draft: true
 title: DAF Trucks
 date: 27/01/2023
 featuredImage:

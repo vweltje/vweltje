@@ -1,3 +1,5 @@
+@use "../../scss/variables" as *;
+
 .CaseEdgeNavigation {
   padding-top: #{$spacing * 4};
   padding-bottom: #{$spacing * 7};

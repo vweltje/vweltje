@@ -1,3 +1,5 @@
+@use "../../scss/variables" as *;
+
 .LargeImage {
   padding: #{$spacing * 4} 0;
 }

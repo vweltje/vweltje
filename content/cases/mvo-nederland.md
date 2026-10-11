@@ -4,7 +4,7 @@ date: 04/21/2020
 featuredImage: https://ucarecdn.com/446132f6-059f-4ebf-890d-62bab734b337/
 list:
   url: https://mvonederland.nl
-  employer: Oddessey Solutions
+  employer: oddesseySolutions
   projectType: wordpress
 excerpt: 'Crafted a custom WordPress theme. Pages are fully customizable, site
   got multilingual support and has several external API implementations. '

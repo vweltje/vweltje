@@ -1,4 +1,7 @@
-@import "./typography";
+@use "sass:color";
+@use "variables" as *;
+@use "typography";
+
 
 * {
   box-sizing: border-box;
@@ -17,7 +20,7 @@
 }
 
 ::selection {
-  background: lighten($colorGreen, 20%);
+  background: color.adjust($colorGreen, $lightness: 20%);
 }
 
 body {

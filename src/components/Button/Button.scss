@@ -1,3 +1,6 @@
+@use "sass:color";
+@use "../../scss/variables" as *;
+
 .Button {
   background-color: $colorLightGreen;
   color: $colorBlack;
@@ -27,7 +30,7 @@
       left: 100%;
       height: 100%;
       width: #{$spacing * 6};
-      background-color: darken($colorLightGreen, 10%);
+      background-color: color.adjust($colorLightGreen, $lightness: -10%);
     }
 
     &::before {

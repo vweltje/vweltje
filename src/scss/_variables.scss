@@ -6,8 +6,8 @@ $colorBlack: #000;
 $colorWhite: #fff;
 
 // Fonts
-$fontPrimary: "Nunito", sans-serif;
-$fontSecondary: "Libre Caslon Text", serif;
+$fontPrimary: var(--font-nunito), "Nunito", sans-serif;
+$fontSecondary: var(--font-libre-caslon), "Libre Caslon Text", serif;
 
 // Spacing
 $spacing: 10px;

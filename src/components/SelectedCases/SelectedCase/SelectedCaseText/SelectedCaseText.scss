@@ -1,3 +1,5 @@
+@use "../../../../scss/variables" as *;
+
 .SelectedCaseText {
   width: calc(50% - #{$spacing * 8});
   display: flex;

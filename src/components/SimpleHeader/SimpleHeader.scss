@@ -1,3 +1,5 @@
+@use "../../scss/variables" as *;
+
 .SimpleHeader {
   position: relative;
   padding: #{$spacing * 4} 0;

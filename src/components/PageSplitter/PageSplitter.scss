@@ -1,3 +1,5 @@
+@use "../../scss/variables" as *;
+
 .PageSplitter--Main,
 .PageSplitter--Clone {
   background-color: $colorWhite;
