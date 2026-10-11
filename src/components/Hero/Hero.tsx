@@ -1,8 +1,8 @@
 "use client"
 
+import type { ReactNode } from "react"
 import Splitview, { SplitviewContainer } from "./Splitview/Splitview"
 import Button from "../Button/Button"
-import Content from "../Content/Content"
 import VWLogo from "../icons/VWLogo"
 import VWLogoFull from "../icons/VWLogoFull"
 import { useUI } from "@/lib/UIContext"
@@ -10,10 +10,11 @@ import { useIsMobile } from "@/lib/useIsMobile"
 
 type Props = {
   buttonText: string
-  text: string
+  // Rendered on the server, so the markdown renderer stays out of the bundle
+  children: ReactNode
 }
 
-export default function Hero({ buttonText, text }: Props) {
+export default function Hero({ buttonText, children }: Props) {
   const { setContactOverlayActive } = useUI()
   const isMobile = useIsMobile()
 
@@ -21,7 +22,7 @@ export default function Hero({ buttonText, text }: Props) {
     <header className="Hero">
       <Splitview>
         <SplitviewContainer position="Left">
-          <Content>{text}</Content>
+          {children}
           <Button onClick={() => setContactOverlayActive(true)}>
             {buttonText}
           </Button>

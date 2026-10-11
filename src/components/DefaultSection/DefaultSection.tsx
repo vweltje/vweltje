@@ -1,16 +1,20 @@
+import type { ReactNode } from "react"
 import Container from "../Container/Container"
 import ImageWrapper from "./ImageWrapper/ImageWrapper"
-import Content from "../Content/Content"
-import type { Section } from "@/lib/content"
+
+export type DefaultSectionData = {
+  content?: ReactNode
+  image?: string
+}
 
 type Props = {
-  data: Section
+  data: DefaultSectionData
   imageFirst?: boolean
 }
 
 export default function DefaultSection({ data, imageFirst = false }: Props) {
   const image = data.image && <ImageWrapper image={data.image} />
-  const content = data.content && <Content>{data.content}</Content>
+  const content = data.content
 
   return (
     <section className="DefaultSection">

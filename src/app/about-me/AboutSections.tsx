@@ -1,11 +1,16 @@
 "use client"
 
-import DefaultSection from "@/components/DefaultSection/DefaultSection"
+import DefaultSection, {
+  type DefaultSectionData,
+} from "@/components/DefaultSection/DefaultSection"
 import LargeImage from "@/components/LargeImage/LargeImage"
-import type { AboutPage } from "@/lib/content"
 import { useIsMobile } from "@/lib/useIsMobile"
 
-type Props = Pick<AboutPage, "firstSection" | "secondSection" | "footerImage">
+type Props = {
+  firstSection: DefaultSectionData
+  secondSection: DefaultSectionData
+  footerImage: string
+}
 
 // On mobile the second image goes first and the footer image is hidden
 export default function AboutSections({
