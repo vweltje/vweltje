@@ -79,8 +79,10 @@ function readFrontmatter<T>(file: string): T {
   return matter(fs.readFileSync(path.join(contentDir, file), "utf8")).data as T
 }
 
-// Dates in the case frontmatter are written as MM/DD/YYYY
+// Dates in the case frontmatter are written as MM/DD/YYYY, or "current" for
+// ongoing projects, which always sort first
 function toTime(date: string) {
+  if (date.trim().toLowerCase() === "current") return Number.MAX_SAFE_INTEGER
   const [month, day, year] = date.split("/").map(Number)
   return new Date(year, month - 1, day).getTime()
 }
