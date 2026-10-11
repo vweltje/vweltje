@@ -1,0 +1,90 @@
+@use "../../scss/variables" as *;
+
+.ErrorLayout {
+  display: flex;
+  flex-direction: row;
+  min-height: 700px;
+
+  @media screen and (max-width: $bpLarge) {
+    flex-direction: column-reverse;
+    min-height: 0;
+  }
+}
+
+.ErrorLayout--Start,
+.ErrorLayout--End {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media screen and (max-width: $bpLarge) {
+    width: 100%;
+  }
+}
+
+.ErrorLayout--Start {
+  background-color: $colorGreen;
+  color: $colorLightGreen;
+  padding: #{$spacing * 8} #{$spacing * 4};
+
+  @media screen and (max-width: $bpMedium) {
+    padding: #{$spacing * 4} #{$spacing * 2} #{$spacing * 6};
+  }
+}
+
+.ErrorLayout--Content {
+  max-width: 550px;
+  width: 100%;
+}
+
+.ErrorLayout--Label {
+  display: block;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 1.4rem;
+  letter-spacing: 0.1rem;
+}
+
+.ErrorLayout--Heading {
+  font-size: 3rem;
+  line-height: 4.2rem;
+  margin: #{$spacing * 2} 0 0;
+  color: $colorWhite;
+}
+
+.ErrorLayout--Actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: #{$spacing * 3} #{$spacing * 5};
+
+  .Link::after {
+    background-color: currentColor;
+  }
+}
+
+.ErrorLayout--End {
+  background-color: $colorLightGreen;
+  overflow: hidden;
+
+  @media screen and (max-width: $bpLarge) {
+    padding: #{$spacing * 4} 0;
+  }
+}
+
+.ErrorLayout--Code {
+  font-family: $fontSecondary;
+  font-size: 22rem;
+  line-height: 1;
+  color: $colorGreen;
+  user-select: none;
+
+  @media screen and (max-width: $bpExtraLarge) {
+    font-size: 16rem;
+  }
+
+  @media screen and (max-width: $bpLarge) {
+    font-size: 10rem;
+  }
+}

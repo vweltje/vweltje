@@ -1,5 +1,11 @@
+@use "../../scss/variables" as *;
+
 .LargeImage {
   padding: #{$spacing * 4} 0;
+
+  @media screen and (max-width: $bpLarge) {
+    display: none;
+  }
 }
 
 .LargeImage--Image {

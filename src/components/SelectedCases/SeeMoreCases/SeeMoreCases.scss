@@ -1,6 +1,12 @@
+@use "../../../scss/variables" as *;
+
 .SeeMoreCases {
   display: flex;
   justify-content: center;
   padding-top: #{$spacing * 4};
   padding-bottom: #{$spacing * 7};
+
+  @media screen and (max-width: $bpLarge) {
+    display: none;
+  }
 }

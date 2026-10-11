@@ -1,3 +1,5 @@
+@use "../../scss/variables" as *;
+
 .DefaultSection {
   padding: #{$spacing * 4} 0;
 
@@ -38,5 +40,27 @@
 
   @media screen and (max-width: $bpExtraLarge) {
     padding-left: 0;
+  }
+}
+
+// Puts the image (End) before the content (Start) on desktop
+.DefaultSection.imageFirst {
+  @media screen and (min-width: #{$bpLarge + 1px}) and (max-width: $bpExtraLarge) {
+    .Container {
+      flex-direction: column;
+    }
+  }
+
+  @media screen and (min-width: #{$bpExtraLarge + 1px}) {
+    .DefaultSection--Start {
+      padding-right: 0;
+      padding-left: #{$spacing * 4};
+    }
+
+    .DefaultSection--End {
+      order: -1;
+      padding-left: 0;
+      padding-right: #{$spacing * 4};
+    }
   }
 }

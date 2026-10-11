@@ -1,3 +1,5 @@
+@use "../../../../scss/variables" as *;
+
 .SelectedCaseImage {
   position: relative;
   display: flex;
@@ -54,11 +56,13 @@
   }
 
   &.Reversed {
-    .Left .parallax-inner {
-      background-color: $colorLightGreen;
-    }
-    .Right .parallax-inner {
-      background-color: $colorGreen;
+    @media screen and (min-width: #{$bpLarge + 1px}) {
+      .Left .parallax-inner {
+        background-color: $colorLightGreen;
+      }
+      .Right .parallax-inner {
+        background-color: $colorGreen;
+      }
     }
   }
 }

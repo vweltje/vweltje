@@ -1,3 +1,5 @@
+@use "../../scss/variables" as *;
+
 .Hero {
   p,
   h1 {
@@ -25,6 +27,20 @@
     @media screen and (max-width: $bpMedium) {
       margin-left: -#{$spacing * 2};
       height: 35px;
+    }
+  }
+
+  .Logo--Mobile {
+    display: none;
+  }
+
+  @media screen and (max-width: $bpLarge) {
+    .Logo--Mobile {
+      display: block;
+    }
+
+    .Logo--Desktop {
+      display: none;
     }
   }
 }

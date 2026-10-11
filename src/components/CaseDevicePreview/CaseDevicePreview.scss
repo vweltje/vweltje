@@ -1,3 +1,5 @@
+@use "../../scss/variables" as *;
+
 .CaseDevicePreview {
   padding-bottom: #{$spacing * 2};
 }

@@ -1,7 +1,10 @@
+@use "sass:color";
+@use "../../../scss/variables" as *;
+
 .ContactForm--Fieldset {
   width: 100%;
   position: absolute;
-  background-color: lighten($colorBlack, 75%);
+  background-color: color.adjust($colorBlack, $lightness: 75%);
   padding: #{$spacing * 4};
   padding-bottom: #{$spacing * 3};
   display: flex;

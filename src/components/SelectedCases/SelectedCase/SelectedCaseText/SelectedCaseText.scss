@@ -1,3 +1,5 @@
+@use "../../../../scss/variables" as *;
+
 .SelectedCaseText {
   width: calc(50% - #{$spacing * 8});
   display: flex;
@@ -10,20 +12,9 @@
     justify-content: flex-start;
   }
 
-  &:first-child {
-    .SelectedCaseText--Inner {
-      padding-right: #{$spacing * 2};
-    }
-  }
-
-  &:last-child {
-    .SelectedCaseText--Inner {
-      padding-left: #{$spacing * 2};
-    }
-  }
-
   .SelectedCaseText--Inner {
     max-width: 360px;
+    padding-left: #{$spacing * 2};
 
     @media screen and (max-width: $bpLarge) {
       max-width: unset;
@@ -34,5 +25,17 @@
         margin: #{$spacing} 0;
       }
     }
+  }
+}
+
+// Stretches over the whole case, including the image
+.SelectedCaseText--CoverLink {
+  display: none;
+
+  @media screen and (max-width: $bpLarge) {
+    display: block;
+    position: absolute;
+    inset: 0;
+    z-index: 1;
   }
 }

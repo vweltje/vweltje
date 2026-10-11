@@ -1,3 +1,5 @@
+@use "../../scss/variables" as *;
+
 .SimpleHeader {
   position: relative;
   padding: #{$spacing * 4} 0;
@@ -53,7 +55,12 @@
 }
 
 .SimpleHeader--MobileSpacer {
+  display: none;
   height: 70px;
   width: 100%;
   position: relative;
+
+  @media screen and (max-width: $bpLarge) {
+    display: block;
+  }
 }

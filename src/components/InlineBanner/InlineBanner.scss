@@ -1,3 +1,5 @@
+@use "../../scss/variables" as *;
+
 .InlineBanner {
   padding: #{$spacing * 7} 0;
 
