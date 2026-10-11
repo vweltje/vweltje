@@ -9,7 +9,7 @@ const resolutions = {
 
 export type Resolution = keyof typeof resolutions
 
-const isUploadcare = (src: string) => src.includes("ucarecdn.com")
+const isUploadcare = (src: string) => src?.includes("ucarecdn.com")
 
 export const getSrcSet = (src: string) =>
   isUploadcare(src)
